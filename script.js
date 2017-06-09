@@ -117,6 +117,7 @@ function Person4 (number) {
 var dom = {
   numberOfStrategy: 0,
   ñounterWinsInStrategy: 0,
+  txt: "",
   
   winCheck: function(persons) {
     var winners = "";        
@@ -139,22 +140,23 @@ var dom = {
   
   writeInitialInfo: function () {
     dom.numberOfStrategy++;
-    document.write(
+    document.getElementById("initialInfo").innerHTML = 
       "Number of strategy: " + 
       dom.numberOfStrategy + 
-      "<br><br>");
+      "<br><br>";
   },
   
   checkCase: function (persons) {
     for (var i = 0; i <= 3; i++) {
-      document.write(persons[i].number + "(" +
+      dom.txt += persons[i].number + "(" +
                      persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
-        persons[(i + 3) % 4].number) + ") ");
+        persons[(i + 3) % 4].number) + ") ";
     };
     
-    document.write(dom.winCheck(persons) + "<br>")
+    dom.txt += dom.winCheck(persons) + "<br>";
+    document.getElementById("checkCase").innerHTML = dom.txt;  
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -165,7 +167,7 @@ var dom = {
       "person4 wins " + person4.winsCounter + " times <br>" +
       "Total number of wins is " + dom.ñounterWinsInStrategy;
     
-    document.write(infoToWrite);
+    document.getElementById("generalInfo").innerHTML = infoToWrite;
     person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;
@@ -199,4 +201,4 @@ function main () {
   dom.writeGeneralInfo(person1, person2, person3, person4);
 };
 
-main();
+//main();

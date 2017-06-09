@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="script.js"></script>
+  	<title>My app</title>
+ 	<script src="script.js"></script>
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	  	.bg-1 { 
+	    	text-align: center;
+	    	background-color: #156c9c;
+	    	color: #ffffff;
+	    }
+	    .bg-2 { 
+	    	background-color: #122c9c;
+	    	color: #ffffff;
+	    }
+	</style>
 </head>
 <body>
+
+<div class="bg-1">
+	<div class="container">
+	  	<h1>What is my number?</h1>
+	  		<img class="img-responsive img-rounded" src="WhatIsMyNumber.jpg" alt="man thinks" width="1320" height="1110">
+	  		<button onclick="main()" class="btn btn-warning btn-lg">Try it</button>
+	  </div>
+</div>
+
+<div class="bg-2">
+	<div class="container">
+		<p id="initialInfo"></p>
+		<p id="checkCase"></p>
+		<p id="generalInfo"></p>
+	</div>
+</div>
 
 
 </body>
