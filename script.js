@@ -142,8 +142,7 @@ var dom = {
     dom.numberOfStrategy++;
     document.getElementById("initialInfo").innerHTML = 
       "Number of strategy: " + 
-      dom.numberOfStrategy + 
-      "<br><br>";
+      dom.numberOfStrategy;
   },
   
   checkCase: function (persons) {
@@ -160,7 +159,7 @@ var dom = {
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
-  	var infoToWrite = "<br>" + 
+  	var infoToWrite =  
       "person1 wins " + person1.winsCounter + " times <br>" +
       "person2 wins " + person2.winsCounter + " times <br>" + 
       "person3 wins " + person3.winsCounter + " times <br>" +
