@@ -200,4 +200,8 @@ function main () {
   dom.writeGeneralInfo(person1, person2, person3, person4);
 };
 
-//main();
+function cleardata () {
+  document.getElementById("initialInfo").innerHTML = "";
+  document.getElementById("checkCase").innerHTML = "";
+  document.getElementById("generalInfo").innerHTML = "";
+};
