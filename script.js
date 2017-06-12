@@ -176,6 +176,8 @@ var dom = {
 };
 
 function main () {
+  document.getElementById("myImage").style.display = "none";
+
   dom.writeInitialInfo();
   
   var person1 = new Person1 (0);
@@ -201,6 +203,7 @@ function main () {
 };
 
 function cleardata () {
+  document.getElementById("myImage").style.display = "inline";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("checkCase").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
