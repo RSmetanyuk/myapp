@@ -23,23 +23,29 @@
 <div class="bg-1">
 	<div class="container">
 	  	<h1>What is my number?</h1>
-	  		<button onclick="main()" class="btn btn-success btn-lg">Try it</button>
-	  		<button onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>
+	  		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg" style="display: inline">Try it</button>
+	  		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg" style="display: none">Clear</button>
 	  		<img id="myImage" class="img-responsive img-rounded" src="WhatIsMyNumber.jpg" alt="man thinks" width="1320" height="1110" style="display: inline">
-	  </div>
+	</div>
 </div>
 
 <div class="container">
-	<div class="col-sm-4" style="background-color:yellow;">
-		<p id="initialInfo"></p>
+	<div class="col-sm-3" style="background-color:yellow;">
+		<p id="initialInfo"></p>		
 	</div>
-	<div class="col-sm-4" style="background-color:pink;">
-		<p id="checkCase"></p>
-	</div>
-	<div class="col-sm-4" style="background-color:yellow;">
+	
+	<div class="col-sm-9" style="background-color:yellow;">
 		<p id="generalInfo"></p>
-	</div>
+	</div>	
 </div>
+
+<div class="container">
+	<div class="col-sm-12" style="background-color:pink;">
+		<p id="checkCase"></p>
+	</div>	
+</div>
+
+
 
 </body>
 </html>

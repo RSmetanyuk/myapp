@@ -116,12 +116,13 @@ function Person4 (number) {
 
 var dom = {
   numberOfStrategy: 0,
-  ñounterWinsInStrategy: 0,
-  txt: "",
+  counterWinsInStrategy: 0,
+  combinationCounter: 0,
+  combinationTxt: "",
   
   winCheck: function(persons) {
     var winners = "";        
-    var winnersWord = " winners:";
+    var winnersWord = " winnered person:";
    
     for (var i = 0; i <= 3; i++) {
         if (persons[i].checkAnswer(
@@ -133,7 +134,7 @@ var dom = {
         };
     }; 
     
-    winners && dom.ñounterWinsInStrategy++;
+    winners && dom.counterWinsInStrategy++;
            
     return winners && winnersWord + winners;
   },
@@ -145,17 +146,29 @@ var dom = {
       dom.numberOfStrategy;
   },
   
+  addZero: function () {
+    if (dom.combinationCounter < 10) {
+      return "00" + dom.combinationCounter;
+    } else if (dom.combinationCounter < 100) {
+      return "0" + dom.combinationCounter;
+    } else {
+      return dom.combinationCounter;
+    }
+   },
+
   checkCase: function (persons) {
+    dom.combinationTxt += "#" + dom.addZero() + " ---- ";
+    
     for (var i = 0; i <= 3; i++) {
-      dom.txt += persons[i].number + "(" +
+      dom.combinationTxt += "Person " + (i+1) + " number: " + persons[i].number + " (answer: " +
                      persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
-        persons[(i + 3) % 4].number) + ") ";
+        persons[(i + 3) % 4].number) + ") ---- ";
     };
     
-    dom.txt += dom.winCheck(persons) + "<br>";
-    document.getElementById("checkCase").innerHTML = dom.txt;  
+    dom.combinationTxt += dom.winCheck(persons) + "<br>";
+    document.getElementById("checkCase").innerHTML = dom.combinationTxt;  
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -164,19 +177,21 @@ var dom = {
       "person2 wins " + person2.winsCounter + " times <br>" + 
       "person3 wins " + person3.winsCounter + " times <br>" +
       "person4 wins " + person4.winsCounter + " times <br>" +
-      "Total number of wins is " + dom.ñounterWinsInStrategy;
+      "Total number of wins is " + dom.counterWinsInStrategy;
     
     document.getElementById("generalInfo").innerHTML = infoToWrite;
     person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;
     person4.winsCounter = 0;
-    dom.ñounterWinsInStrategy = 0;
+    dom.counterWinsInStrategy = 0;
   },
 };
 
 function main () {
   document.getElementById("myImage").style.display = "none";
+  document.getElementById("clearButton").style.display = "inline";
+  document.getElementById("tryItButton").style.display = "none";
 
   dom.writeInitialInfo();
   
@@ -193,7 +208,9 @@ function main () {
           person2.number = b;
           person3.number = c;
           person4.number = d;
+          dom.combinationCounter++;
           dom.checkCase([person1, person2, person3, person4]);
+
         };
       };
     };
@@ -204,6 +221,8 @@ function main () {
 
 function cleardata () {
   document.getElementById("myImage").style.display = "inline";
+  document.getElementById("clearButton").style.display = "none";
+  document.getElementById("tryItButton").style.display = "inline";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("checkCase").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
