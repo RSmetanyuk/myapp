@@ -192,6 +192,8 @@ function main () {
   document.getElementById("myImage").style.display = "none";
   document.getElementById("clearButton").style.display = "inline";
   document.getElementById("tryItButton").style.display = "none";
+  document.getElementById("container1").style.display = "inline";
+  document.getElementById("container2").style.display = "inline";
 
   dom.writeInitialInfo();
   
@@ -223,6 +225,8 @@ function cleardata () {
   document.getElementById("myImage").style.display = "inline";
   document.getElementById("clearButton").style.display = "none";
   document.getElementById("tryItButton").style.display = "inline";
+  document.getElementById("container1").style.display = "none";
+  document.getElementById("container2").style.display = "none";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("checkCase").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
