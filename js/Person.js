@@ -1,3 +1,15 @@
+ /*
+ We have four people who give answers the following way:
+ 1) if person sees three same numbers, she selects the same number + 
+    her serial number (but person1 chooses + 3);
+ 2) If a person sees three different numbers, she selects the missing number +
+    her serial number (but person1 selects  + 3, if the sum of the difference
+    of neighboring numbers she sees is even)
+ 3) if person sees two same numbers and third number, 
+    she selects that third number + her number (but person1 selects  + 3, if 
+    the sum of the difference of neighboring numbers she sees is even).  
+ */ 
+
 function Person1 (number) {
   this.number = number;
   this.winsCounter = 0;
