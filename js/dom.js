@@ -30,6 +30,13 @@ var dom = {
       dom.numberOfStrategy;
   },
   
+  addCombinationAnchor: function () {
+    if ((dom.combinationCounter - 1) % 30 === 0) {
+      dom.combinationTxt += "<a>Combination</a>";
+    }
+  },
+
+
   addCombinationNumber: function () {
     if (dom.combinationCounter < 10) {
       dom.combinationTxt += "#00" + dom.combinationCounter + " ---- ";

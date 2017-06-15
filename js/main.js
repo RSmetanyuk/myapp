@@ -21,6 +21,7 @@ function main () {
           person3.number = c;
           person4.number = d;
           dom.combinationCounter++;
+          dom.addCombinationAnchor();
           dom.addCombinationNumber();
           dom.checkCase([person1, person2, person3, person4]);          
         };
