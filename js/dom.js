@@ -30,19 +30,18 @@ var dom = {
       dom.numberOfStrategy;
   },
   
-  addZero: function () {
+  addCombinationNumber: function () {
     if (dom.combinationCounter < 10) {
-      return "00" + dom.combinationCounter;
+      dom.combinationTxt += "#00" + dom.combinationCounter + " ---- ";
     } else if (dom.combinationCounter < 100) {
-      return "0" + dom.combinationCounter;
+      dom.combinationTxt += "#0" + dom.combinationCounter + " ---- ";
     } else {
-      return dom.combinationCounter;
+      dom.combinationTxt += "#" +  dom.combinationCounter + " ---- ";
     }
    },
 
   checkCase: function (persons) {
-    dom.combinationTxt += "#" + dom.addZero() + " ---- ";
-    
+        
     for (var i = 0; i <= 3; i++) {
       dom.combinationTxt += "Person " + (i+1) + " number: " + persons[i].number + " (answer: " +
                      persons[i].getAnswer(
