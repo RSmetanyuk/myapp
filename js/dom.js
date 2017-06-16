@@ -3,8 +3,7 @@ var dom = {
   counterWinsInStrategy: 0,
   combinationCounter: 0,
   combinationTxt: "",
-  anchorCounter: 0,
-  
+    
   winCheck: function(persons) {
     var winners = "";        
     var winnersWord = " winnered person:";
@@ -33,8 +32,15 @@ var dom = {
   
   addCombinationAnchor: function () {
     if ((dom.combinationCounter - 1) % 30 === 0) {
-      dom.anchorCounter ++;
-      dom.combinationTxt += "<a name = 'anchor" + dom.anchorCounter + "'>" + "anchor" + dom.anchorCounter + "</a>";
+            
+      dom.combinationTxt += "<a name = 'combination" + 
+      dom.combinationCounter + "'></a>";
+
+     //* 
+     document.getElementById("navbar").innerHTML +=
+      "<li><a href='#combination" + dom.combinationCounter + "'>#" +
+      dom.combinationCounter + "</a></li>"
+    //*/
     }
   },
 
@@ -76,6 +82,6 @@ var dom = {
     person2.winsCounter = 0;
     person3.winsCounter = 0;
     person4.winsCounter = 0;
-    dom.counterWinsInStrategy = 0;
+    dom.counterWinsInStrategy = 0;  
   },
 };
