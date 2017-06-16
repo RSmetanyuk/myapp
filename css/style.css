@@ -8,3 +8,12 @@
 	background-color: #122c9c;
 	color: #ffffff;
 }
+
+.affix {
+    top: 0;
+    width: 100%;
+}
+ 
+.affix + .container-fluid {
+    padding-top: 70px;
+}

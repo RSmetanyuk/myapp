@@ -3,6 +3,7 @@ var dom = {
   counterWinsInStrategy: 0,
   combinationCounter: 0,
   combinationTxt: "",
+  anchorCounter: 0,
   
   winCheck: function(persons) {
     var winners = "";        
@@ -32,7 +33,8 @@ var dom = {
   
   addCombinationAnchor: function () {
     if ((dom.combinationCounter - 1) % 30 === 0) {
-      dom.combinationTxt += "<a>Combination</a>";
+      dom.anchorCounter ++;
+      dom.combinationTxt += "<a name = 'anchor" + dom.anchorCounter + "'>" + "anchor" + dom.anchorCounter + "</a>";
     }
   },
 
