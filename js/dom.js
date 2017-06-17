@@ -82,6 +82,9 @@ var dom = {
     person2.winsCounter = 0;
     person3.winsCounter = 0;
     person4.winsCounter = 0;
-    dom.counterWinsInStrategy = 0;  
+    dom.counterWinsInStrategy = 0;
+    dom.combinationCounter = 0;
+    dom.numberOfStrategy = 0;
+    dom.combinationTxt = ""; 
   },
 };

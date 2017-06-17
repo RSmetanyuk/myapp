@@ -5,11 +5,7 @@ function main () {
   document.getElementById("container1").style.display = "inline";
   document.getElementById("container2").style.display = "inline";
   document.getElementById("container3").style.display = "inline";
-/*
-  document.getElementById("navbar").innerHTML =
-    "<li><a href='#combination1'>Page 1</a></li>" +
-    "<li><a href='#combination31'>Page 2</a></li>"
-//*/
+  document.getElementById("navbar").innerHTML = '<li><a href="#">Combination</a></li>';
 
   dom.writeInitialInfo();
   
