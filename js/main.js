@@ -4,8 +4,6 @@ function main () {
   document.getElementById("tryItButton").style.display = "none";
   document.getElementById("container1").style.display = "inline";
   document.getElementById("container2").style.display = "inline";
-  document.getElementById("container3").style.display = "inline";
-  document.getElementById("navbar").innerHTML = '<li><a href="#">Combination</a></li>';
 
   dom.writeInitialInfo();
   
@@ -23,8 +21,6 @@ function main () {
           person3.number = c;
           person4.number = d;
           dom.combinationCounter++;
-          //dom.addCombinationAnchor();
-          //dom.addCombinationNumber();
           dom.checkCase([person1, person2, person3, person4]);          
         };
       };
@@ -40,7 +36,6 @@ function cleardata () {
   document.getElementById("tryItButton").style.display = "inline";
   document.getElementById("container1").style.display = "none";
   document.getElementById("container2").style.display = "none";
-  document.getElementById("container3").style.display = "none";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
 };
