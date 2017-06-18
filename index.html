@@ -16,16 +16,16 @@
 <div class="bg-1">
 	<div class="container-fluid">
 	  	<h1>What is my number?</h1>
-	  		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg" style="display: inline">Try it</button>
-	  		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg" style="display: none">Clear</button>	  		
+	  		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg">Try it</button>
+	  		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>	  		
 	</div>
 	<div class="container">
-	  	<img id="logo" class="img-responsive img-rounded" src="img/logo.jpg" alt="man thinks" width="880" height="740" style="display: inline">
+	  	<img id="logo" class="img-responsive img-rounded" src="img/logo.jpg" alt="man thinks" width="880" height="740">
 	</div>
 </div>
 
 <div class="bg-2">
-	<div id="container1" style="display: none">
+	<div id="container1">
 		<div class="container">
 			<div class="col-sm-3">
 				<p id="initialInfo"></p>		
@@ -37,31 +37,23 @@
 	</div>
 </div>
 
-<div id="container3" style="display: none">
-	<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="322">
-	  <ul id="navbar" class="nav navbar-nav">	  	
-	  </ul>
-	</nav> 
-</div>
-
-<div id="container2" style="display: none">
+<div id="container2">
 	<div class="container container-fluid">
 		<table class="table table-bordered">
 		<thead>
 	      <tr>
-	        <th width="10" style="border-right: 3px solid"></th>
+	        <th width="10" id="column1"></th>
 	        <th width="80">Person A number</th>
 			<th width="80">Person B number</th>
 			<th width="80">Person C number</th>
-			<th width="80" style="border-right: 3px solid">Person D number</th>
+			<th width="80" id="column1">Person D number</th>
 	        <th width="80">Person A answer</th>
 			<th width="80">Person B answer</th>
 			<th width="80">Person C answer</th>
 			<th>Person D answer</th>			
 	      </tr>
 	    </thead>
-	    <tbody id="tableBody">
-	         
+	    <tbody id="tableBody">	         
 	    </tbody>
 	  </table>
 	</div>

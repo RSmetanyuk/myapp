@@ -9,11 +9,22 @@
 	color: #ffffff;
 }
 
-.affix {
-    top: 0;
-    width: 100%;
+#clearButton{
+	display: none;
 }
- 
-.affix + .container-fluid {
-    padding-top: 70px;
+
+#container1{
+	display: none;
+}
+
+#container2{
+	display: none;
+}
+
+#column1 {
+	border-right: 3px solid
+}
+
+#column2 {
+	border-right: 3px solid
 }
