@@ -53,10 +53,14 @@ var dom = {
    },
 
   checkCase: function (persons) {
-    dom.combinationTxt += "<tr><td>" + dom.combinationCounter + "</td>";    
-    for (var i = 0; i <= 3; i++) {
+    dom.combinationTxt += "<tr><td style='border-right: 3px solid'>" +
+    dom.combinationCounter + "</td>";    
+    
+    for (var i = 0; i <= 2; i++) {
       dom.combinationTxt += "<td>" + persons[i].number + "</td>";
     };
+
+    dom.combinationTxt += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
