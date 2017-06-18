@@ -6,21 +6,21 @@ var dom = {
     
   winCheck: function(persons) {
     var winners = "";        
-    var winnersWord = " winnered person:";
+    //var winnersWord = " winnered person:";
    
     for (var i = 0; i <= 3; i++) {
         if (persons[i].checkAnswer(
               persons[(i + 1) % 4].number, 
               persons[(i + 2) % 4].number, 
               persons[(i + 3) % 4].number)) {
-      		winners += " " + (i + 1);
+      		winners += (i + 1);
       		persons[i].winsCounter++;
         };
     }; 
     
     winners && dom.counterWinsInStrategy++;
            
-    return winners && winnersWord + winners;
+    //return winners && winnersWord + winners;
   },
   
   writeInitialInfo: function () {
@@ -56,17 +56,30 @@ var dom = {
    },
 
   checkCase: function (persons) {
-        
+    dom.combinationTxt += "<tr><td>" + dom.combinationCounter + "</td>";    
     for (var i = 0; i <= 3; i++) {
-      dom.combinationTxt += "Person " + (i+1) + " number: " + persons[i].number + " (answer: " +
+      dom.combinationTxt += "<td>" + persons[i].number + "</td>";
+      /*dom.combinationTxt += "Person " + (i+1) + " number: " + persons[i].number + " (answer: " +
                      persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
-        persons[(i + 3) % 4].number) + ") ---- ";
+        persons[(i + 3) % 4].number) + ") ---- ";*/
     };
+
+    for (var i = 0; i <= 3; i++) {
+      dom.combinationTxt += "<td>" + persons[i].getAnswer(
+        persons[(i + 1) % 4].number, 
+        persons[(i + 2) % 4].number, 
+        persons[(i + 3) % 4].number) + "</td>";
+    };
+
+    dom.combinationTxt += "</tr>";
+
+    dom.winCheck(persons);
     
-    dom.combinationTxt += dom.winCheck(persons) + "<br>";
-    document.getElementById("checkCase").innerHTML = dom.combinationTxt;  
+    //dom.combinationTxt += dom.winCheck(persons) + "<br>";
+    //document.getElementById("checkCase").innerHTML = dom.combinationTxt;
+    document.getElementById("tableBody").innerHTML = dom.combinationTxt;  
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
