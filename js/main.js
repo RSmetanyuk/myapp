@@ -42,6 +42,5 @@ function cleardata () {
   document.getElementById("container2").style.display = "none";
   document.getElementById("container3").style.display = "none";
   document.getElementById("initialInfo").innerHTML = "";
-  document.getElementById("checkCase").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
 };

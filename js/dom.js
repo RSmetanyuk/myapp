@@ -6,8 +6,7 @@ var dom = {
     
   winCheck: function(persons) {
     var winners = "";        
-    //var winnersWord = " winnered person:";
-   
+       
     for (var i = 0; i <= 3; i++) {
         if (persons[i].checkAnswer(
               persons[(i + 1) % 4].number, 
@@ -19,8 +18,6 @@ var dom = {
     }; 
     
     winners && dom.counterWinsInStrategy++;
-           
-    //return winners && winnersWord + winners;
   },
   
   writeInitialInfo: function () {
