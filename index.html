@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<title>My app</title>
- 	<script src="js/Person.js"></script>
- 	<script src="js/dom.js"></script>
- 	<script src="js/main.js"></script>
- 	<link rel="stylesheet" type="text/css" href="css/style.css">
- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My app</title>
+	<script src="js/Person.js"></script>
+	<script src="js/dom.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 <div class="bg-1">
 	<div class="container-fluid">
-	  	<h1>What is my number?</h1>
-	  		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg">Try it</button>
-	  		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>	  		
+		<h1>What is my number?</h1>
+			<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg">Try it</button>
+			<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>
 	</div>
 	<div class="container">
-	  	<img id="logo" class="img-responsive img-rounded" src="img/logo.jpg" alt="man thinks" width="880" height="740">
+		<img id="logo" class="img-responsive img-rounded" src="img/logo.jpg" alt="man thinks" width="880" height="740">
 	</div>
 </div>
 
@@ -28,7 +28,7 @@
 	<div id="container1">
 		<div class="container">
 			<div class="col-sm-3">
-				<p id="initialInfo"></p>		
+				<p id="initialInfo"></p>
 			</div>
 			<div class="col-sm-9">
 				<p id="generalInfo"></p>
@@ -43,25 +43,33 @@
 		<ul class="pagination">
 			<li><a href="#">1</a></li>
 			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">6</a></li>
+			<li><a href="#">7</a></li>
+			<li><a href="#">8</a></li>
+			<li><a href="#">9</a></li>
+			<li><a href="#">10</a></li>
 		</ul>
 
 		<table class="table table-bordered" id="table">
-		<thead>
-	      <tr>
-	        <th width="10" id="column1"></th>
-	        <th width="80">Person A number</th>
-			<th width="80">Person B number</th>
-			<th width="80">Person C number</th>
-			<th width="80" id="column1">Person D number</th>
-	        <th width="80">Person A answer</th>
-			<th width="80">Person B answer</th>
-			<th width="80">Person C answer</th>
-			<th>Person D answer</th>			
-	      </tr>
-	    </thead>
-	    <tbody id="tableBody">	         
-	    </tbody>
-	  </table>
+			<thead>
+				<tr>
+					<th width="10" id="column1"></th>
+					<th width="80">Person A number</th>
+					<th width="80">Person B number</th>
+					<th width="80">Person C number</th>
+					<th width="80" id="column1">Person D number</th>
+					<th width="80">Person A answer</th>
+					<th width="80">Person B answer</th>
+					<th width="80">Person C answer</th>
+					<th>Person D answer</th>
+				</tr>
+			</thead>
+			<tbody id="tableBody">
+			</tbody>
+		</table>
 	</div>
 </div>
 
