@@ -33,6 +33,9 @@ var dom = {
 
     if (dom.combinationCounter % dom.rowInPage === 0) {
       dom.combinationTxt[page] = "";
+      document.getElementById("pagination").innerHTML += 
+      "<button type='button' class='btn btn-default' onclick='dom.changePage(" + page + ")'>" + (page + 1) + "</button>";
+      //  <button type='button' class='btn btn-default' onclick='changePage()'>Apple</button>
     };
 
     dom.combinationTxt[page] += "<tr><td style='border-right: 3px solid'>" +
@@ -61,7 +64,8 @@ var dom = {
 
     dom.combinationTxt[page] += "</tr>";
     dom.winCheck(persons);
-    document.getElementById("tableBody").innerHTML = dom.combinationTxt[page];  
+    
+    dom.changePage(0);
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -80,6 +84,11 @@ var dom = {
     dom.counterWinsInStrategy = 0;
     dom.combinationCounter = 0;
     dom.numberOfStrategy = 0;
-    dom.combinationTxt = [""]; 
   },
+
+  changePage: function (n) {
+    document.getElementById("tableBody").innerHTML = dom.combinationTxt[n];
+   }
+
+
 };
