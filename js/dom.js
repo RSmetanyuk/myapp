@@ -2,7 +2,7 @@ var dom = {
   numberOfStrategy: 0,
   counterWinsInStrategy: 0,
   combinationCounter: 0,
-  combinationTxt: [""],
+  combinationTxt: [],
   rowInPage: 20,
     
   winCheck: function(persons) {
@@ -29,15 +29,20 @@ var dom = {
   },
 
   checkCase: function (persons) {
+    var page = Math.floor (dom.combinationCounter / dom.rowInPage);
 
-    dom.combinationTxt[0] += "<tr><td style='border-right: 3px solid'>" +
+    if (dom.combinationCounter % dom.rowInPage === 0) {
+      dom.combinationTxt[page] = "";
+    };
+
+    dom.combinationTxt[page] += "<tr><td style='border-right: 3px solid'>" +
     (dom.combinationCounter + 1) + "</td>";
     
     for (var i = 0; i <= 2; i++) {
-      dom.combinationTxt[0] += "<td>" + persons[i].number + "</td>";
+      dom.combinationTxt[page] += "<td>" + persons[i].number + "</td>";
     };
 
-    dom.combinationTxt[0] += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
+    dom.combinationTxt[page] += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
@@ -48,15 +53,15 @@ var dom = {
         Coloured = ' class="success"'
       };
 
-      dom.combinationTxt[0] += "<td" + Coloured + ">" + persons[i].getAnswer(
+      dom.combinationTxt[page] += "<td" + Coloured + ">" + persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
         persons[(i + 3) % 4].number) + "</td>";
     };
 
-    dom.combinationTxt[0] += "</tr>";
+    dom.combinationTxt[page] += "</tr>";
     dom.winCheck(persons);
-    document.getElementById("tableBody").innerHTML = dom.combinationTxt[0];  
+    document.getElementById("tableBody").innerHTML = dom.combinationTxt[page];  
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
