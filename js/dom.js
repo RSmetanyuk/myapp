@@ -2,7 +2,8 @@ var dom = {
   numberOfStrategy: 0,
   counterWinsInStrategy: 0,
   combinationCounter: 0,
-  combinationTxt: "",
+  combinationTxt: [""],
+  rowInPage: 20,
     
   winCheck: function(persons) {
     var winners = "";        
@@ -28,14 +29,15 @@ var dom = {
   },
 
   checkCase: function (persons) {
-    dom.combinationTxt += "<tr><td style='border-right: 3px solid'>" +
-    dom.combinationCounter + "</td>";    
+
+    dom.combinationTxt[0] += "<tr><td style='border-right: 3px solid'>" +
+    (dom.combinationCounter + 1) + "</td>";
     
     for (var i = 0; i <= 2; i++) {
-      dom.combinationTxt += "<td>" + persons[i].number + "</td>";
+      dom.combinationTxt[0] += "<td>" + persons[i].number + "</td>";
     };
 
-    dom.combinationTxt += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
+    dom.combinationTxt[0] += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
@@ -46,15 +48,15 @@ var dom = {
         Coloured = ' class="success"'
       };
 
-      dom.combinationTxt += "<td" + Coloured + ">" + persons[i].getAnswer(
+      dom.combinationTxt[0] += "<td" + Coloured + ">" + persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
         persons[(i + 3) % 4].number) + "</td>";
     };
 
-    dom.combinationTxt += "</tr>";
+    dom.combinationTxt[0] += "</tr>";
     dom.winCheck(persons);
-    document.getElementById("tableBody").innerHTML = dom.combinationTxt;  
+    document.getElementById("tableBody").innerHTML = dom.combinationTxt[0];  
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -73,6 +75,6 @@ var dom = {
     dom.counterWinsInStrategy = 0;
     dom.combinationCounter = 0;
     dom.numberOfStrategy = 0;
-    dom.combinationTxt = ""; 
+    dom.combinationTxt = [""]; 
   },
 };

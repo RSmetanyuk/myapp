@@ -20,8 +20,8 @@ function main () {
           person2.number = b;
           person3.number = c;
           person4.number = d;
-          dom.combinationCounter++;
-          dom.checkCase([person1, person2, person3, person4]);          
+          dom.checkCase([person1, person2, person3, person4]);
+          dom.combinationCounter++;          
         };
       };
     };
