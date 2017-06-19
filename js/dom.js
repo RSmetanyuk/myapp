@@ -26,31 +26,6 @@ var dom = {
       "Number of strategy: " + 
       dom.numberOfStrategy;
   },
-  
-  addCombinationAnchor: function () {
-    if ((dom.combinationCounter - 1) % 30 === 0) {
-            
-      dom.combinationTxt += "<a name = 'combination" + 
-      dom.combinationCounter + "'></a>";
-
-     //* 
-     document.getElementById("navbar").innerHTML +=
-      "<li><a href='#combination" + dom.combinationCounter + "'>#" +
-      dom.combinationCounter + "</a></li>"
-    //*/
-    }
-  },
-
-
-  addCombinationNumber: function () {
-    if (dom.combinationCounter < 10) {
-      dom.combinationTxt += "#00" + dom.combinationCounter + " ---- ";
-    } else if (dom.combinationCounter < 100) {
-      dom.combinationTxt += "#0" + dom.combinationCounter + " ---- ";
-    } else {
-      dom.combinationTxt += "#" +  dom.combinationCounter + " ---- ";
-    }
-   },
 
   checkCase: function (persons) {
     dom.combinationTxt += "<tr><td style='border-right: 3px solid'>" +
