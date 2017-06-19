@@ -35,7 +35,6 @@ var dom = {
       dom.combinationTxt[page] = "";
       document.getElementById("pagination").innerHTML += 
       "<button type='button' class='btn btn-default' onclick='dom.changePage(" + page + ")'>" + (page + 1) + "</button>";
-      //  <button type='button' class='btn btn-default' onclick='changePage()'>Apple</button>
     };
 
     dom.combinationTxt[page] += "<tr><td style='border-right: 3px solid'>" +

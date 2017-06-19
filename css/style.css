@@ -39,9 +39,18 @@
 }
 
 img {
-	padding-bottom: 20px;
+	padding-bottom: 5px;
+	width: 75%;
+	margin: auto;
 }
 
 #pagination {
 	padding: 10px;
+}
+
+
+@media screen and (min-width: 769px) {
+    img {
+	padding-bottom: 20px;
+	width: 50%;
 }
