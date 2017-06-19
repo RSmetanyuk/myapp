@@ -4,6 +4,7 @@ function main () {
   document.getElementById("tryItButton").style.display = "none";
   document.getElementById("container1").style.display = "inline";
   document.getElementById("container2").style.display = "inline";
+  document.getElementById("pagination").innerHTML = "";
 
   dom.writeInitialInfo();
   
