@@ -33,7 +33,8 @@
 */
 
 #table {
-	width: 685px;
+	width: 700px;
+	margin: 5px!important;
 }
 
 th:first-child,
@@ -43,15 +44,25 @@ td:nth-child(5n){
 	border-right: 3px solid!important;
 }
 
+th {
+	width: 80px;
+}
+
+th:first-child {
+	width: 10px!important;
+}
+
 img {
 	padding-bottom: 5px;
 	width: 75%;
 	margin: auto;
 }
 
+/*
 #pagination {
-	padding: 10px;
+	padding: 5px;
 }
+*/
 
 
 @media screen and (min-width: 769px) {
