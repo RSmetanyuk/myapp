@@ -9,12 +9,12 @@
 	color: #ffffff;
 }
 
-#clearButton{
+#clearButton {
 	display: none;
 	margin-bottom: 10px;
 }
 
-#tryItButton{
+#tryItButton {
 	margin-bottom: 10px;
 }
 
@@ -22,18 +22,12 @@
 	display: none;
 }
 
-/*
-.rightBorderThik {
-	border-right: 3px solid
-}
-
-#column2 {
-	border-right: 3px solid
-}
-*/
-
 #table {
 	width: 700px;
+	margin: 5px!important;
+}
+
+form {
 	margin: 5px!important;
 }
 
@@ -57,13 +51,6 @@ img {
 	width: 75%;
 	margin: auto;
 }
-
-/*
-#pagination {
-	padding: 5px;
-}
-*/
-
 
 @media screen and (min-width: 769px) {
     img {

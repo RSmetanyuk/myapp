@@ -3,7 +3,7 @@ var dom = {
   counterWinsInStrategy: 0,
   combinationCounter: 0,
   combinationTxt: [],
-  rowInPage: 20,
+  rowInPage: 5,
     
   winCheck: function(persons) {
     var winners = "";        
@@ -86,7 +86,13 @@ var dom = {
 
   changePage: function (n) {
     document.getElementById("tableBody").innerHTML = dom.combinationTxt[n];
-   }
+   },
+
+  combinationsInPage: function() {   
+    x = document.forms[0].combinationsInPageList.value
+    dom.rowInPage = x;
+    main();
+  }
 
 
 };
