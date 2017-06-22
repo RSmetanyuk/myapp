@@ -1,7 +1,13 @@
+/*
+body { 
+	background-color: #156c9c!important;
+}
+*/
+
 .bg-1 { 
-	text-align: center;
 	background-color: #156c9c;
 	color: #ffffff;
+	text-align: center;
 }
 
 .bg-2 { 
@@ -16,10 +22,32 @@
 
 #tryItButton {
 	margin-bottom: 10px;
+	position: center;
+
 }
 
 #container1, #container2{
 	display: none;
+}
+
+.jumbotron {
+	height: 66px;
+	width: 570px;
+	margin: auto;
+	margin-top: 10px!important;
+	margin-bottom: 10px!important;
+	padding: 1px!important;
+	color: black!important;
+	text-align: left!important;
+}
+
+#smImg {
+	height: 56px;
+	width: 93px;
+	margin: 4px;
+	padding-bottom: 0px!important;
+	float: left;
+	margin-right: 40px!important;	
 }
 
 #table {
