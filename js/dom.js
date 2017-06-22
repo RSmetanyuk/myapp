@@ -34,7 +34,8 @@ var dom = {
     if (dom.combinationCounter % dom.rowInPage === 0) {
       dom.combinationTxt[page] = "";
       document.getElementById("pagination").innerHTML += 
-      "<button type='button' class='btn btn-default' onclick='dom.changePage(" + page + ")'>" + (page + 1) + "</button>";
+      "<button type='button' class='btn btn-default' onclick='dom.changeCombinationPageNumber(" + 
+      page + ")'>" + (page + 1) + "</button>";
     };
 
     dom.combinationTxt[page] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
@@ -63,7 +64,7 @@ var dom = {
     dom.combinationTxt[page] += "</tr>";
     dom.winCheck(persons);
     
-    dom.changePage(0);
+    dom.changeCombinationPageNumber(0);
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -84,11 +85,11 @@ var dom = {
     dom.numberOfStrategy = 0;
   },
 
-  changePage: function (n) {
+  changeCombinationPageNumber: function (n) {
     document.getElementById("tableBody").innerHTML = dom.combinationTxt[n];
    },
 
-  combinationsInPage: function() {   
+  changeNumberCombinationsInPage: function() {   
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = x;
     main();
