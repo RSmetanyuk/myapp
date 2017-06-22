@@ -37,14 +37,13 @@ var dom = {
       "<button type='button' class='btn btn-default' onclick='dom.changePage(" + page + ")'>" + (page + 1) + "</button>";
     };
 
-    dom.combinationTxt[page] += "<tr><td style='border-right: 3px solid'>" +
-    (dom.combinationCounter + 1) + "</td>";
+    dom.combinationTxt[page] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
     
     for (var i = 0; i <= 2; i++) {
       dom.combinationTxt[page] += "<td>" + persons[i].number + "</td>";
     };
 
-    dom.combinationTxt[page] += "<td style='border-right: 3px solid'>" + persons[3].number + "</td>";
+    dom.combinationTxt[page] += "<td>" + persons[3].number + "</td>";
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
