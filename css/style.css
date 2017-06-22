@@ -35,11 +35,12 @@ th:first-child,
 td:first-child,
 th:nth-child(5n),
 td:nth-child(5n){
-	border-right: 3px solid!important;
+	border-right: 2px solid!important;
 }
 
 th {
 	width: 80px;
+	border-bottom: 2px solid!important;
 }
 
 th:first-child {
