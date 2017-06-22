@@ -18,14 +18,11 @@
 	margin-bottom: 10px;
 }
 
-#container1{
+#container1, #container2{
 	display: none;
 }
 
-#container2{
-	display: none;
-}
-
+/*
 .rightBorderThik {
 	border-right: 3px solid
 }
@@ -33,9 +30,17 @@
 #column2 {
 	border-right: 3px solid
 }
+*/
 
 #table {
 	width: 685px;
+}
+
+th:first-child,
+td:first-child,
+th:nth-child(5n),
+td:nth-child(5n){
+	border-right: 3px solid!important;
 }
 
 img {
