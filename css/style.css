@@ -1,49 +1,47 @@
 /*
 body { 
-	background-color: #156c9c!important;
+	margin: 0px;
 }
 */
 
-#clearButton {
-	display: none;
-	margin-bottom: 10px;
+#header,
+#blockLeft,
+#blockRight {
+	background-color: #eee;
+	border: 1px solid black;
+	margin: 8px;
+	padding: 3px;
 }
 
-#tryItButton {
-	margin-bottom: 10px;
-	position: center;
-
-}
-
-#container1, #container2{
-	display: none;
-}
-
-.jumbotron {
-	margin: auto;
-	margin-top: 10px!important;
-	margin-bottom: 10px!important;
-	padding: 1px!important;
-	color: black!important;
-	text-align: left!important;
-}
-
-#logo {
-	height: 56px;
-	width: 71px;
-	margin: 4px;
-	padding-bottom: 0px!important;
-	float: left;
-	margin-right: 40px!important;	
+#blockLeft {
+	width: 708px;
 }
 
 #table {
 	width: 700px;
-	margin: 5px!important;
+	background-color: white;
+}
+
+#blockRight {
+	width: 160px;
+}
+
+#clearButton {
+	display: none;
+}
+
+#tryItButton {
+
+}
+
+#logo {
+	height: 63px;
+	float: left;
+	margin-right: 15px;	
 }
 
 form {
-	margin: 5px!important;
+	margin-bottom: 5px!important;
 }
 
 th:first-child,
@@ -62,8 +60,10 @@ th:first-child {
 	width: 10px!important;
 }
 
+/*
 @media screen and (min-width: 769px) {
     img {
 	padding-bottom: 20px;
 	width: 50%;
 }
+*/

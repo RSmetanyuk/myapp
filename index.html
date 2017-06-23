@@ -13,41 +13,25 @@
 </head>
 <body>
 
-
-	<div class="container-fluid">		
-		<div class="jumbotron" id="header">
-			<img id="logo" src="img/logo.jpg" alt="man thinks">
-			<h2>What is my number?</h2>
-		</div>
-
-		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg">Try it</button>
-		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>
+	<div id="header">	
+		<img id="logo" src="img/logo.jpg" alt="man thinks">
+		<h2>What is my number?</h2>
 	</div>
 
+	<div id="blockLeft">
 
-	<div id="container1">
-		<div class="container">
-			<div class="col-sm-3">
-				<p id="initialInfo"></p>
-			</div>
-			<div class="col-sm-9">
-				<p id="generalInfo"></p>
-			</div>		      
-		</div>
-	</div>
-
-<div id="container2">
-	<div class="container container-fluid">		
+		<p id="initialInfo"></p>			
+		<p id="generalInfo"></p>
 
 		<form>
-		Combinations in page
-		<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
-			<option value=5>5</option>
-			<option value=10>10</option>
-			<option value=15>15</option>
-			<option value=20>20</option>
-			<option value=256>all</option>
-		</select>
+			Combinations in page
+			<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
+				<option value=5>5</option>
+				<option value=10>10</option>
+				<option value=15>15</option>
+				<option value=20>20</option>
+				<option value=256>all</option>
+			</select>
 		</form>
 
 		<table class="table table-bordered" id="table">
@@ -72,9 +56,16 @@
 		</div>
 
 	</div>
+
+
+			
+	<div class="col-sm-2" id="blockRight">
+		<button id="tryItButton" onclick="main()" class="btn btn-success btn-lg">Try it</button>
+		<button id="clearButton" onclick="cleardata()" class="btn btn-warning btn-lg">Clear</button>
+			
+	</div>
+
 </div>
-
-
 
 </body>
 </html>
