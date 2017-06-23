@@ -33,6 +33,8 @@ function main () {
 function cleardata () {
   document.getElementById("clearButton").style.display = "none";
   document.getElementById("tryItButton").style.display = "inline";
+  document.getElementById("tableBody").innerHTML = "";
+  document.getElementById("pagination").innerHTML = "";
   //document.getElementById("container1").style.display = "none";
   //document.getElementById("container2").style.display = "none";
   document.getElementById("initialInfo").innerHTML = "";
