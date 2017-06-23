@@ -1,5 +1,4 @@
 function main () {
-  document.getElementById("logo").style.display = "none";
   document.getElementById("clearButton").style.display = "inline";
   document.getElementById("tryItButton").style.display = "none";
   document.getElementById("container1").style.display = "inline";
@@ -32,7 +31,6 @@ function main () {
 };
 
 function cleardata () {
-  document.getElementById("logo").style.display = "inline";
   document.getElementById("clearButton").style.display = "none";
   document.getElementById("tryItButton").style.display = "inline";
   document.getElementById("container1").style.display = "none";

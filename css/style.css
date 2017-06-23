@@ -4,17 +4,6 @@ body {
 }
 */
 
-.bg-1 { 
-	background-color: #156c9c;
-	color: #ffffff;
-	text-align: center;
-}
-
-.bg-2 { 
-	background-color: #122c9c;
-	color: #ffffff;
-}
-
 #clearButton {
 	display: none;
 	margin-bottom: 10px;
@@ -31,8 +20,6 @@ body {
 }
 
 .jumbotron {
-	height: 66px;
-	width: 570px;
 	margin: auto;
 	margin-top: 10px!important;
 	margin-bottom: 10px!important;
@@ -41,9 +28,9 @@ body {
 	text-align: left!important;
 }
 
-#smImg {
+#logo {
 	height: 56px;
-	width: 93px;
+	width: 71px;
 	margin: 4px;
 	padding-bottom: 0px!important;
 	float: left;
@@ -73,12 +60,6 @@ th {
 
 th:first-child {
 	width: 10px!important;
-}
-
-img {
-	padding-bottom: 5px;
-	width: 75%;
-	margin: auto;
 }
 
 @media screen and (min-width: 769px) {
