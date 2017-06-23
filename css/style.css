@@ -1,8 +1,7 @@
-/*
-body { 
-	margin: 0px;
+* {
+  padding: 0;
+  margin: 30;
 }
-*/
 
 #header,
 #blockLeft,
@@ -13,8 +12,15 @@ body {
 	padding: 3px;
 }
 
+#header {
+	min-height: 65px;
+	font-size: 30px;
+}
+
 #blockLeft {
-	width: 708px;
+	width: 80%;
+	min-width: 706px;
+	float: left;
 }
 
 #table {
@@ -23,7 +29,9 @@ body {
 }
 
 #blockRight {
-	width: 160px;
+	width: 17%;
+	float: left;
+	min-width: 85px;
 }
 
 #clearButton {
@@ -35,9 +43,9 @@ body {
 }
 
 #logo {
-	height: 63px;
+	height: 57px;
 	float: left;
-	margin-right: 15px;	
+	margin-right: 15px;
 }
 
 form {
