@@ -18,8 +18,7 @@
 }
 
 #blockLeft {
-	width: 80%;
-	min-width: 706px;
+	width: 706px;
 	float: left;
 }
 
@@ -29,9 +28,8 @@
 }
 
 #blockRight {
-	width: 17%;
+	width: 90px;
 	float: left;
-	min-width: 85px;
 }
 
 #clearButton {
@@ -42,10 +40,11 @@
 
 }
 
-#logo {
+#logo {	
 	height: 57px;
-	float: left;
 	margin-right: 15px;
+	margin-left: 30%;
+	float: left;
 }
 
 #pagination {
