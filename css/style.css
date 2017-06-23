@@ -48,8 +48,8 @@
 	margin-right: 15px;
 }
 
-form {
-	margin-bottom: 5px!important;
+#pagination {
+	margin-top: 5px;
 }
 
 th:first-child,

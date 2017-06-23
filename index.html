@@ -22,17 +22,6 @@
 		<p id="initialInfo"></p>			
 		<p id="generalInfo"></p>
 
-		<form>
-			Combinations in page
-			<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
-				<option value=5>5</option>
-				<option value=10>10</option>
-				<option value=15>15</option>
-				<option value=20>20</option>
-				<option value=256>all</option>
-			</select>
-		</form>
-
 		<table class="table table-bordered" id="table">
 			<thead>
 				<tr>
@@ -50,6 +39,17 @@
 			<tbody id="tableBody">
 			</tbody>
 		</table>
+
+		<form>
+			Combinations in page
+			<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
+				<option value=5>5</option>
+				<option value=10>10</option>
+				<option value=15>15</option>
+				<option value=20>20</option>
+				<option value=256>all</option>
+			</select>
+		</form>
 
 		<div class="btn-group" id="pagination">
 		</div>
