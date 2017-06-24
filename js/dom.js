@@ -113,12 +113,18 @@ var dom = {
   },
 
   makePagination: function() {
-    var txt = "";
-    txt = "<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>" +
-    "<li><a href='#'onclick='dom.pagePrevious()'>Previous</a></li>";
-    txt += "<li><a href='#' onclick='dom.pageNext()'>Next</a></li><li>" +
-    "<a href='#' onclick='dom.pageNumber(" + (dom.combinationTxt.length - 1) + ")'>Last</a></li>";
-    document.getElementById("pagination2").innerHTML = txt;
+     document.getElementById("pagination2").innerHTML = "";
+    if (dom.combinationTxt.length > 1) {
+      var txt = "";
+      txt =
+      "<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>" +
+      "<li><a href='#' onclick='dom.pagePrevious()'>Previous</a></li>" +
+      "<li><a href='#' onclick='dom.pageNext()'>Next</a></li>" +
+      "<li><a href='#' onclick='dom.pageNumber(" + (dom.combinationTxt.length - 1) + ")'>Last</a></li>";
+      document.getElementById("pagination2").innerHTML = txt;
+    }
+
+
   }
 
 };
