@@ -35,18 +35,6 @@
 	display: none;
 }
 
-/*
-#tryItButton,
-#clearButton {
-	float: right;
-}
-
-#initialInfo,		
-#generalInfo {
-	float: left;
-}
-*/
-
 #logo {	
 	height: 57px;
 	margin-right: 15px;
@@ -54,8 +42,10 @@
 	float: left;
 }
 
-#pagination {
+#pagination2 {
+	margin-left: 230px;
 	margin-top: 5px;
+	margin-bottom: 0px;
 }
 
 th:first-child,

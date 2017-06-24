@@ -1,9 +1,6 @@
 function main () {
   document.getElementById("clearButton").style.display = "inline";
   document.getElementById("tryItButton").style.display = "none";
-  //document.getElementById("container1").style.display = "inline";
-  //document.getElementById("container2").style.display = "inline";
-  document.getElementById("pagination").innerHTML = "";
   dom.combinationTxt = [];
 
   dom.writeInitialInfo();
@@ -35,9 +32,6 @@ function cleardata () {
   document.getElementById("clearButton").style.display = "none";
   document.getElementById("tryItButton").style.display = "inline";
   document.getElementById("tableBody").innerHTML = "";
-  document.getElementById("pagination").innerHTML = "";
-  //document.getElementById("container1").style.display = "none";
-  //document.getElementById("container2").style.display = "none";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
 };

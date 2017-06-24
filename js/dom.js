@@ -33,10 +33,7 @@ var dom = {
     var page = Math.floor (dom.combinationCounter / dom.rowInPage);
 
     if (dom.combinationCounter % dom.rowInPage === 0) {
-      dom.combinationTxt[page] = "";
-      document.getElementById("pagination").innerHTML += 
-      "<button type='button' class='btn btn-default' onclick='dom.pageNumber(" + 
-      page + ")'>" + (page + 1) + "</button>";
+      dom.combinationTxt[page] = "";      
     };
 
     dom.combinationTxt[page] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
