@@ -4,6 +4,7 @@ function main () {
   //document.getElementById("container1").style.display = "inline";
   //document.getElementById("container2").style.display = "inline";
   document.getElementById("pagination").innerHTML = "";
+  dom.combinationTxt = [];
 
   dom.writeInitialInfo();
   

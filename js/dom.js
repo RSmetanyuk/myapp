@@ -91,6 +91,21 @@ var dom = {
     dom.activePage = n;
    },
 
+  pageNext: function () {
+    if (dom.activePage < dom.combinationTxt.length - 1) {
+      document.getElementById("tableBody").innerHTML = dom.combinationTxt[dom.activePage + 1];
+      dom.activePage++;
+    };
+  },
+
+  pagePrevious: function () {
+    if (dom.activePage > 0) {
+      document.getElementById("tableBody").innerHTML = dom.combinationTxt[dom.activePage - 1];
+      dom.activePage--;
+    };
+  },
+
+
   changeNumberCombinationsInPage: function() {
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = x;
@@ -100,11 +115,10 @@ var dom = {
   makePagination: function() {
     var txt = "";
     txt = "<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>" +
-    "<li><a href='#' onclick='dom.pageNumber(" + (dom.activePage + 1) + ")'>Previous</a></li>";
-    txt += '<li><a href="#">Next</a></li><li><a href="#">Last</a></li>';
+    "<li><a href='#'onclick='dom.pagePrevious()'>Previous</a></li>";
+    txt += "<li><a href='#' onclick='dom.pageNext()'>Next</a></li><li>" +
+    "<a href='#' onclick='dom.pageNumber(" + (dom.combinationTxt.length - 1) + ")'>Last</a></li>";
     document.getElementById("pagination2").innerHTML = txt;
-
-
   }
 
 };
