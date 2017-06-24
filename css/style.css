@@ -35,9 +35,17 @@
 	display: none;
 }
 
-#tryItButton {
-
+/*
+#tryItButton,
+#clearButton {
+	float: right;
 }
+
+#initialInfo,		
+#generalInfo {
+	float: left;
+}
+*/
 
 #logo {	
 	height: 57px;
