@@ -110,7 +110,8 @@ var dom = {
   },
 
   makePagination: function() {
-     document.getElementById("pagination2").innerHTML = "";
+      var x = document.getElementsByClassName("pagination");
+      x[0].innerHTML = "";
     if (dom.combinationTxt.length > 1) {
       var txt = "";
       txt =
@@ -118,7 +119,7 @@ var dom = {
       "<li><a href='#' onclick='dom.pagePrevious()'>Previous</a></li>" +
       "<li><a href='#' onclick='dom.pageNext()'>Next</a></li>" +
       "<li><a href='#' onclick='dom.pageNumber(" + (dom.combinationTxt.length - 1) + ")'>Last</a></li>";
-      document.getElementById("pagination2").innerHTML = txt;
+      x[0].innerHTML = txt;
     }
 
 
