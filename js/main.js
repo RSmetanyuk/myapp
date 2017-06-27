@@ -1,6 +1,6 @@
 function main () {
-  document.getElementById("clearButton").style.display = "inline";
-  document.getElementById("tryItButton").style.display = "none";
+  document.getElementById("Reset").style.display = "inline";
+  document.getElementById("Start").style.display = "none";
   dom.combinationTxt = [];
 
   dom.writeInitialInfo();
@@ -28,9 +28,9 @@ function main () {
   dom.writeGeneralInfo(person1, person2, person3, person4);
 };
 
-function cleardata () {
-  document.getElementById("clearButton").style.display = "none";
-  document.getElementById("tryItButton").style.display = "inline";
+function ResetData () {
+  document.getElementById("Reset").style.display = "none";
+  document.getElementById("Start").style.display = "inline";
   document.getElementById("tableBody").innerHTML = "";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
