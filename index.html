@@ -13,16 +13,14 @@
 </head>
 <body>
 
-	<div class="header">		
-		<div class="container-fluid">	
-			<img id="logo" src="img/logo.jpg" alt="man thinks">
-			<p>What is my number?</p>
-		</div>
+	<div class="container-fluid header">	
+		<img id="logo" src="img/logo.jpg" alt="man thinks">
+		<p>What is my number?</p>
 	</div>
 
-	<div class="container">	
 
-	<div id="main-content">
+
+	<div class="main-content">
 		<table class="table table-bordered" id="table">
 			<thead>
 				<tr>
@@ -43,7 +41,7 @@
 
 		<form>
 			Combinations in page
-			<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
+			<select id="combinationsInPageList" onclick="dom.changeNumberCombinationsInPage()">	
 				<option value=5>5</option>
 				<option value=10>10</option>
 				<option value=15>15</option>
@@ -56,14 +54,14 @@
 		</ul>
 	</div>
 			
-	<div id="right-sidebar">
+	<div class="right-sidebar">
 		<p id="initialInfo"></p>			
 		<p id="generalInfo"></p>
 		<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
 		<button id="Reset" onclick="ResetData()" class="btn btn-warning btn-lg">Clear</button>			
 	</div>
 
-	</div>
+
 
 </div>
 
