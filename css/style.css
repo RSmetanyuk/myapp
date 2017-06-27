@@ -3,23 +3,23 @@
   margin: 30;
 }
 
-#blockLeft,
-#blockRight {
+#main-content,
+#right-sidebar {
 	background-color: #eee;
 	border: 1px solid black;
 	margin: 8px;
-	padding: 3px;
+	padding: 10px;
 }
 
-#header {
+.header {
 	background-color: #eee;
 	border: 1px solid black;
 	min-height: 65px;
 	font-size: 30px;
 }
 
-#blockLeft {
-	width: 708px;
+#main-content {
+	width: 722px;
 	float: left;
 }
 
@@ -28,12 +28,13 @@
 	background-color: white;
 }
 
-#blockRight {
+#right-sidebar {
 	float: left;
 }
 
 #clearButton {
 	display: none;
+	width: 100%;
 }
 
 #logo {	
