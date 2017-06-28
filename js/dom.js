@@ -5,6 +5,7 @@ var dom = {
   combinationTxt: [],
   rowInPage: 5,
   activePage: 0,
+  firstVisibleRow: 0,
     
   winCount: function(persons) {
     var winners = "";        
@@ -30,19 +31,19 @@ var dom = {
   },
 
   checkCase: function (persons) {
-    var page = Math.floor (dom.combinationCounter / dom.rowInPage);
+    //var page = Math.floor (dom.combinationCounter / dom.rowInPage);
 
-    if (dom.combinationCounter % dom.rowInPage === 0) {
-      dom.combinationTxt[page] = "";      
-    };
+   // if (dom.combinationCounter % dom.rowInPage === 0) {
+    dom.combinationTxt[dom.combinationCounter] = "";      
+    //};
 
-    dom.combinationTxt[page] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
+    dom.combinationTxt[dom.combinationCounter] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
     
-    for (var i = 0; i <= 2; i++) {
-      dom.combinationTxt[page] += "<td>" + persons[i].number + "</td>";
+    for (var i = 0; i <= 3; i++) {
+      dom.combinationTxt[dom.combinationCounter] += "<td>" + persons[i].number + "</td>";
     };
 
-    dom.combinationTxt[page] += "<td>" + persons[3].number + "</td>";
+
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
@@ -53,16 +54,16 @@ var dom = {
         Coloured = ' class="success"'
       };
 
-      dom.combinationTxt[page] += "<td" + Coloured + ">" + persons[i].getAnswer(
+      dom.combinationTxt[dom.combinationCounter] += "<td" + Coloured + ">" + persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
         persons[(i + 3) % 4].number) + "</td>";
     };
 
-    dom.combinationTxt[page] += "</tr>";
+    dom.combinationTxt[dom.combinationCounter] += "</tr>";
     dom.winCount(persons);
     
-    dom.pageNumber(0);
+    //dom.pageNumber(0);
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -83,30 +84,29 @@ var dom = {
     dom.numberOfStrategy = 0;
   },
 
-  pageNumber: function (n) {
-    document.getElementById("tableBody").innerHTML = dom.combinationTxt[n];
-    dom.activePage = n;
+  pageNumber: function (n) { // "n" - number first row on page
+    if((n + dom.rowInPage) > dom.combinationTxt.length) { // to fix bug of  last next button click
+      n = dom.combinationTxt.length - dom.rowInPage;
+    };
+
+    if(n < 0) { // to fix bug of last previous button click
+      n = 0;
+    };
+
+
+    var x = "";
+    for (var i = 0; i < dom.rowInPage; i++) {
+      x += dom.combinationTxt[i+n];
+    };
+
+    document.getElementById("tableBody").innerHTML = x;
+    dom.firstVisibleRow = n;
    },
-
-  pageNext: function () {
-    if (dom.activePage < dom.combinationTxt.length - 1) {
-      document.getElementById("tableBody").innerHTML = dom.combinationTxt[dom.activePage + 1];
-      dom.activePage++;
-    };
-  },
-
-  pagePrevious: function () {
-    if (dom.activePage > 0) {
-      document.getElementById("tableBody").innerHTML = dom.combinationTxt[dom.activePage - 1];
-      dom.activePage--;
-    };
-  },
-
 
   changeNumberCombinationsInPage: function() {
     x = document.forms[0].combinationsInPageList.value
-    dom.rowInPage = x;
-    main();
+    dom.rowInPage = + x;
+    dom.pageNumber(dom.firstVisibleRow);
   },
 
   makePagination: function() {
@@ -116,9 +116,9 @@ var dom = {
       var txt = "";
       txt =
       "<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>" +
-      "<li><a href='#' onclick='dom.pagePrevious()'>Previous</a></li>" +
-      "<li><a href='#' onclick='dom.pageNext()'>Next</a></li>" +
-      "<li><a href='#' onclick='dom.pageNumber(" + (dom.combinationTxt.length - 1) + ")'>Last</a></li>";
+      "<li><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>" +
+      "<li><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>" +
+      "<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>";
       x[0].innerHTML = txt;
     }
 
