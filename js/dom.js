@@ -101,6 +101,7 @@ var dom = {
 
     document.getElementById("tableBody").innerHTML = x;
     dom.firstVisibleRow = n;
+    document.forms[1].startRow.value = n +1;
    },
 
   changeNumberCombinationsInPage: function() {
@@ -109,20 +110,9 @@ var dom = {
     dom.pageNumber(dom.firstVisibleRow);
   },
 
-  makePagination: function() {
-      var x = document.getElementsByClassName("pagination");
-      x[0].innerHTML = "";
-    if (dom.combinationTxt.length > 1) {
-      var txt = "";
-      txt =
-      "<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>" +
-      "<li><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>" +
-      "<li><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>" +
-      "<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>";
-      x[0].innerHTML = txt;
-    }
-
-
-  }
-
+  setFirstVisibleRow: function () {
+    var x = + document.forms[1].startRow.value - 1;
+    dom.firstVisibleRow = x;
+    dom.pageNumber(x);    
+  },
 };

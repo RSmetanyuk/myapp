@@ -25,9 +25,9 @@ function main () {
     };
   };
   dom.pageNumber(0);
-  dom.makePagination();
   dom.writeGeneralInfo(person1, person2, person3, person4);
   document.getElementById("combinationsInPageList").disabled = false;
+  document.getElementById("startRow").disabled = false;
 };
 
 function ResetData () {
