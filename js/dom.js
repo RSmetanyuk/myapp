@@ -85,23 +85,27 @@ var dom = {
   },
 
   pageNumber: function (n) { // "n" - number first row on page
-    if((n + dom.rowInPage) > dom.combinationTxt.length) { // to fix bug of  last next button click
-      n = dom.combinationTxt.length - dom.rowInPage;
-    };
+    if(n > 0 || n < dom.combinationTxt.length) {
+      if((n + dom.rowInPage) > dom.combinationTxt.length) { // to fix bug of  last next button click
+        n = dom.combinationTxt.length - dom.rowInPage;
+      };
 
-    if(n < 0) { // to fix bug of last previous button click
-      n = 0;
-    };
+      if(n < 0) { // to fix bug of last previous button click
+        n = 0;
+      };
 
 
-    var x = "";
-    for (var i = 0; i < dom.rowInPage; i++) {
-      x += dom.combinationTxt[i+n];
-    };
+      var x = "";
+      for (var i = 0; i < dom.rowInPage; i++) {
+        x += dom.combinationTxt[i+n];
+      };
 
-    document.getElementById("tableBody").innerHTML = x;
-    dom.firstVisibleRow = n;
-    document.forms[1].startRow.value = n +1;
+      document.getElementById("tableBody").innerHTML = x;
+      dom.firstVisibleRow = n;
+      document.forms[1].startRow.value = n +1;
+    } else {
+      alert ("You can only enter a number")
+    }
    },
 
   changeNumberCombinationsInPage: function() {

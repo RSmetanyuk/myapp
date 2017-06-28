@@ -28,6 +28,7 @@ function main () {
   dom.writeGeneralInfo(person1, person2, person3, person4);
   document.getElementById("combinationsInPageList").disabled = false;
   document.getElementById("startRow").disabled = false;
+  document.getElementById("hide").style.display = "inline";
 };
 
 function ResetData () {
@@ -37,4 +38,6 @@ function ResetData () {
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").disabled = true;
+  document.getElementById("startRow").disabled = true;
+  document.getElementById("hide").style.display = "none";
 };
