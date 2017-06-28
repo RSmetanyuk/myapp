@@ -24,8 +24,10 @@ function main () {
       };
     };
   };
+  dom.pageNumber(0);
   dom.makePagination();
   dom.writeGeneralInfo(person1, person2, person3, person4);
+  document.getElementById("combinationsInPageList").disabled = false;
 };
 
 function ResetData () {
@@ -34,4 +36,5 @@ function ResetData () {
   document.getElementById("tableBody").innerHTML = "";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
+  document.getElementById("combinationsInPageList").disabled = true;
 };
