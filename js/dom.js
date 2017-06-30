@@ -67,14 +67,15 @@ var dom = {
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
-  	var infoToWrite =  
-      "person1 wins " + person1.winsCounter + " times <br>" +
-      "person2 wins " + person2.winsCounter + " times <br>" + 
-      "person3 wins " + person3.winsCounter + " times <br>" +
-      "person4 wins " + person4.winsCounter + " times <br>" +
-      "Total number of wins is " + dom.counterWinsInStrategy;
+    document.getElementById("table2Body").innerHTML =
+      "<tr><td>A</td><td>" + person1.winsCounter + "</td></tr>" +
+      "<tr><td>B</td><td>" + person2.winsCounter + "</td></tr>" +
+      "<tr><td>C</td><td>" + person3.winsCounter + "</td></tr>" +
+      "<tr><td>D</td><td>" + person4.winsCounter + "</td></tr>";
+
+    document.getElementById("generalInfo").innerHTML = 
+    "Total number of wins is " + dom.counterWinsInStrategy;
     
-    document.getElementById("generalInfo").innerHTML = infoToWrite;
     person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;

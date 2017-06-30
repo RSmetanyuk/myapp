@@ -24,13 +24,21 @@
 	float: left;
 }
 
-#table {
-	width: 700px;
+#table,
+#table2 {
 	background-color: white;
 	border-top: 2px solid;
 	border-bottom: 2px solid;
 	border-left: 2px solid;
 	border-right: 2px solid;
+}
+
+#table {
+	width: 700px;
+}
+
+#table2 {
+	width: 190px;
 }
 
 .right-sidebar {

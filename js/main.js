@@ -35,6 +35,7 @@ function ResetData () {
   document.getElementById("Reset").style.display = "none";
   document.getElementById("Start").style.display = "inline";
   document.getElementById("tableBody").innerHTML = "";
+  document.getElementById("table2Body").innerHTML = "";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").disabled = true;
