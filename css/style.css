@@ -5,16 +5,20 @@
 
 .main-content,
 .right-sidebar {
-	background-color: #eee;
-	border: 1px solid black;
+	background: -webkit-linear-gradient(top, #fff, #eee);
+	border: solid black;
+	border-width: 0px 1px 1px 1px;
+	border-radius: 0 0 15px 15px;
 	margin-left: 8px;
 	margin-top: 8px;
 	padding: 10px;
 }
 
 .header {
-	background-color: #eee;
+	background: -webkit-linear-gradient(top, #fff, #eee);
 	border: 1px solid black;
+	border-width: 0px 1px 1px 1px;
+	border-radius: 0 0 15px 15px;
 	min-height: 65px;
 	font-size: 30px;
 }
