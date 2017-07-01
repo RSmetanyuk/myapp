@@ -42,3 +42,11 @@ function resetData () {
   document.getElementById("startRow").disabled = true;
   document.getElementById("hide").style.display = "none";
 };
+
+window.onscroll = function() {
+    if (window.pageYOffset >= 150) {
+      document.getElementById("returnToTop").style.display = "inline";    
+    } else {
+      document.getElementById("returnToTop").style.display = "none";
+    }
+};

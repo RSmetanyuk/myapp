@@ -122,4 +122,9 @@ var dom = {
     dom.firstVisibleRow = x;
     dom.pageNumber(x);    
   },
+
+
+  toTop: function () {
+    scrollTop: 0;
+  },
 };
