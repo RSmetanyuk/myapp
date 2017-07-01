@@ -31,19 +31,12 @@ var dom = {
   },
 
   checkCase: function (persons) {
-    //var page = Math.floor (dom.combinationCounter / dom.rowInPage);
-
-   // if (dom.combinationCounter % dom.rowInPage === 0) {
-    dom.combinationTxt[dom.combinationCounter] = "";      
-    //};
-
+    dom.combinationTxt[dom.combinationCounter] = "";
     dom.combinationTxt[dom.combinationCounter] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
     
     for (var i = 0; i <= 3; i++) {
       dom.combinationTxt[dom.combinationCounter] += "<td>" + persons[i].number + "</td>";
     };
-
-
 
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
@@ -62,8 +55,6 @@ var dom = {
 
     dom.combinationTxt[dom.combinationCounter] += "</tr>";
     dom.winCount(persons);
-    
-    //dom.pageNumber(0);
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
@@ -95,7 +86,6 @@ var dom = {
         n = 0;
       };
 
-
       var x = "";
       for (var i = 0; i < dom.rowInPage; i++) {
         x += dom.combinationTxt[i+n];
@@ -107,7 +97,19 @@ var dom = {
     } else {
       alert ("You can only enter a number")
     }
-   },
+
+    if (n === 0) { // dasabled "Previous" button
+      $("#buttonPrevious").addClass('disabled');
+    } else {
+      $("#buttonPrevious").removeClass('disabled');
+    }
+
+    if (n === dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
+      $("#buttonNext").addClass('disabled');
+    } else {
+      $("#buttonNext").removeClass('disabled');
+    }
+  },
 
   changeNumberCombinationsInPage: function() {
     x = document.forms[0].combinationsInPageList.value

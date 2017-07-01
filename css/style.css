@@ -35,6 +35,7 @@
 	border-bottom: 2px solid;
 	border-left: 2px solid;
 	border-right: 2px solid;
+	text-align: center;
 }
 
 #table {
@@ -74,6 +75,10 @@
 
 #startRow {
 	width: 30px;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 th:first-child,

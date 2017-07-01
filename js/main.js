@@ -31,7 +31,7 @@ function main () {
   document.getElementById("hide").style.display = "inline";
 };
 
-function ResetData () {
+function resetData () {
   document.getElementById("Reset").style.display = "none";
   document.getElementById("Start").style.display = "inline";
   document.getElementById("tableBody").innerHTML = "";

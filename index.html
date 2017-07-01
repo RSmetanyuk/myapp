@@ -58,8 +58,8 @@
 		<div id="hide">
 		<ul class="pagination" id="pagination">
 			<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
-      		<li class="disabled"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
-      		<li><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>
+      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
+      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>
       		<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
 		</ul>
 		</div>
@@ -79,7 +79,7 @@
 		</table>
 		<p id="generalInfo"></p>
 		<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
-		<button id="Reset" onclick="ResetData()" class="btn btn-warning btn-lg">Reset</button>			
+		<button id="Reset" onclick="resetData()" class="btn btn-warning btn-lg">Reset</button>			
 	</div>
 
 
