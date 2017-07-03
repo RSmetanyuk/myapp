@@ -1,6 +1,11 @@
 * {
   padding: 0;
-  margin: 30;
+  margin: 0;
+}
+
+.container {
+	position: relative;
+	border: 1px solid black;
 }
 
 .main-content,
@@ -9,14 +14,13 @@
 	border: solid black;
 	border-width: 0px 1px 1px 1px;
 	border-radius: 0 0 15px 15px;
-	margin-left: 8px;
 	margin-top: 8px;
 	padding: 10px;
 }
 
 .header {
 	background: -webkit-linear-gradient(top, #fff, #eee);
-	border: 1px solid black;
+	border: solid black;
 	border-width: 0px 1px 1px 1px;
 	border-radius: 0 0 15px 15px;
 	font-size: 25px;
@@ -26,12 +30,11 @@
 
 .header p {
 	margin-top: -40px;
+	margin-left: 55px;
 }
 
 .main-content {
-	width: 722px;
-	margin: auto;
-	margin-top: 5px;
+	width: 608px;
 }
 
 #table,
@@ -45,18 +48,23 @@
 }
 
 #table {
-	width: 700px;
+	width: 498px;
+}
+
+#tableHead2 {
+	display: none;
 }
 
 #table2 {
 	width: 190px;
 }
 
+.left-sidebar {
+	background: #fdf;
+}
+
 .right-sidebar {
-	width: 722px;
-	margin: auto;
-	margin-top: 5px;
-	/*float: left;*/
+	width: 608px;
 }
 
 #hide {
@@ -72,7 +80,7 @@
 	height: 37px;
 	margin-top: 3px;
 	margin-bottom: 3px;
-	margin-left: -300px;
+	margin-left: -252px;
 }
 
 #pagination {
@@ -110,25 +118,99 @@ td:nth-child(5n){
 }
 
 th {
-	width: 80px;
+	width: 65px;
 	border-bottom: 2px solid!important;
 }
 
 th:first-child {
-	width: 10px!important;
+	width: 10px;
 }
 
 @media screen and (min-width: 768px) {
 	#logo {	
 		height: 57px;
-		margin-left: -629px;
+		margin-left: -624px;
 	}
+	
 	.header {
 		font-size: 30px;
 		height: 64px;
 	}
+	
 	.header p {
 		margin-left: -245px;
 		margin-top: -50px;
+	}
+
+	.main-content {
+		float: left;
+		margin-right: 8px;
+		width: 722px;
+	}
+
+	#table {
+	width: 700px;
+	}
+
+	#tableHead1 {
+		display: none;
+	}
+
+
+	#tableHead2 {
+		display: table-header-group;
+	}
+
+	.right-sidebar {
+		width: 212px;
+		float: left;
+	}
+}
+
+
+@media screen and (min-width: 974px) {	
+	.container {
+	width: 974px!important;
+	}
+
+	#logo {	
+		height: 57px;
+		margin-left: -848px;
+	}
+	
+	.header {
+		font-size: 30px;
+		height: 64px;
+	}
+	
+	.header p {
+		margin-left: -448px;
+	}
+}
+
+
+
+
+@media screen and (min-width: 1194px) {	
+	#logo {	
+		margin-left: -629px;
+	}
+	
+	.header p {
+		margin-left: -245px;
+	}
+
+	.container {
+	width: 1194px!important;
+	}
+
+	.left-sidebar {
+		height: 1px;
+		width: 212px;
+		float: left;
+	}
+
+	.main-content {
+	margin-left: 8px;
 	}
 }

@@ -17,70 +17,85 @@
 		<p>What is my number?</p>
 	</div>
 
+	<div class="container">
+		<div class="left-sidebar">
+		</div>
 
+		<div class="main-content">
+			<table class="table table-bordered" id="table">
+				<thead id="tableHead1">
+					<tr>
+						<th class="rightBorderThik"></th>
+						<th>A number</th>
+						<th>B number</th>
+						<th> C number</th>
+						<th class="rightBorderThik">D number</th>
+						<th>A answer</th>
+						<th>B answer</th>
+						<th>C answer</th>
+						<th>D answer</th>
+					</tr>
+				</thead>				
+				<thead id="tableHead2">
+					<tr>
+						<th class="rightBorderThik"></th>
+						<th>Person A number</th>
+						<th>Person B number</th>
+						<th> Person C number</th>
+						<th class="rightBorderThik">Person D number</th>
+						<th>Person A answer</th>
+						<th>Person B answer</th>
+						<th>Person C answer</th>
+						<th>Person D answer</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody">
+				</tbody>
+			</table>
 
-	<div class="main-content">
-		<table class="table table-bordered" id="table">
-			<thead>
-				<tr>
-					<th class="rightBorderThik"></th>
-					<th>Person A number</th>
-					<th>Person B number</th>
-					<th> Person C number</th>
-					<th class="rightBorderThik">Person D number</th>
-					<th>Person A answer</th>
-					<th>Person B answer</th>
-					<th>Person C answer</th>
-					<th>Person D answer</th>
-				</tr>
-			</thead>
-			<tbody id="tableBody">
-			</tbody>
-		</table>
+			<form>
+				Rows per page
+				<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()" disabled>	
+					<option value=5>5</option>
+					<option value=10>10</option>
+					<option value=15>15</option>
+					<option value=20>20</option>
+					<option value=256>all</option>
+				</select>
+			</form>
 
-		<form>
-			Rows per page
-			<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()" disabled>	
-				<option value=5>5</option>
-				<option value=10>10</option>
-				<option value=15>15</option>
-				<option value=20>20</option>
-				<option value=256>all</option>
-			</select>
-		</form>
+			<form>
+				Start from
+				<input id="startRow" value=1 oninput="dom.setFirstVisibleRow()" disabled></input>
+			</form>
 
-		<form>
-			Start from
-			<input id="startRow" value=1 oninput="dom.setFirstVisibleRow()" disabled></input>
-		</form>
-
-		<div id="hide">
-		<ul class="pagination" id="pagination">
-			<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
-      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
-      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>
-      		<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
-		</ul>
+			<div id="hide">
+			<ul class="pagination" id="pagination">
+				<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
+	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
+	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>
+	      		<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
+			</ul>
+			</div>
+		</div>
+				
+		<div class="right-sidebar">
+			<h4 id="initialInfo"></h4>
+			<table class="table" id="table2">
+				<thead>
+					<tr>
+						<th>Persons</th>
+						<th>Wins count</th>
+					</tr>
+				</thead>
+				<tbody id="table2Body">
+				</tbody>
+			</table>
+			<p id="generalInfo"></p>
+			<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
+			<button id="Reset" onclick="resetData()" class="btn btn-warning btn-lg">Reset</button>			
 		</div>
 	</div>
-			
-	<div class="right-sidebar">
-		<h4 id="initialInfo"></h4>
-		<table class="table" id="table2">
-			<thead>
-				<tr>
-					<th>Persons</th>
-					<th>Wins count</th>
-				</tr>
-			</thead>
-			<tbody id="table2Body">
-			</tbody>
-		</table>
-		<p id="generalInfo"></p>
-		<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
-		<button id="Reset" onclick="resetData()" class="btn btn-warning btn-lg">Reset</button>			
-	</div>
-
 <a href="#" id="returnToTop" onclick="dom.toTop()"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 </body>
