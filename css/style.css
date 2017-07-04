@@ -33,11 +33,12 @@
 	font-size: 25px;
 	text-align: center;
 	height: 44px;
+	min-width: 554px;
 }
 
 .header p {
+	margin-left: -160px;
 	margin-top: -40px;
-	margin-left: 55px;
 }
 
 .main-content {
@@ -97,7 +98,7 @@
 	height: 37px;
 	margin-top: 3px;
 	margin-bottom: 3px;
-	margin-left: -252px;
+	margin-left: -462px;
 }
 
 #pagination {
