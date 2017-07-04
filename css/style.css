@@ -5,7 +5,14 @@
 
 .container {
 	position: relative;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
+	width: 554px;
+}
+
+.container2 {
+	/*border: 1px solid black;*/
+	width: 200px;
+	float: left;
 }
 
 .main-content,
@@ -34,21 +41,23 @@
 }
 
 .main-content {
-	width: 608px;
+	width: 520px;
 }
 
 #table,
 #table2 {
 	background-color: white;
-	border-top: 2px solid;
-	border-bottom: 2px solid;
-	border-left: 2px solid;
-	border-right: 2px solid;
+	border: 2px solid;
 	text-align: center;
+	font-size: 11px;
 }
 
 #table {
 	width: 498px;
+}
+
+#startRow {
+	width: 33px;
 }
 
 #tableHead2 {
@@ -60,11 +69,13 @@
 }
 
 .left-sidebar {
-	background: #fdf;
+	background: #fff;
 }
 
 .right-sidebar {
-	width: 608px;
+	position: relative;
+	float: left;
+	width: 520px;
 }
 
 #hide {
@@ -73,7 +84,13 @@
 
 #Reset {
 	display: none;
-	width: 100%;
+	float: right;
+	width: 220px;
+}
+
+#Start {
+	float: right;
+	width: 220px;
 }
 
 #logo {	
@@ -84,13 +101,9 @@
 }
 
 #pagination {
-	margin-left: 230px;
+	margin-left: 138px;
 	margin-top: 5px;
 	margin-bottom: 0px;
-}
-
-#startRow {
-	width: 30px;
 }
 
 .disabled {
@@ -110,20 +123,18 @@
 
 }
 
-th:first-child,
-td:first-child,
-th:nth-child(5n),
-td:nth-child(5n){
-	border-right: 2px solid!important;
+.col11,
+.col21,
+.col15 {
+	border-right: 2px solid;
 }
 
 th {
-	width: 65px;
 	border-bottom: 2px solid!important;
 }
 
-th:first-child {
-	width: 10px;
+.col11 {
+	width: 38px;
 }
 
 @media screen and (min-width: 768px) {
@@ -150,6 +161,19 @@ th:first-child {
 
 	#table {
 	width: 700px;
+	font-size: 14px;
+	}
+
+	.col11 {
+	width: 45px;
+	}
+
+	.container2 {
+	width: 375px;
+	}
+
+	#table2 {
+	font-size: 14px;
 	}
 
 	#tableHead1 {
@@ -162,8 +186,17 @@ th:first-child {
 	}
 
 	.right-sidebar {
-		width: 212px;
+		width: 722px;
 		float: left;
+	}
+
+	#Start,
+	#Reset {
+		width: 320px;
+	}
+
+	#pagination {
+	margin-left: 241px;
 	}
 }
 
@@ -171,6 +204,10 @@ th:first-child {
 @media screen and (min-width: 974px) {	
 	.container {
 	width: 974px!important;
+	}
+
+	.container2 {
+	width: 190px;
 	}
 
 	#logo {	
@@ -185,6 +222,16 @@ th:first-child {
 	
 	.header p {
 		margin-left: -448px;
+	}
+
+	#Start,
+	#Reset {
+		width: 190px;
+	}
+
+	.right-sidebar {
+		width: 212px;
+		float: left;
 	}
 }
 

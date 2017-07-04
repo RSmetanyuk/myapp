@@ -23,13 +23,24 @@
 
 		<div class="main-content">
 			<table class="table table-bordered" id="table">
+				<colgroup>
+					<col class="col11">
+					<col>
+					<col>
+					<col>
+					<col class="col15">
+					<col>
+					<col>
+					<col>
+					<col>
+				</colgroup>
 				<thead id="tableHead1">
 					<tr>
-						<th class="rightBorderThik"></th>
+						<th></th>
 						<th>A number</th>
 						<th>B number</th>
-						<th> C number</th>
-						<th class="rightBorderThik">D number</th>
+						<th>C number</th>
+						<th>D number</th>
 						<th>A answer</th>
 						<th>B answer</th>
 						<th>C answer</th>
@@ -38,11 +49,11 @@
 				</thead>				
 				<thead id="tableHead2">
 					<tr>
-						<th class="rightBorderThik"></th>
+						<th></th>
 						<th>Person A number</th>
 						<th>Person B number</th>
-						<th> Person C number</th>
-						<th class="rightBorderThik">Person D number</th>
+						<th>Person C number</th>
+						<th>Person D number</th>
 						<th>Person A answer</th>
 						<th>Person B answer</th>
 						<th>Person C answer</th>
@@ -80,18 +91,24 @@
 		</div>
 				
 		<div class="right-sidebar">
-			<h4 id="initialInfo"></h4>
-			<table class="table" id="table2">
-				<thead>
-					<tr>
-						<th>Persons</th>
-						<th>Wins count</th>
-					</tr>
-				</thead>
-				<tbody id="table2Body">
-				</tbody>
-			</table>
-			<p id="generalInfo"></p>
+			<div class="container2">
+				<h4 id="initialInfo"></h4>
+				<table class="table" id="table2">
+					<colgroup>
+						<col class="col21">
+						<col>					
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Persons</th>
+							<th>Wins count</th>
+						</tr>
+					</thead>
+					<tbody id="table2Body">
+					</tbody>
+				</table>
+				<p id="generalInfo"></p>
+			</div>	
 			<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
 			<button id="Reset" onclick="resetData()" class="btn btn-warning btn-lg">Reset</button>			
 		</div>
