@@ -17,7 +17,7 @@
 
 .main-content,
 .right-sidebar {
-	background: -webkit-linear-gradient(top, #fff, #0099ff);
+	background: -webkit-linear-gradient(top, #fff, #f3f7e8);
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
 	border-radius: 0 0 10px 10px;
@@ -26,7 +26,7 @@
 }
 
 .header {
-	background: -webkit-linear-gradient(top, #fff, #0099ff);
+	background: -webkit-linear-gradient(top, #fff, #f3f7e8);
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
 	border-radius: 0 0 10px 10px;
