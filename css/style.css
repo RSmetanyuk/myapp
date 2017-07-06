@@ -24,7 +24,7 @@
 	background: -webkit-linear-gradient(top, #fff, #f3f7e8);
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
-	border-radius: 0 0 10px 10px;
+	border-radius: 10px;
 	margin-top: 8px;
 	padding: 10px;
 }
@@ -33,7 +33,7 @@
 	background: -webkit-linear-gradient(top, #fff, #f3f7e8);
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
-	border-radius: 0 0 10px 10px;
+	border-radius: 10px;
 	font-size: 25px;
 	text-align: center;
 	height: 44px;
