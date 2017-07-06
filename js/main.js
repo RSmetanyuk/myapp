@@ -50,3 +50,7 @@ window.onscroll = function() {
       document.getElementById("returnToTop").style.display = "none";
     }
 };
+
+window.onload = function() {
+  main();
+};
