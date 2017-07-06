@@ -78,6 +78,7 @@ var dom = {
 
   pageNumber: function (n) { // "n" - number first row on page
     if(n > 0 || n < dom.combinationTxt.length) {
+      document.getElementById("message").style.visibility  = "hidden";
       if((n + dom.rowInPage) > dom.combinationTxt.length) { // to fix bug of  last next button click
         n = dom.combinationTxt.length - dom.rowInPage;
       };
@@ -95,20 +96,20 @@ var dom = {
       dom.firstVisibleRow = n;
       document.forms[1].startRow.value = n +1;
     } else {
-      alert ("You can only enter a number")
-    }
+      document.getElementById("message").style.visibility  = "visible";
+    };
 
     if (n === 0) { // dasabled "Previous" button
       document.getElementById("buttonPrevious").className = "disabled";
     } else {
       document.getElementById("buttonPrevious").className = "unDisabled";
-    }
+    };
 
     if (n === dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
       document.getElementById("buttonNext").className = "disabled";
     } else {
       document.getElementById("buttonNext").className = "unDisabled";
-    }
+    };
   },
 
   changeNumberCombinationsInPage: function() {

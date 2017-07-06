@@ -71,12 +71,15 @@
 					<option value=15>15</option>
 					<option value=20>20</option>
 					<option value=256>all</option>
-				</select>
+				</select>				
 			</form>
 
 			<form>
-				Start from
-				<input id="startRow" value=1 oninput="dom.setFirstVisibleRow()" disabled></input>
+				<div class="left">
+					Start from
+					<input id="startRow" value=1 oninput="dom.setFirstVisibleRow()" disabled></input>
+				</div>
+				<p id="message">You can only enter a number</p>			
 			</form>
 
 			<div id="hide">
