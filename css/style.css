@@ -111,9 +111,9 @@
     pointer-events: none;
 }
 
-#returnToTop {
+#returnToTop,
+#returnToBottom {
     position: fixed;
-    bottom: 20px;
     right: 20px;
     background: rgb(180, 220, 150);
     width: 50px;
@@ -121,7 +121,18 @@
     border-radius: 25px;
     text-align: center;
     display: none;
+}
 
+#returnToTop {
+	bottom: 20px;
+}
+
+#returnToBottom {
+	top: 8px;
+}
+
+#returnToBottom span {
+	margin-top: 33px;
 }
 
 .col11,

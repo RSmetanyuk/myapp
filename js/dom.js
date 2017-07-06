@@ -125,6 +125,12 @@ var dom = {
 
 
   toTop: function () {
-    scrollTop: 0;
+    window.scrollTo(0, 0);
   },
+
+
+  toBottom: function () {
+    window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
+  },
+
 };

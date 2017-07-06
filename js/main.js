@@ -44,11 +44,22 @@ function resetData () {
 };
 
 window.onscroll = function() {
+    if (document.body.offsetHeight > document.documentElement.clientHeight) {
+      document.getElementById("returnToBottom").style.display = "inline"; 
+    } else {
+      document.getElementById("returnToBottom").style.display = "none"; 
+    };
+
+
     if (window.pageYOffset >= 150) {
-      document.getElementById("returnToTop").style.display = "inline";    
+      document.getElementById("returnToTop").style.display = "inline";     
     } else {
       document.getElementById("returnToTop").style.display = "none";
-    }
+    };
+
+    if (window.pageYOffset > document.body.offsetHeight - document.documentElement.clientHeight - 20) {
+      document.getElementById("returnToBottom").style.display = "none"; 
+    };
 };
 
 window.onload = function() {
