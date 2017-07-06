@@ -99,15 +99,15 @@ var dom = {
     }
 
     if (n === 0) { // dasabled "Previous" button
-      $("#buttonPrevious").addClass('disabled');
+      document.getElementById("buttonPrevious").className = "disabled";
     } else {
-      $("#buttonPrevious").removeClass('disabled');
+      document.getElementById("buttonPrevious").className = "unDisabled";
     }
 
     if (n === dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
-      $("#buttonNext").addClass('disabled');
+      document.getElementById("buttonNext").className = "disabled";
     } else {
-      $("#buttonNext").removeClass('disabled');
+      document.getElementById("buttonNext").className = "unDisabled";
     }
   },
 
