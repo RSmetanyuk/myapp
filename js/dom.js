@@ -6,6 +6,9 @@ var dom = {
   rowInPage: 5,
   activePage: 0,
   firstVisibleRow: 0,
+  moveSteps: "",
+  stasrtMove: 2,
+  topPozition: 0,
     
   winCount: function(persons) {
     var winners = "";        
@@ -134,4 +137,32 @@ var dom = {
     window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
   },
 
+  toTop: function () {
+    dom.stasrtMove = 2;
+    dom.moveSteps = "";
+    dom.topPozition = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+    dom.toTopMove();
+  },
+
+
+  toTopMove: function () {
+    var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+    var t;
+    if(top > dom.topPozition/2) {
+      window.scrollBy(0, dom.stasrtMove/-1);
+      dom.stasrtMove *= 1.14;
+      dom.moveSteps += dom.stasrtMove + " / ";
+      t = setTimeout('dom.toTopMove()',20);
+     } else if (top > 0) {
+      var j = (top+20)/-7.8;
+      window.scrollBy(0, j);
+      dom.moveSteps += j + " / ";
+      t = setTimeout('dom.toTopMove()',20);
+     } else {
+      clearTimeout(t);
+      //alert (dom.moveSteps);
+     };
+     return false;
+  },
+  
 };
