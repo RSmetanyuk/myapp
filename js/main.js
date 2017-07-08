@@ -65,3 +65,36 @@ window.onscroll = function() {
 window.onload = function() {
   main();
 };
+
+
+var moveSteps = "";
+var stasrtMove = 2;
+var topPozition = 0;
+
+function up() {
+  stasrtMove = 2;
+  moveSteps = "";
+  topPozition = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+  upMove();
+}
+
+
+function upMove() {
+  var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+  var t;
+  if(top > topPozition/2) {
+    window.scrollBy(0, stasrtMove/-1);
+    stasrtMove *= 1.14;
+    moveSteps += stasrtMove + " / ";
+    t = setTimeout('upMove()',20);
+   } else if (top > 0) {
+    var j = (top+20)/-7.8;
+    window.scrollBy(0, j);
+    moveSteps += j + " / ";
+    t = setTimeout('upMove()',20);
+   } else {
+    clearTimeout(t);
+    //alert (moveSteps);
+    };
+   return false;
+};
