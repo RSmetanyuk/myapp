@@ -128,41 +128,69 @@ var dom = {
   },
 
 
-  toTop: function () {
-    window.scrollTo(0, 0);
-  },
+  //toTop: function () {
+  //  window.scrollTo(0, 0);
+  //},
 
 
-  toBottom: function () {
-    window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
-  },
+  //toBottom: function () {
+  //  window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
+  //},
 
-  toTop: function () {
+  move: function (topBottom) {
     dom.stasrtMove = 2;
-    dom.moveSteps = "";
-    dom.topPozition = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
-    dom.toTopMove();
+    dom.moveSteps = "Move steps, px: ";
+    dom.topPozition = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    if (topBottom < 0) {
+      dom.toTop();
+    } else if (topBottom > 0) {
+      dom.toBottom();
+    }
   },
 
-
-  toTopMove: function () {
-    var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+  toTop: function () {
+    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var t;
     if(top > dom.topPozition/2) {
-      window.scrollBy(0, dom.stasrtMove/-1);
+      window.scrollBy(0, - dom.stasrtMove);
       dom.stasrtMove *= 1.14;
-      dom.moveSteps += dom.stasrtMove + " / ";
-      t = setTimeout('dom.toTopMove()',20);
+      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+      t = setTimeout('dom.toTop()',20);
      } else if (top > 0) {
       var j = (top+20)/-7.8;
       window.scrollBy(0, j);
-      dom.moveSteps += j + " / ";
-      t = setTimeout('dom.toTopMove()',20);
+      dom.moveSteps += j.toFixed(1) + " / ";
+      t = setTimeout('dom.toTop()',20);
      } else {
       clearTimeout(t);
-      //alert (dom.moveSteps);
+      alert (dom.moveSteps);
      };
      return false;
+  },
+
+  toBottom: function () {
+    var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+    var distance = document.body.offsetHeight - document.documentElement.clientHeight - dom.topPozition;
+    var t;
+    if(top < dom.topPozition + distance / 2 - dom.stasrtMove) {
+      dom.stasrtMove *= 1.14;
+      window.scrollBy(0, dom.stasrtMove);
+      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+      t = setTimeout('dom.toBottom()',20);
+    } else if (top < dom.topPozition + distance / 2) {
+      window.scrollBy(0, document.body.offsetHeight - document.documentElement.clientHeight - top * 2);
+      dom.moveSteps += (document.body.offsetHeight - document.documentElement.clientHeight - top * 2).toFixed(1) + " / ";
+      t = setTimeout('dom.toBottom()',20);
+    } else if (top < dom.topPozition + distance) {
+      window.scrollBy(0, dom.stasrtMove);
+      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+      t = setTimeout('dom.toBottom()',20);
+      dom.stasrtMove /= 1.14;
+    } else {
+      clearTimeout(t);
+      alert (dom.moveSteps);
+    };
+    return false;
   },
   
 };
