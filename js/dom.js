@@ -178,8 +178,8 @@ var dom = {
       dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance / 2) {
-      window.scrollBy(0, document.body.offsetHeight - document.documentElement.clientHeight - top * 2);
-      dom.moveSteps += (document.body.offsetHeight - document.documentElement.clientHeight - top * 2).toFixed(1) + " / ";
+      window.scrollBy(0, distance - (top - dom.topPozition) * 2);
+      dom.moveSteps += (distance - (top - dom.topPozition) * 2).toFixed(1) + " / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance) {
       window.scrollBy(0, dom.stasrtMove);
