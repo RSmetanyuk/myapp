@@ -7,7 +7,7 @@
 	float: left;
 }
 
-.container {
+.container1 {
 	position: relative;
 	/*border: 1px solid black;*/
 	width: 554px;
@@ -124,25 +124,28 @@
 #returnToTop,
 #returnToBottom {
     position: fixed;
-    right: 20px;
-    background: rgb(180, 220, 150);
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    right: 22px;
     text-align: center;
     display: none;
 }
 
+#returnToTopBottomBuckground {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    background: rgb(180, 220, 150);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: none;
+}
+
 #returnToTop {
-	bottom: 20px;
+	bottom: 33px;
 }
 
 #returnToBottom {
-	top: 8px;
-}
-
-#returnToBottom span {
-	margin-top: 33px;
+	bottom: 4px;
 }
 
 .col11,
@@ -233,7 +236,7 @@
 
 
 @media screen and (min-width: 974px) {	
-	body .container {
+	body .container1 {
 	width: 974px;
 	}
 
@@ -278,7 +281,7 @@
 		margin-left: -245px;
 	}
 
-	body .container {
+	body .container1 {
 	width: 1194px;
 	}
 

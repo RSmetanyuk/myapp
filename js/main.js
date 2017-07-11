@@ -41,11 +41,13 @@ function resetData () {
   document.getElementById("combinationsInPageList").disabled = true;
   document.getElementById("startRow").disabled = true;
   document.getElementById("hide").style.display = "none";
+  document.getElementById("returnToTopBottomBuckground").style.display = "none";
 };
 
 window.onscroll = function() {
     if (document.body.offsetHeight > document.documentElement.clientHeight) {
-      document.getElementById("returnToBottom").style.display = "inline"; 
+      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
+      document.getElementById("returnToBottom").style.display = "inline";
     } else {
       document.getElementById("returnToBottom").style.display = "none"; 
     };
