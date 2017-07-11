@@ -128,16 +128,6 @@ var dom = {
     dom.pageNumber(x);    
   },
 
-
-  //toTop: function () {
-  //  window.scrollTo(0, 0);
-  //},
-
-
-  //toBottom: function () {
-  //  window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
-  //},
-
   move: function (step, speedup) {
     dom.step = Math.abs(step);
     dom.speedup = speedup;
@@ -153,43 +143,26 @@ var dom = {
   toTop: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var t;
-    if(top > dom.topPozition/2) {
+    if(top > dom.topPozition / 2 + dom.step * dom.speedup) {
+      dom.step *= dom.speedup;
       window.scrollBy(0, - dom.step);
-      dom.step *= dom.speedup;
       dom.stepsLog += dom.step.toFixed(1) + " / ";
       t = setTimeout('dom.toTop()',20);
-     } else if (top > 0) {
-      var j = (top+20)/-7.8;
-      window.scrollBy(0, j);
-      dom.stepsLog += j.toFixed(1) + " / ";
+    } else if (top > dom.topPozition / 2) {
+      window.scrollBy(0, - (dom.topPozition - (dom.topPozition - top) * 2));
+      dom.stepsLog += "<<< " + (dom.topPozition - (dom.topPozition - top) * 2).toFixed(1) + " >>> / ";
       t = setTimeout('dom.toTop()',20);
-     } else {
+    } else if (top > 0) {
+      window.scrollBy(0, - dom.step);
+      dom.stepsLog += dom.step.toFixed(1) + " / ";
+      t = setTimeout('dom.toTop()',20);
+      dom.step /= dom.speedup;
+    } else {
       clearTimeout(t);
-      alert (dom.stepsLog);
-     };
-     return false;
+      //alert (dom.stepsLog);
+    };
+    return false;
   },
-
-  /*toTop: function () {
-    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    var t;
-    if(top > dom.topPozition/2 + dom.step * dom.speedup) {
-      dom.step *= dom.speedup;
-      window.scrollBy(0, dom.step);
-      dom.step *= dom.speedup;
-      dom.stepsLog += dom.step.toFixed(1) + " / ";
-      t = setTimeout('dom.toTop()',20);
-     } else if (top > 0) {
-      var j = (top+20)/-7.8;
-      window.scrollBy(0, j);
-      dom.stepsLog += j.toFixed(1) + " / ";
-      t = setTimeout('dom.toTop()',20);
-     } else {
-      clearTimeout(t);
-      alert (dom.stepsLog);
-     };
-     return false;
-  },*/
 
   toBottom: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
@@ -211,7 +184,7 @@ var dom = {
       dom.step /= dom.speedup;
     } else {
       clearTimeout(t);
-      alert (dom.stepsLog);
+      //alert (dom.stepsLog);
     };
     return false;
   },
