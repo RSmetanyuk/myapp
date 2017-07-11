@@ -6,8 +6,9 @@ var dom = {
   rowInPage: 5,
   activePage: 0,
   firstVisibleRow: 0,
-  moveSteps: "",
-  stasrtMove: 2,
+  stepsLog: "",
+  step: 0,
+  speedup: 0,
   topPozition: 0,
     
   winCount: function(persons) {
@@ -137,13 +138,14 @@ var dom = {
   //  window.scrollTo(0, document.body.offsetHeight - document.documentElement.clientHeight);
   //},
 
-  move: function (topBottom) {
-    dom.stasrtMove = 2;
-    dom.moveSteps = "Move steps, px: ";
+  move: function (step, speedup) {
+    dom.step = Math.abs(step);
+    dom.speedup = speedup;
+    dom.stepsLog = "Move steps, px: ";
     dom.topPozition = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if (topBottom < 0) {
+    if (step < 0) {
       dom.toTop();
-    } else if (topBottom > 0) {
+    } else if (step > 0) {
       dom.toBottom();
     }
   },
@@ -152,43 +154,64 @@ var dom = {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var t;
     if(top > dom.topPozition/2) {
-      window.scrollBy(0, - dom.stasrtMove);
-      dom.stasrtMove *= 1.14;
-      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+      window.scrollBy(0, - dom.step);
+      dom.step *= dom.speedup;
+      dom.stepsLog += dom.step.toFixed(1) + " / ";
       t = setTimeout('dom.toTop()',20);
      } else if (top > 0) {
       var j = (top+20)/-7.8;
       window.scrollBy(0, j);
-      dom.moveSteps += j.toFixed(1) + " / ";
+      dom.stepsLog += j.toFixed(1) + " / ";
       t = setTimeout('dom.toTop()',20);
      } else {
       clearTimeout(t);
-      alert (dom.moveSteps);
+      alert (dom.stepsLog);
      };
      return false;
   },
 
+  /*toTop: function () {
+    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    var t;
+    if(top > dom.topPozition/2 + dom.step * dom.speedup) {
+      dom.step *= dom.speedup;
+      window.scrollBy(0, dom.step);
+      dom.step *= dom.speedup;
+      dom.stepsLog += dom.step.toFixed(1) + " / ";
+      t = setTimeout('dom.toTop()',20);
+     } else if (top > 0) {
+      var j = (top+20)/-7.8;
+      window.scrollBy(0, j);
+      dom.stepsLog += j.toFixed(1) + " / ";
+      t = setTimeout('dom.toTop()',20);
+     } else {
+      clearTimeout(t);
+      alert (dom.stepsLog);
+     };
+     return false;
+  },*/
+
   toBottom: function () {
-    var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var distance = document.body.offsetHeight - document.documentElement.clientHeight - dom.topPozition;
     var t;
-    if(top < dom.topPozition + distance / 2 - dom.stasrtMove * 1.14) {
-      dom.stasrtMove *= 1.14;
-      window.scrollBy(0, dom.stasrtMove);
-      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+    if(top < dom.topPozition + distance / 2 - dom.step * dom.speedup) {
+      dom.step *= dom.speedup;
+      window.scrollBy(0, dom.step);
+      dom.stepsLog += dom.step.toFixed(1) + " / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance / 2) {
       window.scrollBy(0, distance - (top - dom.topPozition) * 2);
-      dom.moveSteps += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
+      dom.stepsLog += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance) {
-      window.scrollBy(0, dom.stasrtMove);
-      dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
+      window.scrollBy(0, dom.step);
+      dom.stepsLog += dom.step.toFixed(1) + " / ";
       t = setTimeout('dom.toBottom()',20);
-      dom.stasrtMove /= 1.14;
+      dom.step /= dom.speedup;
     } else {
       clearTimeout(t);
-      alert (dom.moveSteps);
+      alert (dom.stepsLog);
     };
     return false;
   },
