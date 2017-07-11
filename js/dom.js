@@ -172,14 +172,14 @@ var dom = {
     var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
     var distance = document.body.offsetHeight - document.documentElement.clientHeight - dom.topPozition;
     var t;
-    if(top < dom.topPozition + distance / 2 - dom.stasrtMove) {
+    if(top < dom.topPozition + distance / 2 - dom.stasrtMove * 1.14) {
       dom.stasrtMove *= 1.14;
       window.scrollBy(0, dom.stasrtMove);
       dom.moveSteps += dom.stasrtMove.toFixed(1) + " / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance / 2) {
       window.scrollBy(0, distance - (top - dom.topPozition) * 2);
-      dom.moveSteps += (distance - (top - dom.topPozition) * 2).toFixed(1) + " / ";
+      dom.moveSteps += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
       t = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance) {
       window.scrollBy(0, dom.stasrtMove);
