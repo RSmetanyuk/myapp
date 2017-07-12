@@ -125,6 +125,11 @@ var dom = {
     };
   },
 
+  /*onMouseOverDisabledInput () {
+    document.getElementById("errorMessage").innerHTML  = 'Please, press Start button';
+    document.getElementById("errorMessage").style.visibility  = "visible";
+  },*/
+
   changeNumberCombinationsInPage: function() {
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
