@@ -77,9 +77,9 @@
 			<form>
 				<div class="left">
 					Start from
-					<input id="startRow" value=1 oninput="dom.setFirstVisibleRow()" disabled></input>
+					<input id="startRow" onchange="dom.setFirstVisibleRow()" disabled></input>
 				</div>
-				<p id="message">You can only enter a number</p>			
+				<p id="errorMessage">///</p>
 			</form>
 
 			<div id="hide">

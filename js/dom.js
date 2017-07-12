@@ -81,38 +81,47 @@ var dom = {
   },
 
   pageNumber: function (n) { // "n" - number first row on page
-    if(n > 0 || n < dom.combinationTxt.length) {
-      document.getElementById("message").style.visibility  = "hidden";
-      if((n + dom.rowInPage) > dom.combinationTxt.length) { // to fix bug of  last next button click
-        n = dom.combinationTxt.length - dom.rowInPage;
-      };
-
-      if(n < 0) { // to fix bug of last previous button click
-        n = 0;
-      };
-
       var x = "";
-      for (var i = 0; i < dom.rowInPage; i++) {
-        x += dom.combinationTxt[i+n];
+
+      if (n < 0) { // to fix "previous press"
+        n = 0
+        for (var i = 0; i < dom.firstVisibleRow; i++) {
+          x += dom.combinationTxt[n + i];
+        };
+      } else {
+        for (var i = 0; i < dom.rowInPage && i + n < dom.combinationTxt.length; i++) {
+          x += dom.combinationTxt[n + i];
+        };
       };
 
       document.getElementById("tableBody").innerHTML = x;
       dom.firstVisibleRow = n;
       document.forms[1].startRow.value = n +1;
-    } else {
-      document.getElementById("message").style.visibility  = "visible";
-    };
+      document.getElementById("errorMessage").style.visibility  = "hidden";
 
-    if (n === 0) { // dasabled "Previous" button
-      document.getElementById("buttonPrevious").className = "disabled";
-    } else {
-      document.getElementById("buttonPrevious").className = "unDisabled";
-    };
 
-    if (n === dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
-      document.getElementById("buttonNext").className = "disabled";
+      if (n === 0) { // dasabled "Previous" button
+        document.getElementById("buttonPrevious").className = "disabled";
+      } else {
+        document.getElementById("buttonPrevious").className = "unDisabled";
+      };
+
+      if (n >= dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
+        document.getElementById("buttonNext").className = "disabled";
+      } else {
+        document.getElementById("buttonNext").className = "unDisabled";
+      };
+
+ 
+  },
+
+  makeErrorMessage (input) {
+    if (input < 0) {
+      document.getElementById("errorMessage").innerHTML  = 'You can start from "1" only';
+    } else if (input >= dom.combinationTxt.length) {
+      document.getElementById("errorMessage").innerHTML  = 'There are only 256 rows';
     } else {
-      document.getElementById("buttonNext").className = "unDisabled";
+      document.getElementById("errorMessage").innerHTML  = 'You can only enter a number';
     };
   },
 
@@ -123,9 +132,16 @@ var dom = {
   },
 
   setFirstVisibleRow: function () {
-    var x = + document.forms[1].startRow.value - 1;
-    dom.firstVisibleRow = x;
-    dom.pageNumber(x);    
+    var enteredRowNumber = + document.forms[1].startRow.value - 1;
+    if(enteredRowNumber >= 0 && enteredRowNumber < dom.combinationTxt.length) {
+      document.getElementById("errorMessage").style.visibility  = "hidden";
+      dom.firstVisibleRow = enteredRowNumber;
+      dom.pageNumber(enteredRowNumber);   
+    } else {
+      document.forms[1].startRow.value = ""
+      document.getElementById("errorMessage").style.visibility  = "visible";
+      dom.makeErrorMessage(enteredRowNumber); 
+    }; 
   },
 
   move: function (step, speedup) {

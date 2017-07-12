@@ -29,6 +29,7 @@ function main () {
   document.getElementById("combinationsInPageList").disabled = false;
   document.getElementById("combinationsInPageList").value = 5;
   document.getElementById("startRow").disabled = false;
+  document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("hide").style.display = "inline";
 };
 
