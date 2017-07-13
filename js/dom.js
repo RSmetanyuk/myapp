@@ -4,7 +4,6 @@ var dom = {
   combinationCounter: 0,
   combinationTxt: [],
   rowInPage: 5,
-  activePage: 0,
   firstVisibleRow: 0,
   lastVisibleRow: 0,
   stepsLog: "",
@@ -105,14 +104,18 @@ var dom = {
 
       if (n === 0) { // dasabled "Previous" button
         document.getElementById("buttonPrevious").className = "disabled";
+        document.getElementById("buttonFirst").className = "disabled";
       } else {
         document.getElementById("buttonPrevious").className = "unDisabled";
+        document.getElementById("buttonFirst").className = "unDisabled";
       };
 
       if (n >= dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
         document.getElementById("buttonNext").className = "disabled";
+        document.getElementById("buttonLast").className = "disabled";
       } else {
         document.getElementById("buttonNext").className = "unDisabled";
+        document.getElementById("buttonLast").className = "unDisabled";        
       };
 
  

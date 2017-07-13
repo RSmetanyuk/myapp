@@ -30,7 +30,8 @@ function main () {
   document.getElementById("startRow").disabled = false;
   document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("hide").style.display = "inline";
-  dom.changeNumberCombinationsInPage();
+  //dom.changeNumberCombinationsInPage();
+  dom.pageNumber(0);
 };
 
 function resetData () {
@@ -41,6 +42,7 @@ function resetData () {
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").value = "";
+  dom.rowInPage = 5;
   document.getElementById("startRow").value = "";
   dom.firstVisibleRow = 0;
   document.getElementById("hide").style.display = "none";
