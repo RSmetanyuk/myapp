@@ -65,7 +65,7 @@
 
 			<form>
 				Max rows per page
-				<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()" disabled>	
+				<select id="combinationsInPageList" onmouseover="dom.onMouseDisabledInput()" onchange="dom.changeNumberCombinationsInPage()" disabled>	
 					<option value=5>5</option>
 					<option value=10>10</option>
 					<option value=15>15</option>
@@ -77,7 +77,7 @@
 			<form>
 				<div class="left">
 					Start from
-					<input id="startRow" onchange="dom.setFirstVisibleRow()" disabled></input>
+					<input id="startRow" onmouseover="dom.onMouseDisabledInput()" onchange="dom.setFirstVisibleRow()" disabled></input>
 				</div>
 				<p id="errorMessage">///</p>
 			</form>

@@ -41,9 +41,7 @@ function resetData () {
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").value = "";
-  document.getElementById("combinationsInPageList").disabled = true;
   document.getElementById("startRow").value = "";
-  document.getElementById("startRow").disabled = true;
   document.getElementById("hide").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
