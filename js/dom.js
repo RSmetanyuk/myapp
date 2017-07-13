@@ -145,6 +145,13 @@ var dom = {
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
     dom.pageNumber(dom.firstVisibleRow);
+
+    if (+ x === 256) {
+      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
+      document.getElementById("returnToBottom").style.display = "inline";
+    } else {
+      document.getElementById("returnToTopBottomBuckground").style.display = "none";
+    };
   },
 
   setFirstVisibleRow: function () {
