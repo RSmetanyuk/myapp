@@ -42,6 +42,7 @@ function resetData () {
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").value = "";
   document.getElementById("startRow").value = "";
+  dom.firstVisibleRow = 0;
   document.getElementById("hide").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
