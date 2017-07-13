@@ -46,6 +46,7 @@ function resetData () {
   document.getElementById("startRow").disabled = true;
   document.getElementById("hide").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";
+  document.getElementById("errorMessage").style.visibility  = "hidden";
 };
 
 window.onscroll = function() {
