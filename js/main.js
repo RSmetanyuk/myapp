@@ -24,13 +24,13 @@ function main () {
       };
     };
   };
-  dom.pageNumber(0);
   dom.writeGeneralInfo(person1, person2, person3, person4);
   document.getElementById("combinationsInPageList").disabled = false;
   document.getElementById("combinationsInPageList").value = 5;
   document.getElementById("startRow").disabled = false;
   document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("hide").style.display = "inline";
+  dom.changeNumberCombinationsInPage();
 };
 
 function resetData () {
