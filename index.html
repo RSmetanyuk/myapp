@@ -86,7 +86,7 @@
 			<ul class="pagination" id="pagination">
 				<li><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
 	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
-	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow + dom.rowInPage)'>Next</a></li>
+	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.lastVisibleRow + 1)'>Next</a></li>
 	      		<li><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
 			</ul>
 			</div>

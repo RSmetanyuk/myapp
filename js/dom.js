@@ -6,6 +6,7 @@ var dom = {
   rowInPage: 5,
   activePage: 0,
   firstVisibleRow: 0,
+  lastVisibleRow: 0,
   stepsLog: "",
   step: 0,
   speedup: 0,
@@ -87,10 +88,12 @@ var dom = {
         n = 0
         for (var i = 0; i < dom.firstVisibleRow; i++) {
           x += dom.combinationTxt[n + i];
+          dom.lastVisibleRow = n + i;
         };
       } else {
         for (var i = 0; i < dom.rowInPage && i + n < dom.combinationTxt.length; i++) {
           x += dom.combinationTxt[n + i];
+          dom.lastVisibleRow = n + i;
         };
       };
 
