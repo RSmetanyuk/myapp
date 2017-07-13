@@ -129,7 +129,7 @@ var dom = {
   },
 
   onMouseDisabledInput () {
-    if (document.getElementById("combinationsInPageList").value === "" ||
+    if (document.getElementById("combinationsInPageList").value === "" &&
       document.getElementById("startRow").value === "") {
       document.getElementById("combinationsInPageList").disabled = true;
       document.getElementById("startRow").disabled = true;
