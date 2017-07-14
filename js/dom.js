@@ -145,13 +145,15 @@ var dom = {
   changeNumberCombinationsInPage: function() {
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
-    dom.pageNumber(dom.firstVisibleRow);
-
     if (+ x === 256) {
       document.getElementById("returnToTopBottomBuckground").style.display = "inline";
       document.getElementById("returnToBottom").style.display = "inline";
+      document.getElementById("startRow").disabled = true;   
+      dom.pageNumber(0);  
     } else {
       document.getElementById("returnToTopBottomBuckground").style.display = "none";
+      document.getElementById("startRow").disabled = false;
+      dom.pageNumber(dom.firstVisibleRow);  
     };
   },
 
