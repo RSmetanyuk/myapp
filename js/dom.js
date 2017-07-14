@@ -10,6 +10,7 @@ var dom = {
   step: 0,
   speedup: 0,
   topPozition: 0,
+  timer: 0,
     
   winCount: function(persons) {
     var winners = "";        
@@ -168,6 +169,7 @@ var dom = {
   },
 
   move: function (step, speedup) {
+    clearTimeout(dom.timer);
     dom.step = Math.abs(step);
     dom.speedup = speedup;
     dom.stepsLog = "Move steps, px: ";
@@ -181,23 +183,22 @@ var dom = {
 
   toTop: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    var t;
     if(top > dom.topPozition / 2 + dom.step * dom.speedup) {
       dom.step *= dom.speedup;
       window.scrollBy(0, - dom.step);
       dom.stepsLog += dom.step.toFixed(1) + " / ";
-      t = setTimeout('dom.toTop()',20);
+      dom.timer = setTimeout('dom.toTop()',20);
     } else if (top > dom.topPozition / 2) {
       window.scrollBy(0, - (dom.topPozition - (dom.topPozition - top) * 2));
       dom.stepsLog += "<<< " + (dom.topPozition - (dom.topPozition - top) * 2).toFixed(1) + " >>> / ";
-      t = setTimeout('dom.toTop()',20);
+      dom.timer = setTimeout('dom.toTop()',20);
     } else if (top > 0) {
       window.scrollBy(0, - dom.step);
       dom.stepsLog += dom.step.toFixed(1) + " / ";
-      t = setTimeout('dom.toTop()',20);
+      dom.timer = setTimeout('dom.toTop()',20);
       dom.step /= dom.speedup;
     } else {
-      clearTimeout(t);
+      clearTimeout(dom.timer);
       //alert (dom.stepsLog);
     };
     return false;
@@ -206,23 +207,22 @@ var dom = {
   toBottom: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var distance = document.body.offsetHeight - document.documentElement.clientHeight - dom.topPozition;
-    var t;
     if(top < dom.topPozition + distance / 2 - dom.step * dom.speedup) {
       dom.step *= dom.speedup;
       window.scrollBy(0, dom.step);
       dom.stepsLog += dom.step.toFixed(1) + " / ";
-      t = setTimeout('dom.toBottom()',20);
+      dom.timer = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance / 2) {
       window.scrollBy(0, distance - (top - dom.topPozition) * 2);
       dom.stepsLog += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
-      t = setTimeout('dom.toBottom()',20);
+      dom.timer = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance) {
       window.scrollBy(0, dom.step);
       dom.stepsLog += dom.step.toFixed(1) + " / ";
-      t = setTimeout('dom.toBottom()',20);
+      dom.timer = setTimeout('dom.toBottom()',20);
       dom.step /= dom.speedup;
     } else {
-      clearTimeout(t);
+      clearTimeout(dom.timer);
       //alert (dom.stepsLog);
     };
     return false;
