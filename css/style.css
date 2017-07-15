@@ -3,10 +3,6 @@
   margin: 0;
 }
 
-.left{
-	float: left;
-}
-
 .container1 {
 	position: relative;
 	/*border: 1px solid black;*/
@@ -61,14 +57,47 @@
 	width: 498px;
 }
 
+#form1,
+#form2 {
+    position: relative;
+    /*border: 1px solid black;*/
+}
+
+#overlay1,
+#overlay2 {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    top: 0
+    left: 0;
+    /*border: 1px solid red;*/
+}
+
+#overlay1 {
+	width: 40px;
+	margin-left: -40px;
+}
+
+#overlay2 {
+	width: 45px;
+	height: 24px;
+	margin-left: -45px;
+}
+
+/*#combinationsInPageList:disabled + #overlay1 {
+    display: inline-block;
+}*/
+
 #startRow {
 	width: 45px;
-	margin-right: 6px;
 }
 
 #errorMessage {
 	color: red;
 	padding-top: 3px;
+	position: absolute;
+	margin-top: -25px;
+	padding-left: 120px;
 }
 
 #tableHead2 {
@@ -117,9 +146,9 @@
 	margin-bottom: 0px;
 }
 
-.disabled {
+/*.disabled {
     pointer-events: none;
-}
+}*/
 
 #returnToTop,
 #returnToBottom {
@@ -161,14 +190,6 @@
 
 .col11 {
 	width: 38px;
-}
-
-.form-group.has-error .help-block {
-    display: block;
-}
-
-.form-group .help-block {
-    display: none;
 }
 
 @media screen and (min-width: 768px) {

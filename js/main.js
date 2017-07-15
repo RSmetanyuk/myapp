@@ -27,10 +27,11 @@ function main () {
   dom.writeGeneralInfo(person1, person2, person3, person4);
   document.getElementById("combinationsInPageList").disabled = false;
   document.getElementById("combinationsInPageList").value = 5;
+  document.getElementById("overlay1").style.display = "none";
   document.getElementById("startRow").disabled = false;
+  document.getElementById("overlay2").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("hide").style.display = "inline";
-  //dom.changeNumberCombinationsInPage();
   dom.pageNumber(0);
 };
 
@@ -42,8 +43,12 @@ function resetData () {
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("combinationsInPageList").value = "";
+  document.getElementById("combinationsInPageList").disabled = true;
+  document.getElementById("overlay1").style.display = "inline-block";
   dom.rowInPage = 5;
   document.getElementById("startRow").value = "";
+  document.getElementById("startRow").disabled = true;
+  document.getElementById("overlay2").style.display = "inline-block";
   dom.firstVisibleRow = 0;
   document.getElementById("hide").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";

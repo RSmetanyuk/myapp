@@ -63,22 +63,22 @@
 				</tbody>
 			</table>
 
-			<form>
+			<form id="form1">
 				Max rows per page
-				<select id="combinationsInPageList" onclick="dom.onMouseDisabledInput()" onchange="dom.changeNumberCombinationsInPage()" disabled>	
+				<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
 					<option value=5>5</option>
 					<option value=10>10</option>
 					<option value=15>15</option>
 					<option value=20>20</option>
 					<option value=256>all</option>
-				</select>				
+				</select>
+				<div id="overlay1" onclick="dom.onClickDisabledInput()"></div>		
 			</form>
 
-			<form>
-				<div class="left">
-					Start from
-					<input id="startRow" onclick="dom.onMouseDisabledInput()" onchange="dom.setFirstVisibleRow()" disabled></input>
-				</div>
+			<form id="form2">
+				Start from
+				<input id="startRow" onchange="dom.setFirstVisibleRow()"></input>
+				<div id="overlay2" onclick="dom.onClickDisabledInput()"></div>					
 				<p id="errorMessage">///</p>
 			</form>
 

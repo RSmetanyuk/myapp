@@ -132,14 +132,9 @@ var dom = {
     };
   },
 
-  onMouseDisabledInput () {
-    if (document.getElementById("combinationsInPageList").value === "" &&
-      document.getElementById("startRow").value === "") {
-      document.getElementById("combinationsInPageList").disabled = true;
-      document.getElementById("startRow").disabled = true;
-      document.getElementById("errorMessage").innerHTML  = 'Please, press Start button';
-      document.getElementById("errorMessage").style.visibility  = "visible";  
-    };
+  onClickDisabledInput () {
+    document.getElementById("errorMessage").innerHTML  = 'Please, press Start button';
+    document.getElementById("errorMessage").style.visibility  = "visible";  
   },
 
   changeNumberCombinationsInPage: function() {
