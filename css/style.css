@@ -146,8 +146,8 @@
 #pagination li span:focus,
 #pagination li span:hover {
     z-index: 3;
-    color: #23527c;
-    background-color: #337ab7;
+    color: #fff;
+    background-color: #5bc0de;
     border-color: #ddd;
 }
 

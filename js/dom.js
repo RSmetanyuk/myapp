@@ -137,9 +137,10 @@ var dom = {
     document.getElementById("errorMessage").style.visibility  = "visible";  
   },
 
-  changeNumberCombinationsInPage: function() {
-    x = document.forms[0].combinationsInPageList.value
+  changeNumberCombinationsInPage: function(x) {
+    //x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
+    document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
       //document.getElementById("returnToTopBottomBuckground").style.display = "inline";
       //document.getElementById("returnToBottom").style.display = "inline";

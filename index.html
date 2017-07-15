@@ -6,7 +6,9 @@
 	<script src="js/dom.js"></script>
 	<script src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body onresize="dom.onBodyResize()">
@@ -72,6 +74,19 @@
 					<option value=20>20</option>
 					<option value=256>all</option>
 				</select>
+
+				<div class="dropdown">
+  					<button class="btn-xs btn-info dropdown-toggle" type="button" data-toggle="dropdown">5
+  					<span class="caret"></span></button>
+  					<ul class="dropdown-menu">
+    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(5)">5</a></li>
+    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(10)">10</a></li>
+    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(15)">15</a></li>
+    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(20)">20</a></li>
+    					<li role="separator" class="divider"></li>
+    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(256)">all</a></li>
+  					</ul>
+				</div>
 				<div id="overlay1" onclick="dom.onClickDisabledInput()"></div>		
 			</form>
 
