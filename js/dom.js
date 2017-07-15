@@ -119,7 +119,7 @@ var dom = {
         document.getElementById("buttonLast").className = "unDisabled";        
       };
 
- 
+      dom.onBodyResize ();
   },
 
   makeErrorMessage (input) {
@@ -141,12 +141,12 @@ var dom = {
     x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
     if (+ x === 256) {
-      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
-      document.getElementById("returnToBottom").style.display = "inline";
+      //document.getElementById("returnToTopBottomBuckground").style.display = "inline";
+      //document.getElementById("returnToBottom").style.display = "inline";
       document.getElementById("startRow").disabled = true;   
       dom.pageNumber(0);  
     } else {
-      document.getElementById("returnToTopBottomBuckground").style.display = "none";
+      //document.getElementById("returnToTopBottomBuckground").style.display = "none";
       document.getElementById("startRow").disabled = false;
       dom.pageNumber(dom.firstVisibleRow);  
     };
@@ -223,6 +223,15 @@ var dom = {
       //alert (dom.stepsLog);
     };
     return false;
+  },
+
+  onBodyResize: function () {
+    if (document.body.offsetHeight - document.documentElement.clientHeight > 0) {
+      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
+      document.getElementById("returnToBottom").style.display = "inline";  
+    } else {
+      document.getElementById("returnToTopBottomBuckground").style.display = "none";
+    };
   },
   
 };

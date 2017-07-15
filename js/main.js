@@ -64,13 +64,13 @@ window.onscroll = function() {
     };
 
 
-    if (window.pageYOffset >= 150) {
+    if (window.pageYOffset >= 1) {
       document.getElementById("returnToTop").style.display = "inline";     
     } else {
       document.getElementById("returnToTop").style.display = "none";
     };
 
-    if (window.pageYOffset > document.body.offsetHeight - document.documentElement.clientHeight - 20) {
+    if (window.pageYOffset > document.body.offsetHeight - document.documentElement.clientHeight - 1) {
       document.getElementById("returnToBottom").style.display = "none"; 
     };
 };
