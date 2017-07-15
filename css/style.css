@@ -141,6 +141,16 @@
 	margin-bottom: 0px;
 }
 
+#pagination li a:focus,
+#pagination li a:hover,
+#pagination li span:focus,
+#pagination li span:hover {
+    z-index: 3;
+    color: #23527c;
+    background-color: #337ab7;
+    border-color: #ddd;
+}
+
 .disabled {
     pointer-events: none;
 }
