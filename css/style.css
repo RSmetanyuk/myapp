@@ -109,6 +109,14 @@
 }
 
 #errorMessage {
+	position: absolute;
+	bottom: -12px;
+	left: 210px;
+
+
+}
+
+#errorMessage1 {
 	color: red;
 	padding-top: 3px;
 	position: absolute;
