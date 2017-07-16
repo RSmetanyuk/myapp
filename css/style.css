@@ -17,7 +17,7 @@
 
 .main-content,
 .right-sidebar {
-	background: -webkit-linear-gradient(top, #fff, #f7f7f9);
+	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
 	border-radius: 10px;
@@ -26,7 +26,7 @@
 }
 
 .header {
-	background: -webkit-linear-gradient(top, #fff, #f7f7f9);
+	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
 	border-radius: 10px;
@@ -73,14 +73,23 @@
 }
 
 #overlay1 {
-	width: 40px;
-	margin-left: -40px;
+	width: 70px;
+	margin-top: -22px;
+	margin-left: 125px;
 }
 
 #overlay2 {
 	width: 45px;
 	height: 24px;
 	margin-left: -45px;
+}
+
+#combinationsInPageList {
+	width: 70px;
+	height: 22px;
+	margin-top: -20px;
+	margin-left: 125px;
+	padding-top: 0;
 }
 
 #startRow {

@@ -67,26 +67,13 @@
 
 			<form id="form1">
 				Max rows per page
-				<select id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
+				<select class="form-control" id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
 					<option value=5>5</option>
 					<option value=10>10</option>
 					<option value=15>15</option>
 					<option value=20>20</option>
 					<option value=256>all</option>
-				</select>
-
-				<div class="dropdown">
-  					<button class="btn-xs btn-info dropdown-toggle" type="button" data-toggle="dropdown">5
-  					<span class="caret"></span></button>
-  					<ul class="dropdown-menu">
-    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(5)">5</a></li>
-    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(10)">10</a></li>
-    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(15)">15</a></li>
-    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(20)">20</a></li>
-    					<li role="separator" class="divider"></li>
-    					<li><a href="#" onclick="dom.changeNumberCombinationsInPage(256)">all</a></li>
-  					</ul>
-				</div>
+				</select>			
 				<div id="overlay1" onclick="dom.onClickDisabledInput()"></div>		
 			</form>
 
