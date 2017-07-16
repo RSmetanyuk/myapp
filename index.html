@@ -37,7 +37,7 @@
 				</colgroup>
 				<thead id="tableHead1">
 					<tr>
-						<th></th>
+						<th>#</th>
 						<th>A number</th>
 						<th>B number</th>
 						<th>C number</th>
@@ -50,7 +50,7 @@
 				</thead>				
 				<thead id="tableHead2">
 					<tr>
-						<th></th>
+						<th>#</th>
 						<th>Person A number</th>
 						<th>Person B number</th>
 						<th>Person C number</th>
@@ -65,8 +65,10 @@
 				</tbody>
 			</table>
 
+			<p>Total rows (combinations): <span id="totalRows"></span></p>
+
 			<form id="form1">
-				Max rows per page
+				<p>Max rows per page</p>
 				<select class="form-control" id="combinationsInPageList" onchange="dom.changeNumberCombinationsInPage()">	
 					<option value=5>5</option>
 					<option value=10>10</option>
@@ -78,8 +80,13 @@
 			</form>
 
 			<form id="form2">
-				Start from
-				<input id="startRow" onchange="dom.setFirstVisibleRow()"></input>
+				<p>Start display from</p>
+
+				<div class="input-group input-group-sm" id="startRowGenral">
+  					<span class="input-group-addon" id="addon1">#</span>
+  					<input type="text" class="form-control" id="startRow" onchange="dom.setFirstVisibleRow()" placeholder="......." aria-describedby="addon1">
+				</div>
+
 				<div id="overlay2" onclick="dom.onClickDisabledInput()"></div>					
 				<p id="errorMessage">///</p>
 			</form>
@@ -114,7 +121,7 @@
 				<p id="generalInfo"></p>
 			</div>	
 			<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
-			<button id="Reset" onclick="resetData()" class="btn btn-warning btn-lg">Reset</button>			
+			<button id="Reset" onclick="resetData()" class="btn btn-danger btn-lg">Reset</button>			
 		</div>
 	</div>
 

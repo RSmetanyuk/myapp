@@ -138,7 +138,7 @@ var dom = {
   },
 
   changeNumberCombinationsInPage: function(x) {
-    //x = document.forms[0].combinationsInPageList.value
+    x = document.forms[0].combinationsInPageList.value
     dom.rowInPage = + x;
     document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
