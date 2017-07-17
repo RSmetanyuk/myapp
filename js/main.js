@@ -34,6 +34,10 @@ function main () {
   document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("hide").style.display = "inline";
   dom.pageNumber(0);
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 };
 
 function resetData () {
