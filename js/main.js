@@ -45,6 +45,9 @@ function resetData () {
   document.getElementById("Start").style.display = "inline";
   document.getElementById("tableBody").innerHTML = "";
   document.getElementById("table2Body").innerHTML = "";
+  document.getElementById("table2v2").innerHTML =
+      "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
+                 "<th>Wins count</th><td></td><td></td><td></td><td></td></tr></tbody>";
   document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("totalRows").innerHTML = 0;

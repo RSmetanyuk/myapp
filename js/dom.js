@@ -68,6 +68,12 @@ var dom = {
       "<tr><td>B</td><td>" + person2.winsCounter + "</td></tr>" +
       "<tr><td>C</td><td>" + person3.winsCounter + "</td></tr>" +
       "<tr><td>D</td><td>" + person4.winsCounter + "</td></tr>";
+    document.getElementById("table2v2").innerHTML =
+      "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
+      "<th>Wins count</th><td>" + person1.winsCounter + 
+                    "</td><td>" + person2.winsCounter + 
+                    "</td><td>" + person3.winsCounter + 
+                    "</td><td>" + person4.winsCounter + "</td></tr></tbody>";
 
     document.getElementById("generalInfo").innerHTML = 
     "Total number of wins is " + dom.counterWinsInStrategy;

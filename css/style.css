@@ -12,7 +12,7 @@
 .container2 {
 	/*border: 1px solid black;*/
 	width: 200px;
-	float: left;
+	/*float: left;*/
 }
 
 .main-content,
@@ -46,7 +46,8 @@
 }
 
 #table,
-#table2 {
+#table2,
+#table2v2 {
 	background-color: white;
 	text-align: center;
 	font-size: 11px;
@@ -96,10 +97,12 @@
 	height: 30px;
 	margin-top: -35px;
 	margin-left: 125px;
+	font-size: 14px;
 }
 
 #startRow {
 	width: 45px;
+	font-size: 14px;
 }
 
 #startRowGenral {
@@ -112,8 +115,6 @@
 	position: absolute;
 	bottom: -12px;
 	left: 210px;
-
-
 }
 
 #errorMessage1 {
@@ -128,9 +129,6 @@
 	display: none;
 }
 
-#table2 {
-	width: 190px;
-}
 
 .left-sidebar {
 	background: #fff;
@@ -142,19 +140,37 @@
 	width: 520px;
 }
 
+#initialInfo {
+	text-align: center;
+	width: 498px;
+	/*border: 1px solid black;*/
+}
+
+#table2 {
+	width: 190px;
+	display: none;
+}
+
+#table2v2 {
+	width: 498px;
+	margin-bottom: 25px;
+}
+
 #hide {
 	display: none;
 }
 
 #Reset {
 	display: none;
-	float: right;
+	/*float: right;*/
 	width: 220px;
+	margin-left: 150px;
+
 }
 
 #Start {
-	float: right;
 	width: 220px;
+margin-left: 150px;
 }
 
 #logo {	
@@ -211,7 +227,7 @@
 	bottom: 4px;
 }
 
-.col11 {
+#table th:first-child {
 	width: 38px;
 }
 
@@ -242,15 +258,15 @@
 	font-size: 14px;
 	}
 
-	.col11 {
-	width: 45px;
+	#table th:first-child {
+		width: 38px;
 	}
 
 	.container2 {
-	width: 375px;
+		width: 375px;
 	}
 
-	#table2 {
+	#table2v2 {
 	font-size: 14px;
 	}
 
@@ -268,9 +284,17 @@
 		float: left;
 	}
 
+	#initialInfo {
+		width: 700px;
+	}
+
+	#table2v2 {
+		width: 700px;
+	}
+
 	#Start,
 	#Reset {
-		width: 320px;
+		margin-left: 251px;
 	}
 
 	#pagination {
@@ -311,6 +335,25 @@
 		width: 212px;
 		float: left;
 	}
+
+	#initialInfo {
+		width: 190px;
+	}
+
+	#table2v2 {
+		display: none;
+	}
+
+	#table2 {
+		display: table;
+		font-size: 14px;
+	}
+
+	#Start,
+	#Reset {
+		margin-left: 0px;
+	}
+
 }
 
 
