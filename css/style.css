@@ -12,7 +12,6 @@
 .container2 {
 	/*border: 1px solid black;*/
 	width: 200px;
-	/*float: left;*/
 }
 
 .main-content,
@@ -153,7 +152,6 @@
 
 #table2v2 {
 	width: 498px;
-	margin-bottom: 25px;
 }
 
 #hide {
@@ -162,7 +160,6 @@
 
 #Reset {
 	display: none;
-	/*float: right;*/
 	width: 220px;
 	margin-left: 150px;
 
@@ -170,7 +167,7 @@
 
 #Start {
 	width: 220px;
-margin-left: 150px;
+	margin-left: 150px;
 }
 
 #logo {	
@@ -298,18 +295,18 @@ margin-left: 150px;
 	}
 
 	#pagination {
-	margin-left: 241px;
+		margin-left: 241px;
 	}
 }
 
 
 @media screen and (min-width: 974px) {	
 	body .container1 {
-	width: 974px;
+		width: 974px;
 	}
 
 	.container2 {
-	width: 190px;
+		width: 190px;
 	}
 
 	#logo {	
@@ -369,7 +366,7 @@ margin-left: 150px;
 	}
 
 	body .container1 {
-	width: 1194px;
+		width: 1194px;
 	}
 
 	.left-sidebar {
@@ -379,6 +376,6 @@ margin-left: 150px;
 	}
 
 	.main-content {
-	margin-left: 8px;
+		margin-left: 8px;
 	}
 }
