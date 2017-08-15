@@ -5,4 +5,6 @@ This application checks the strategy of answering next logical puzzle: Four were
 
 This application shows a list of possible 256 combinations of numbers in persons and who of them guessed the number on his forehead.
 
+Try this app at: https://rsmetanyukapp.herokuapp.com
+
 	
