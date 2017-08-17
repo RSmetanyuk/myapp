@@ -25,19 +25,34 @@
 }
 
 .header {
+	position: relative;
 	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
 	border-width: 1px;
 	border-radius: 5px;
 	font-size: 25px;
-	text-align: center;
 	height: 44px;
 	min-width: 554px;
 }
 
+#headerInnerContainer {
+	position: relative;
+	margin: auto;
+	width: 520px;
+	border: 1px solid black;
+}
+
+#logo {	
+	position: relative;
+	height: 37px;
+	margin-top: 2px;
+	margin-left: 0px;
+	margin-right: 10px;
+	float: left;
+}
+
 .header p {
-	margin-left: -160px;
-	margin-top: -40px;
+	margin-top: 5px;
 }
 
 .main-content {
@@ -170,13 +185,6 @@
 	margin-left: 150px;
 }
 
-#logo {	
-	height: 37px;
-	margin-top: 3px;
-	margin-bottom: 3px;
-	margin-left: -462px;
-}
-
 #pagination {
 	margin-left: 138px;
 	margin-top: 5px;
@@ -229,19 +237,22 @@
 }
 
 @media screen and (min-width: 768px) {
-	#logo {	
-		height: 57px;
-		margin-left: -624px;
-	}
-	
 	.header {
 		font-size: 30px;
 		height: 64px;
 	}
+
+	#headerInnerContainer {
+		width: 722px;
+		/*height: 64px;*/
+	}
 	
+	#logo {	
+		height: 57px;
+	}
+
 	.header p {
-		margin-left: -245px;
-		margin-top: -50px;
+		margin-top: 10px;
 	}
 
 	.main-content {
@@ -311,18 +322,19 @@
 
 	#logo {	
 		height: 57px;
-		margin-left: -848px;
+		margin-top: 2px;
 	}
 	
 	.header {
 		font-size: 30px;
 		height: 64px;
 	}
-	
-	.header p {
-		margin-left: -448px;
-	}
 
+	#headerInnerContainer {
+		width: 942px;
+		/*height: 64px;*/
+	}
+	
 	#Start,
 	#Reset {
 		width: 190px;
@@ -357,12 +369,8 @@
 
 
 @media screen and (min-width: 1194px) {	
-	#logo {	
-		margin-left: -629px;
-	}
-	
-	.header p {
-		margin-left: -245px;
+	#headerInnerContainer {
+		width: 722px;
 	}
 
 	body .container1 {
