@@ -66,21 +66,17 @@
 					<option value=15>15</option>
 					<option value=20>20</option>
 					<option value=256>all</option>
-				</select>			
-				<div id="numberCombinationsInPageOverlay" onclick="dom.onClickDisabledInput()"></div>		
+				</select>
+				<div id="numberCombinationsInPageOverlay" onclick="dom.onClickDisabledInput()"></div>
+				<div class="alert alert-danger" id="errorMessage"></div>		
 			</div>
 
 			<div id="form2">
 				<p>Start display from</p>
-
 				<div class="input-group input-group-sm" id="startRowOuterContainer">
   					<span class="input-group-addon" id="addon1">#</span>
   					<input type="text" class="form-control" id="startRow" onchange="dom.setFirstVisibleRow()" placeholder="......." aria-describedby="addon1">
-				</div>						
-				
-				<div class="alert alert-danger" id="errorMessage">					
-				</div>
-
+				</div>			
 				<div id="startRowOverlay" onclick="dom.onClickDisabledInput()"></div>
 			</div>
 
