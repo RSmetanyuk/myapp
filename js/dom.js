@@ -105,7 +105,7 @@ var dom = {
 
       document.getElementById("tableBody").innerHTML = x;
       dom.firstVisibleRow = n;
-      document.forms[1].startRow.value = n +1;
+      document.getElementById("startRow").value = n +1;
       document.getElementById("errorMessage").style.visibility  = "hidden";
 
 
@@ -144,7 +144,7 @@ var dom = {
   },
 
   changeNumberCombinationsInPage: function(x) {
-    x = document.forms[0].numberCombinationsInPage.value
+    x = document.getElementById("numberCombinationsInPage").value
     dom.rowInPage = + x;
     document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
@@ -160,13 +160,13 @@ var dom = {
   },
 
   setFirstVisibleRow: function () {
-    var enteredRowNumber = + document.forms[1].startRow.value - 1;
+    var enteredRowNumber = + document.getElementById("startRow").value - 1;
     if(enteredRowNumber >= 0 && enteredRowNumber < dom.combinationTxt.length) {
       document.getElementById("errorMessage").style.visibility  = "hidden";
       dom.firstVisibleRow = enteredRowNumber;
       dom.pageNumber(enteredRowNumber);   
     } else {
-      document.forms[1].startRow.value = ""
+      document.getElementById("startRow").value = ""
       document.getElementById("errorMessage").style.visibility  = "visible";
       dom.makeErrorMessage(enteredRowNumber); 
     }; 
