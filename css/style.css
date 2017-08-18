@@ -3,28 +3,7 @@
   margin: 0;
 }
 
-.container1 {
-	position: relative;
-	/*border: 1px solid black;*/
-	width: 554px;
-}
-
-.container2 {
-	/*border: 1px solid black;*/
-	width: 200px;
-}
-
-.main-content,
-.right-sidebar {
-	background-color: #f7f7f9;
-	border: solid rgba(0, 0, 0, 0.07);
-	border-width: 1px;
-	border-radius: 5px;
-	margin-top: 8px;
-	padding: 10px;
-}
-
-.header {
+#header {
 	position: relative;
 	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
@@ -51,12 +30,45 @@
 	float: left;
 }
 
-.header p {
+#header p {
 	margin-top: 5px;
 }
 
-.main-content {
+#generalContainer {
+	position: relative;
+	border: 1px solid red;
+	width: 554px;
+}
+
+#mainContent,
+#rightSidebar {
+	position: relative;
+	background-color: #f7f7f9;
+	border: solid rgba(0, 0, 0, 0.07);
+	border-width: 1px;
+	border-radius: 5px;
+	margin-top: 8px;
+	padding: 10px;
+	border: 1px solid green;
+}
+
+#mainContent {
 	width: 520px;
+}
+
+#left-sidebar {
+	background: #fff;
+}
+
+#rightSidebar {
+	float: left;
+	width: 520px;
+}
+
+#initialInfo {
+	text-align: center;
+	width: 498px;
+	border: 1px solid black;
 }
 
 #table,
@@ -144,22 +156,6 @@
 }
 
 
-.left-sidebar {
-	background: #fff;
-}
-
-.right-sidebar {
-	position: relative;
-	float: left;
-	width: 520px;
-}
-
-#initialInfo {
-	text-align: center;
-	width: 498px;
-	/*border: 1px solid black;*/
-}
-
 #table2 {
 	width: 190px;
 	display: none;
@@ -167,10 +163,6 @@
 
 #table2v2 {
 	width: 498px;
-}
-
-#hide {
-	display: none;
 }
 
 #Reset {
@@ -237,7 +229,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.header {
+	#header {
 		font-size: 30px;
 		height: 64px;
 	}
@@ -246,19 +238,23 @@
 		width: 722px;
 		/*height: 64px;*/
 	}
+
+	#generalContainer {
+		width: 752px;
+	}
 	
 	#logo {	
 		height: 57px;
 	}
 
-	.header p {
+	#header p {
 		margin-top: 10px;
 	}
 
-	.main-content {
+	#mainContent {
 		float: left;
 		margin-right: 8px;
-		width: 722px;
+		width: 722px;		
 	}
 
 	#table {
@@ -268,10 +264,6 @@
 
 	#table th:first-child {
 		width: 38px;
-	}
-
-	.container2 {
-		width: 375px;
 	}
 
 	#table2v2 {
@@ -287,7 +279,7 @@
 		display: table-header-group;
 	}
 
-	.right-sidebar {
+	#rightSidebar {
 		width: 722px;
 		float: left;
 	}
@@ -310,14 +302,9 @@
 	}
 }
 
-
 @media screen and (min-width: 974px) {	
-	body .container1 {
+	body #generalContainer {
 		width: 974px;
-	}
-
-	.container2 {
-		width: 190px;
 	}
 
 	#logo {	
@@ -325,7 +312,7 @@
 		margin-top: 2px;
 	}
 	
-	.header {
+	#header {
 		font-size: 30px;
 		height: 64px;
 	}
@@ -340,7 +327,7 @@
 		width: 190px;
 	}
 
-	.right-sidebar {
+	#rightSidebar {
 		width: 212px;
 		float: left;
 	}
@@ -365,25 +352,22 @@
 
 }
 
-
-
-
 @media screen and (min-width: 1194px) {	
 	#headerInnerContainer {
 		width: 722px;
 	}
 
-	body .container1 {
+	body #generalContainer {
 		width: 1194px;
 	}
 
-	.left-sidebar {
+	#left-sidebar {
 		height: 1px;
 		width: 212px;
 		float: left;
 	}
 
-	.main-content {
+	#mainContent {
 		margin-left: 8px;
 	}
 }

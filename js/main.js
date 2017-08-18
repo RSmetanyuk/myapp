@@ -32,7 +32,7 @@ function main () {
   document.getElementById("startRow").disabled = false;
   document.getElementById("overlay2").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
-  document.getElementById("hide").style.display = "inline";
+  document.getElementById("pagination").style.display = "inline-block";
   dom.pageNumber(0);
 
   $(function () {
@@ -59,7 +59,7 @@ function resetData () {
   document.getElementById("startRow").disabled = true;
   document.getElementById("overlay2").style.display = "inline-block";
   dom.firstVisibleRow = 0;
-  document.getElementById("hide").style.display = "none";
+  document.getElementById("pagination").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
 };

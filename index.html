@@ -13,18 +13,18 @@
 </head>
 <body onresize="dom.onBodyResize()">
 
-	<div class="container-fluid header">
+	<div class="container-fluid" id="header">
 		<div id="headerInnerContainer">
 			<img id="logo" src="img/logo.jpg" alt="man thinks">
 			<p>What is my number?</p>
 		</div>
 	</div>
 
-	<div class="container container1">
-		<div class="left-sidebar">
+	<div class="container" id="generalContainer">
+		<div id="left-sidebar">
 		</div>
 
-		<div class="main-content">
+		<div id="mainContent">
 			<table class="table table-bordered" id="table">
 				<thead id="tableHead1">
 					<tr>
@@ -84,18 +84,18 @@
 				</div>
 			</form>
 
-			<div id="hide">
+
 			<ul class="pagination pagination-info" id="pagination">
 				<li id="buttonFirst"><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
 	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
 	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.lastVisibleRow + 1)'>Next</a></li>
 	      		<li id="buttonLast"><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
 			</ul>
-			</div>
+
 		</div>
 				
-		<div class="right-sidebar">
-			<div class="container2">
+		<div id="rightSidebar">
+			<div id="rightSidebarInnerContainer">
 				<h4 id="initialInfo"></h4>
 				<table class="table table-bordered" id="table2">
 					<thead>
@@ -112,7 +112,7 @@
 					</tbody>
 				</table>
 				<p id="generalInfo"></p>
-			</div>	
+
 			<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
 			<button id="Reset" onclick="resetData()" class="btn btn-danger btn-lg">Reset</button>			
 		</div>
