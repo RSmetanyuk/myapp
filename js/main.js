@@ -28,9 +28,9 @@ function main () {
   document.getElementById("totalRows").innerHTML = dom.combinationTxt.length;
   document.getElementById("numberCombinationsInPage").disabled = false;
   document.getElementById("numberCombinationsInPage").value = 5;
-  document.getElementById("overlay1").style.display = "none";
+  document.getElementById("numberCombinationsInPageOverlay").style.display = "none";
   document.getElementById("startRow").disabled = false;
-  document.getElementById("overlay2").style.display = "none";
+  document.getElementById("startRowOverlay").style.display = "none";
   document.getElementById("errorMessage").style.visibility  = "hidden";
   document.getElementById("pagination").style.display = "inline-block";
   dom.pageNumber(0);
@@ -53,11 +53,11 @@ function resetData () {
   document.getElementById("totalRows").innerHTML = 0;
   document.getElementById("numberCombinationsInPage").value = "";
   document.getElementById("numberCombinationsInPage").disabled = true;
-  document.getElementById("overlay1").style.display = "inline-block";
+  document.getElementById("numberCombinationsInPageOverlay").style.display = "inline-block";
   dom.rowInPage = 5;
   document.getElementById("startRow").value = "";
   document.getElementById("startRow").disabled = true;
-  document.getElementById("overlay2").style.display = "inline-block";
+  document.getElementById("startRowOverlay").style.display = "inline-block";
   dom.firstVisibleRow = 0;
   document.getElementById("pagination").style.display = "none";
   document.getElementById("returnToTopBottomBuckground").style.display = "none";

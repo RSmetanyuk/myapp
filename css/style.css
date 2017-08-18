@@ -95,23 +95,23 @@
     height: 32px;
 }
 
-#overlay1,
-#overlay2 {
+#numberCombinationsInPageOverlay,
+#startRowOverlay {
     display: inline-block;
     height: 30px;
     position: absolute;
     top: 0
     left: 0;
-    /*border: 1px solid red;*/
+    border: 1px solid red;
 }
 
-#overlay1 {
+#numberCombinationsInPageOverlay {
 	width: 70px;
 	margin-top: -30px;
 	margin-left: 125px;
 }
 
-#overlay2 {
+#startRowOverlay {
 	width: 73px;
 	margin-left: 115px;
 	margin-top: -35px;
@@ -131,7 +131,7 @@
 	font-size: 14px;
 }
 
-#startRowGenral {
+#startRowOuterContainer {
    float:left;
 	margin-top: -35px;
 	margin-left: 115px;
