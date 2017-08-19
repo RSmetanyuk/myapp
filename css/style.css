@@ -62,11 +62,6 @@
 	width: 520px;
 }
 
-#initialInfo {
-	text-align: center;
-	width: 498px;
-}
-
 #table,
 #table2,
 #table2v2 {
@@ -180,6 +175,10 @@
     border-color: #ddd;
 }
 
+#generalInfo {
+	text-align: center;
+}
+
 .disabled {
     pointer-events: none;
 }
@@ -270,10 +269,6 @@
 		float: left;
 	}
 
-	#initialInfo {
-		width: 700px;
-	}
-
 	#table2v2 {
 		width: 700px;
 	}
@@ -285,6 +280,10 @@
 
 	#pagination {
 		margin-left: 123px;
+	}
+
+	#generalInfo {
+	font-weight: bold;
 	}
 }
 
@@ -315,10 +314,6 @@
 	#rightSidebar {
 		width: 212px;
 		float: left;
-	}
-
-	#initialInfo {
-		width: 190px;
 	}
 
 	#table2v2 {

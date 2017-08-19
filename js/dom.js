@@ -1,5 +1,4 @@
 var dom = {
-  numberOfStrategy: 0,
   counterWinsInStrategy: 0,
   combinationCounter: 0,
   combinationTxt: [],
@@ -26,13 +25,6 @@ var dom = {
     }; 
     
     winners && dom.counterWinsInStrategy++;
-  },
-  
-  writeInitialInfo: function () {
-    dom.numberOfStrategy++;
-    document.getElementById("initialInfo").innerHTML = 
-      "Number of strategy: " + 
-      dom.numberOfStrategy;
   },
 
   checkCase: function (persons) {
@@ -84,7 +76,6 @@ var dom = {
     person4.winsCounter = 0;
     dom.counterWinsInStrategy = 0;
     dom.combinationCounter = 0;
-    dom.numberOfStrategy = 0;
   },
 
   pageNumber: function (n) { // "n" - number first row on page

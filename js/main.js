@@ -2,8 +2,6 @@ function main () {
   document.getElementById("Reset").style.display = "inline";
   document.getElementById("Start").style.display = "none";
   dom.combinationTxt = [];
-
-  dom.writeInitialInfo();
   
   var person1 = new Person1 (0);
   var person2 = new Person2 (0);
@@ -48,7 +46,6 @@ function resetData () {
   document.getElementById("table2v2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
                  "<th>Wins count</th><td></td><td></td><td></td><td></td></tr></tbody>";
-  document.getElementById("initialInfo").innerHTML = "";
   document.getElementById("generalInfo").innerHTML = "";
   document.getElementById("totalRows").innerHTML = 0;
   document.getElementById("numberCombinationsInPage").value = "";
