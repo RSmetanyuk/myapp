@@ -148,13 +148,14 @@
 }
 
 #Reset {
-	display: none;
+	display: inline;
 	width: 220px;
 	margin-left: 150px;
 
 }
 
 #Start {
+	display: none;
 	width: 220px;
 	margin-left: 150px;
 }
@@ -175,7 +176,7 @@
     border-color: #ddd;
 }
 
-#generalInfo {
+#totalNumberOfWins {
 	text-align: center;
 }
 
@@ -282,7 +283,7 @@
 		margin-left: 123px;
 	}
 
-	#generalInfo {
+	#totalNumberOfWins {
 	font-weight: bold;
 	}
 }
