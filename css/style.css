@@ -176,7 +176,7 @@
     border-color: #ddd;
 }
 
-#totalNumberOfWins {
+#rightSidebar p {
 	text-align: center;
 }
 
@@ -283,7 +283,7 @@
 		margin-left: 123px;
 	}
 
-	#totalNumberOfWins {
+	#rightSidebar p {
 	font-weight: bold;
 	}
 }

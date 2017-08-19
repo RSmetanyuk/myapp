@@ -67,15 +67,14 @@ var dom = {
                     "</td><td>" + person3.winsCounter + 
                     "</td><td>" + person4.winsCounter + "</td></tr></tbody>";
 
-    document.getElementById("totalNumberOfWins").innerHTML = 
-    "Total number of wins is " + dom.counterWinsInStrategy;
+    document.getElementById("totalNumberOfWins").innerHTML = dom.counterWinsInStrategy;
     
-    /*person1.winsCounter = 0;
+    person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;
     person4.winsCounter = 0;
     dom.counterWinsInStrategy = 0;
-    dom.combinationCounter = 0;*/
+    dom.combinationCounter = 0;
   },
 
   pageNumber: function (n) { // "n" - number first row on page
@@ -252,7 +251,7 @@ var dom = {
     };
   },
 
-  start: function () {
+  onStartup: function () {
     document.getElementById("Reset").style.display = "inline";
     document.getElementById("Start").style.display = "none";
     document.getElementById("totalRows").innerHTML = dom.combinationTxt.length;
@@ -262,19 +261,22 @@ var dom = {
     document.getElementById("startRow").disabled = false;
     document.getElementById("startRowOverlay").style.display = "none";
     document.getElementById("errorMessage").style.visibility  = "hidden";
-    document.getElementById("pagination").style.display = "inline-block";
-    dom.pageNumber(0);
+    document.getElementById("pagination").style.display = "inline-block";    
   },
 
   reset: function () {
     document.getElementById("Reset").style.display = "none";
     document.getElementById("Start").style.display = "inline";
     document.getElementById("tableBody").innerHTML = "";
-    /*document.getElementById("table2Body").innerHTML = "";
+    document.getElementById("table2Body").innerHTML = 
+      "<tbody><tr><td>A</td><td>0</td></tr>" +
+              "<tr><td>B</td><td>0</td></tr>" +
+              "<tr><td>C</td><td>0</td></tr>" +
+              "<tr><td>D</td><td>0</td></tr></tbody>";
     document.getElementById("table2v2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td></td><td></td><td></td><td></td></tr></tbody>";*/   
-    document.getElementById("totalNumberOfWins").innerHTML = "";
+      "<th>Wins count</th><td></td><td></td><td></td><td></td></tr></tbody>"; 
+    document.getElementById("totalNumberOfWins").innerHTML = 0;
     document.getElementById("totalRows").innerHTML = 0;
     document.getElementById("numberCombinationsInPage").value = "";
     document.getElementById("numberCombinationsInPage").disabled = true;
