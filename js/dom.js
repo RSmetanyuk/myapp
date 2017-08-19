@@ -1,15 +1,15 @@
 var dom = {
-  counterWinsInStrategy: 0,
-  combinationCounter: 0,
-  combinationTxt: [],
-  rowInPage: 5,
+  counterOfCombinations: 0,
+  counterOfWins: 0,
+  arrayOfMainTableRows: [],
+  maxRowsPerPage: 5,
   firstVisibleRow: 0,
   lastVisibleRow: 0,
-  stepsLog: "",
-  step: 0,
-  speedup: 0,
-  topPozition: 0,
-  timer: 0,
+  pageScrollLog: "",
+  pageScrollStep: 0,
+  pageScrollSpeedup: 0,
+  pageScrollTopPozitionOnStart: 0,
+  pageScrollTimer: 0,
     
   winCount: function(persons) {
     var winners = "";        
@@ -24,15 +24,15 @@ var dom = {
         };
     }; 
     
-    winners && dom.counterWinsInStrategy++;
+    winners && dom.counterOfWins++;
   },
 
   checkCase: function (persons) {
-    dom.combinationTxt[dom.combinationCounter] = "";
-    dom.combinationTxt[dom.combinationCounter] += "<tr><td>" + (dom.combinationCounter + 1) + "</td>";
+    dom.arrayOfMainTableRows[dom.counterOfCombinations] = "";
+    dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<tr><td>" + (dom.counterOfCombinations + 1) + "</td>";
     
     for (var i = 0; i <= 3; i++) {
-      dom.combinationTxt[dom.combinationCounter] += "<td>" + persons[i].number + "</td>";
+      dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<td>" + persons[i].number + "</td>";
     };
 
     for (var i = 0; i <= 3; i++) {
@@ -44,37 +44,37 @@ var dom = {
         Coloured = ' class="success"'
       };
 
-      dom.combinationTxt[dom.combinationCounter] += "<td" + Coloured + ">" + persons[i].getAnswer(
+      dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<td" + Coloured + ">" + persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
         persons[(i + 3) % 4].number) + "</td>";
     };
 
-    dom.combinationTxt[dom.combinationCounter] += "</tr>";
+    dom.arrayOfMainTableRows[dom.counterOfCombinations] += "</tr>";
     dom.winCount(persons);
   },
     
   writeGeneralInfo: function(person1, person2, person3, person4) {
-    document.getElementById("table2Body").innerHTML =
+    document.getElementById("winsTableBody").innerHTML =
       "<tr><td>A</td><td>" + person1.winsCounter + "</td></tr>" +
       "<tr><td>B</td><td>" + person2.winsCounter + "</td></tr>" +
       "<tr><td>C</td><td>" + person3.winsCounter + "</td></tr>" +
       "<tr><td>D</td><td>" + person4.winsCounter + "</td></tr>";
-    document.getElementById("table2v2").innerHTML =
+    document.getElementById("winsTable2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
       "<th>Wins count</th><td>" + person1.winsCounter + 
                     "</td><td>" + person2.winsCounter + 
                     "</td><td>" + person3.winsCounter + 
                     "</td><td>" + person4.winsCounter + "</td></tr></tbody>";
 
-    document.getElementById("totalNumberOfWins").innerHTML = dom.counterWinsInStrategy;
+    document.getElementById("totalNumberOfWins").innerHTML = dom.counterOfWins;
     
     person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;
     person4.winsCounter = 0;
-    dom.counterWinsInStrategy = 0;
-    dom.combinationCounter = 0;
+    dom.counterOfWins = 0;
+    dom.counterOfCombinations = 0;
   },
 
   pageNumber: function (n) { // "n" - number first row on page
@@ -83,17 +83,17 @@ var dom = {
       if (n < 0) { // to fix "previous press"
         n = 0
         for (var i = 0; i < dom.firstVisibleRow; i++) {
-          x += dom.combinationTxt[n + i];
+          x += dom.arrayOfMainTableRows[n + i];
           dom.lastVisibleRow = n + i;
         };
       } else {
-        for (var i = 0; i < dom.rowInPage && i + n < dom.combinationTxt.length; i++) {
-          x += dom.combinationTxt[n + i];
+        for (var i = 0; i < dom.maxRowsPerPage && i + n < dom.arrayOfMainTableRows.length; i++) {
+          x += dom.arrayOfMainTableRows[n + i];
           dom.lastVisibleRow = n + i;
         };
       };
 
-      document.getElementById("tableBody").innerHTML = x;
+      document.getElementById("mainTableBody").innerHTML = x;
       dom.firstVisibleRow = n;
       document.getElementById("startRow").value = n +1;
       document.getElementById("errorMessage").style.visibility  = "hidden";
@@ -107,7 +107,7 @@ var dom = {
         document.getElementById("buttonFirst").className = "unDisabled";
       };
 
-      if (n >= dom.combinationTxt.length - dom.rowInPage) { // dasabled "Next" button
+      if (n >= dom.arrayOfMainTableRows.length - dom.maxRowsPerPage) { // dasabled "Next" button
         document.getElementById("buttonNext").className = "disabled";
         document.getElementById("buttonLast").className = "disabled";
       } else {
@@ -121,7 +121,7 @@ var dom = {
   makeErrorMessage (input) {
     if (input < 0) {
       document.getElementById("errorMessage").innerHTML  = 'You can start from "1" only';
-    } else if (input >= dom.combinationTxt.length) {
+    } else if (input >= dom.arrayOfMainTableRows.length) {
       document.getElementById("errorMessage").innerHTML  = 'There are only 256 rows';
     } else {
       document.getElementById("errorMessage").innerHTML  = 'You can only enter a number';
@@ -135,7 +135,7 @@ var dom = {
 
   changeNumberCombinationsInPage: function(x) {
     x = document.getElementById("numberCombinationsInPage").value
-    dom.rowInPage = + x;
+    dom.maxRowsPerPage = + x;
     document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
       //document.getElementById("returnToTopBottomBuckground").style.display = "inline";
@@ -151,7 +151,7 @@ var dom = {
 
   setFirstVisibleRow: function () {
     var enteredRowNumber = + document.getElementById("startRow").value - 1;
-    if(enteredRowNumber >= 0 && enteredRowNumber < dom.combinationTxt.length) {
+    if(enteredRowNumber >= 0 && enteredRowNumber < dom.arrayOfMainTableRows.length) {
       document.getElementById("errorMessage").style.visibility  = "hidden";
       dom.firstVisibleRow = enteredRowNumber;
       dom.pageNumber(enteredRowNumber);   
@@ -162,38 +162,38 @@ var dom = {
     }; 
   },
 
-  move: function (step, speedup) {
+  move: function (pageScrollStep, speedup) {
     clearTimeout(dom.timer);
-    dom.step = Math.abs(step);
+    dom.pageScrollStep = Math.abs(pageScrollStep);
     dom.speedup = speedup;
-    dom.stepsLog = "Move steps, px: ";
+    dom.pageScrollLog = "Move pageScrollSteps, px: ";
     dom.topPozition = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if (step < 0) {
+    if (pageScrollStep < 0) {
       dom.toTop();
-    } else if (step > 0) {
+    } else if (pageScrollStep > 0) {
       dom.toBottom();
     }
   },
 
   toTop: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-    if(top > dom.topPozition / 2 + dom.step * dom.speedup) {
-      dom.step *= dom.speedup;
-      window.scrollBy(0, - dom.step);
-      dom.stepsLog += dom.step.toFixed(1) + " / ";
+    if(top > dom.topPozition / 2 + dom.pageScrollStep * dom.speedup) {
+      dom.pageScrollStep *= dom.speedup;
+      window.scrollBy(0, - dom.pageScrollStep);
+      dom.pageScrollLog += dom.pageScrollStep.toFixed(1) + " / ";
       dom.timer = setTimeout('dom.toTop()',20);
     } else if (top > dom.topPozition / 2) {
       window.scrollBy(0, - (dom.topPozition - (dom.topPozition - top) * 2));
-      dom.stepsLog += "<<< " + (dom.topPozition - (dom.topPozition - top) * 2).toFixed(1) + " >>> / ";
+      dom.pageScrollLog += "<<< " + (dom.topPozition - (dom.topPozition - top) * 2).toFixed(1) + " >>> / ";
       dom.timer = setTimeout('dom.toTop()',20);
     } else if (top > 0) {
-      window.scrollBy(0, - dom.step);
-      dom.stepsLog += dom.step.toFixed(1) + " / ";
+      window.scrollBy(0, - dom.pageScrollStep);
+      dom.pageScrollLog += dom.pageScrollStep.toFixed(1) + " / ";
       dom.timer = setTimeout('dom.toTop()',20);
-      dom.step /= dom.speedup;
+      dom.pageScrollStep /= dom.speedup;
     } else {
       clearTimeout(dom.timer);
-      //alert (dom.stepsLog);
+      //alert (dom.pageScrollLog);
     };
     return false;
   },
@@ -201,23 +201,23 @@ var dom = {
   toBottom: function () {
     var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     var distance = document.body.offsetHeight - document.documentElement.clientHeight - dom.topPozition;
-    if(top < dom.topPozition + distance / 2 - dom.step * dom.speedup) {
-      dom.step *= dom.speedup;
-      window.scrollBy(0, dom.step);
-      dom.stepsLog += dom.step.toFixed(1) + " / ";
+    if(top < dom.topPozition + distance / 2 - dom.pageScrollStep * dom.speedup) {
+      dom.pageScrollStep *= dom.speedup;
+      window.scrollBy(0, dom.pageScrollStep);
+      dom.pageScrollLog += dom.pageScrollStep.toFixed(1) + " / ";
       dom.timer = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance / 2) {
       window.scrollBy(0, distance - (top - dom.topPozition) * 2);
-      dom.stepsLog += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
+      dom.pageScrollLog += "<<< " + (distance - (top - dom.topPozition) * 2).toFixed(1) + " >>> / ";
       dom.timer = setTimeout('dom.toBottom()',20);
     } else if (top < dom.topPozition + distance) {
-      window.scrollBy(0, dom.step);
-      dom.stepsLog += dom.step.toFixed(1) + " / ";
+      window.scrollBy(0, dom.pageScrollStep);
+      dom.pageScrollLog += dom.pageScrollStep.toFixed(1) + " / ";
       dom.timer = setTimeout('dom.toBottom()',20);
-      dom.step /= dom.speedup;
+      dom.pageScrollStep /= dom.speedup;
     } else {
       clearTimeout(dom.timer);
-      //alert (dom.stepsLog);
+      //alert (dom.pageScrollLog);
     };
     return false;
   },
@@ -254,7 +254,7 @@ var dom = {
   onStartup: function () {
     document.getElementById("Reset").style.display = "inline";
     document.getElementById("Start").style.display = "none";
-    document.getElementById("totalRows").innerHTML = dom.combinationTxt.length;
+    document.getElementById("totalRows").innerHTML = dom.arrayOfMainTableRows.length;
     document.getElementById("numberCombinationsInPage").disabled = false;
     document.getElementById("numberCombinationsInPage").value = 5;
     document.getElementById("numberCombinationsInPageOverlay").style.display = "none";
@@ -267,21 +267,21 @@ var dom = {
   reset: function () {
     document.getElementById("Reset").style.display = "none";
     document.getElementById("Start").style.display = "inline";
-    document.getElementById("tableBody").innerHTML = "";
-    document.getElementById("table2Body").innerHTML = 
+    document.getElementById("mainTableBody").innerHTML = "";
+    document.getElementById("winsTableBody").innerHTML = 
       "<tbody><tr><td>A</td><td>0</td></tr>" +
               "<tr><td>B</td><td>0</td></tr>" +
               "<tr><td>C</td><td>0</td></tr>" +
               "<tr><td>D</td><td>0</td></tr></tbody>";
-    document.getElementById("table2v2").innerHTML =
+    document.getElementById("winsTable2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td></td><td></td><td></td><td></td></tr></tbody>"; 
+      "<th>Wins count</th><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>"; 
     document.getElementById("totalNumberOfWins").innerHTML = 0;
     document.getElementById("totalRows").innerHTML = 0;
     document.getElementById("numberCombinationsInPage").value = "";
     document.getElementById("numberCombinationsInPage").disabled = true;
     document.getElementById("numberCombinationsInPageOverlay").style.display = "inline-block";
-    dom.rowInPage = 5;
+    dom.maxRowsPerPage = 5;
     document.getElementById("startRow").value = "";
     document.getElementById("startRow").disabled = true;
     document.getElementById("startRowOverlay").style.display = "inline-block";

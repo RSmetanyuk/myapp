@@ -25,8 +25,8 @@
 		</div>
 
 		<div id="mainContent">
-			<table class="table table-bordered" id="table">
-				<thead id="tableHead1">
+			<table class="table table-bordered" id="mainTable">
+				<thead id="mainTableHead1">
 					<tr>
 						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
 						<th>A number</th>
@@ -39,7 +39,7 @@
 						<th>D answer</th>
 					</tr>
 				</thead>				
-				<thead id="tableHead2">
+				<thead id="mainTableHead2">
 					<tr>
 						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
 						<th>Person A number</th>
@@ -52,7 +52,7 @@
 						<th>Person D answer</th>
 					</tr>
 				</thead>
-				<tbody id="tableBody">
+				<tbody id="mainTableBody">
 				</tbody>
 			</table>
 
@@ -83,9 +83,9 @@
 
 			<ul class="pagination pagination-info" id="pagination">
 				<li id="buttonFirst"><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
-	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.rowInPage)'>Previous</a></li>
+	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.maxRowsPerPage)'>Previous</a></li>
 	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.lastVisibleRow + 1)'>Next</a></li>
-	      		<li id="buttonLast"><a href='#' onclick='dom.pageNumber(dom.combinationTxt.length - dom.rowInPage)'>Last</a></li>
+	      		<li id="buttonLast"><a href='#' onclick='dom.pageNumber(dom.arrayOfMainTableRows.length - dom.maxRowsPerPage)'>Last</a></li>
 			</ul>
 
 		</div>
@@ -93,17 +93,17 @@
 		<div id="rightSidebar">
 			<p>Total number of wins is <span id="totalNumberOfWins"></span></p>
 
-			<table class="table table-bordered" id="table2">
+			<table class="table table-bordered" id="winsTable">
 				<thead>
 					<tr>
 						<th>Persons</th>
 						<th>Wins count</th>
 					</tr>
 				</thead>
-				<tbody id="table2Body">
+				<tbody id="winsTableBody">
 				</tbody>
 			</table>
-			<table class="table table-bordered" id="table2v2">
+			<table class="table table-bordered" id="winsTable2">
 				<tbody>				
 				</tbody>
 			</table>
