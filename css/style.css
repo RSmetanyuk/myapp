@@ -79,39 +79,39 @@
 		text-align: center;
 }
 
-#form1,
-#form2 {
+#maxRowsPerPageForm,
+#firstVisibleRowForm {
     position: relative;
     height: 32px;
     margin-top: 3px;
 }
 
-#form1 p,
-#form2 p {
+#maxRowsPerPageForm p,
+#firstVisibleRowForm p {
     float: left;
     margin-right: 5px;
     margin-top: 5px;
 }
 
-#numberCombinationsInPage {
+#maxRowsPerPage {
 	width: 70px;
 	height: 30px;
 	font-size: 14px;
 }
 
-#startRow {
+#firstVisibleRow {
 	width: 45px;
 	font-size: 14px;
 }
 
-#startRowOuterContainer {
+#firstVisibleRowContainer {
 	position: relative;
 	float: left;
 	width: 75px;
 }
 
 #numberCombinationsInPageOverlay,
-#startRowOverlay {
+#firstVisibleRowOverlay {
 	height: 30px;
 	position: absolute;
     top: 0;
@@ -122,7 +122,7 @@
 	width: 70px;
 }
 
-#startRowOverlay {
+#firstVisibleRowOverlay {
 	width: 73px;
 	left: 115px;
 }
@@ -184,15 +184,15 @@
     pointer-events: none;
 }
 
-#returnToTop,
-#returnToBottom {
+#scrollToTopButton,
+#scrollToBottomButton {
     position: fixed;
     right: 22px;
     text-align: center;
     display: none;
 }
 
-#returnToTopBottomBuckground {
+#scrollButtonsBuckground {
     position: fixed;
     right: 5px;
     bottom: 5px;
@@ -203,11 +203,11 @@
     display: none;
 }
 
-#returnToTop {
+#scrollToTopButton {
 	bottom: 33px;
 }
 
-#returnToBottom {
+#scrollToBottomButton {
 	bottom: 4px;
 }
 

@@ -58,34 +58,34 @@
 
 			<p>Total rows (combinations): <span id="totalRows"></span></p>
 
-			<div id="form1">
+			<div id="maxRowsPerPageForm">
 				<p>Max rows per page</p>
-				<select class="form-control" id="numberCombinationsInPage" onchange="dom.changeNumberCombinationsInPage()">	
+				<select class="form-control" id="maxRowsPerPage" onchange="dom.maxRowsPerPageOnChange()">	
 					<option value=5>5</option>
 					<option value=10>10</option>
 					<option value=15>15</option>
 					<option value=20>20</option>
 					<option value=256>all</option>
 				</select>
-				<div id="numberCombinationsInPageOverlay" onclick="dom.onClickDisabledInput()"></div>
+				<div id="numberCombinationsInPageOverlay" onclick="dom.overlayOnClick()"></div>
 				<div class="alert alert-danger" id="errorMessage"></div>		
 			</div>
 
-			<div id="form2">
+			<div id="firstVisibleRowForm">
 				<p>Start display from</p>
-				<div class="input-group input-group-sm" id="startRowOuterContainer">
+				<div class="input-group input-group-sm" id="firstVisibleRowContainer">
   					<span class="input-group-addon" id="addon1">#</span>
-  					<input type="text" class="form-control" id="startRow" onchange="dom.setFirstVisibleRow()" placeholder="......." aria-describedby="addon1">
+  					<input type="text" class="form-control" id="firstVisibleRow" onchange="dom.onTypeFirstVisibleRowHandler()" placeholder="......." aria-describedby="addon1">
 				</div>			
-				<div id="startRowOverlay" onclick="dom.onClickDisabledInput()"></div>
+				<div id="firstVisibleRowOverlay" onclick="dom.overlayOnClick()"></div>
 			</div>
 
 
 			<ul class="pagination pagination-info" id="pagination">
-				<li id="buttonFirst"><a href='#' onclick='dom.pageNumber(0)'>First</a></li>
-	      		<li id="buttonPrevious"><a href='#' onclick='dom.pageNumber(dom.firstVisibleRow - dom.maxRowsPerPage)'>Previous</a></li>
-	      		<li id="buttonNext"><a href='#' onclick='dom.pageNumber(dom.lastVisibleRow + 1)'>Next</a></li>
-	      		<li id="buttonLast"><a href='#' onclick='dom.pageNumber(dom.arrayOfMainTableRows.length - dom.maxRowsPerPage)'>Last</a></li>
+				<li id="buttonFirst"><a href='#' onclick='dom.setFirstVisibleRow(0)'>First</a></li>
+	      		<li id="buttonPrevious"><a href='#' onclick='dom.setFirstVisibleRow(dom.firstVisibleRow - dom.maxRowsPerPage)'>Previous</a></li>
+	      		<li id="buttonNext"><a href='#' onclick='dom.setFirstVisibleRow(dom.lastVisibleRow + 1)'>Next</a></li>
+	      		<li id="buttonLast"><a href='#' onclick='dom.setFirstVisibleRow(dom.arrayOfMainTableRows.length - dom.maxRowsPerPage)'>Last</a></li>
 			</ul>
 
 		</div>
@@ -113,9 +113,9 @@
 		</div>
 	</div>
 
-<div id="returnToTopBottomBuckground">
-	<a id="returnToTop" onclick="dom.move(-1, 1.19)"><span class="glyphicon glyphicon-chevron-up"></span></a>
-	<a id="returnToBottom" onclick="dom.move(1, 1.19)"><span class="glyphicon glyphicon-chevron-down"></span></a>
+<div id="scrollButtonsBuckground">
+	<a id="scrollToTopButton" onclick="dom.pageScroll(-1, 1.19)"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	<a id="scrollToBottomButton" onclick="dom.pageScroll(1, 1.19)"><span class="glyphicon glyphicon-chevron-down"></span></a>
 </div>
 
 </body>

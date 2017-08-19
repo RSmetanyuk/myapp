@@ -20,7 +20,7 @@ function main () {
     };
   };
   dom.writeGeneralInfo(person1, person2, person3, person4);
-  dom.pageNumber(0);
+  dom.setFirstVisibleRow(0);
   dom.onStartup();
 };
 

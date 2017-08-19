@@ -77,7 +77,7 @@ var dom = {
     dom.counterOfCombinations = 0;
   },
 
-  pageNumber: function (n) { // "n" - number first row on page
+  setFirstVisibleRow: function (n) { // "n" - number to be set
       var x = "";
 
       if (n < 0) { // to fix "previous press"
@@ -95,7 +95,7 @@ var dom = {
 
       document.getElementById("mainTableBody").innerHTML = x;
       dom.firstVisibleRow = n;
-      document.getElementById("startRow").value = n +1;
+      document.getElementById("firstVisibleRow").value = n +1;
       document.getElementById("errorMessage").style.visibility  = "hidden";
 
 
@@ -128,45 +128,42 @@ var dom = {
     };
   },
 
-  onClickDisabledInput () {
+  overlayOnClick () {  // disabled input on click
     document.getElementById("errorMessage").innerHTML  = 'Please, press Start button';
     document.getElementById("errorMessage").style.visibility  = "visible";  
   },
 
-  changeNumberCombinationsInPage: function(x) {
-    x = document.getElementById("numberCombinationsInPage").value
+  maxRowsPerPageOnChange: function(x) {
+    x = document.getElementById("maxRowsPerPage").value
     dom.maxRowsPerPage = + x;
     document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
-      //document.getElementById("returnToTopBottomBuckground").style.display = "inline";
-      //document.getElementById("returnToBottom").style.display = "inline";
-      document.getElementById("startRow").disabled = true;   
-      dom.pageNumber(0);  
+      document.getElementById("firstVisibleRow").disabled = true;   
+      dom.setFirstVisibleRow(0);  
     } else {
-      //document.getElementById("returnToTopBottomBuckground").style.display = "none";
-      document.getElementById("startRow").disabled = false;
-      dom.pageNumber(dom.firstVisibleRow);  
+      document.getElementById("firstVisibleRow").disabled = false;
+      dom.setFirstVisibleRow(dom.firstVisibleRow);  
     };
   },
 
-  setFirstVisibleRow: function () {
-    var enteredRowNumber = + document.getElementById("startRow").value - 1;
-    if(enteredRowNumber >= 0 && enteredRowNumber < dom.arrayOfMainTableRows.length) {
+  onTypeFirstVisibleRowHandler: function () {
+    var typedFirstVisibleRow = + document.getElementById("firstVisibleRow").value - 1;
+    if(typedFirstVisibleRow >= 0 && typedFirstVisibleRow < dom.arrayOfMainTableRows.length) {
       document.getElementById("errorMessage").style.visibility  = "hidden";
-      dom.firstVisibleRow = enteredRowNumber;
-      dom.pageNumber(enteredRowNumber);   
+      dom.firstVisibleRow = typedFirstVisibleRow;
+      dom.setFirstVisibleRow(typedFirstVisibleRow);   
     } else {
-      document.getElementById("startRow").value = ""
+      document.getElementById("firstVisibleRow").value = ""
       document.getElementById("errorMessage").style.visibility  = "visible";
-      dom.makeErrorMessage(enteredRowNumber); 
+      dom.makeErrorMessage(typedFirstVisibleRow); 
     }; 
   },
 
-  move: function (pageScrollStep, speedup) {
+  pageScroll: function (pageScrollStep, speedup) {
     clearTimeout(dom.timer);
     dom.pageScrollStep = Math.abs(pageScrollStep);
     dom.speedup = speedup;
-    dom.pageScrollLog = "Move pageScrollSteps, px: ";
+    dom.pageScrollLog = "Page scroll steps, px: ";
     dom.topPozition = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
     if (pageScrollStep < 0) {
       dom.toTop();
@@ -224,30 +221,30 @@ var dom = {
 
   onBodyResize: function () {
     if (document.body.offsetHeight - document.documentElement.clientHeight > 0) {
-      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
-      document.getElementById("returnToBottom").style.display = "inline";  
+      document.getElementById("scrollButtonsBuckground").style.display = "inline";
+      document.getElementById("scrollToBottomButton").style.display = "inline";  
     } else {
-      document.getElementById("returnToTopBottomBuckground").style.display = "none";
+      document.getElementById("scrollButtonsBuckground").style.display = "none";
     };
   },
 
   onScrollHandler: function () {
     if (document.body.offsetHeight > document.documentElement.clientHeight) {
-      document.getElementById("returnToTopBottomBuckground").style.display = "inline";
-      document.getElementById("returnToBottom").style.display = "inline";
+      document.getElementById("scrollButtonsBuckground").style.display = "inline";
+      document.getElementById("scrollToBottomButton").style.display = "inline";
     } else {
-      document.getElementById("returnToBottom").style.display = "none"; 
+      document.getElementById("scrollToBottomButton").style.display = "none"; 
     };
 
 
     if (window.pageYOffset >= 1) {
-      document.getElementById("returnToTop").style.display = "inline";     
+      document.getElementById("scrollToTopButton").style.display = "inline";     
     } else {
-      document.getElementById("returnToTop").style.display = "none";
+      document.getElementById("scrollToTopButton").style.display = "none";
     };
 
     if (window.pageYOffset > document.body.offsetHeight - document.documentElement.clientHeight - 1) {
-      document.getElementById("returnToBottom").style.display = "none"; 
+      document.getElementById("scrollToBottomButton").style.display = "none"; 
     };
   },
 
@@ -255,11 +252,11 @@ var dom = {
     document.getElementById("Reset").style.display = "inline";
     document.getElementById("Start").style.display = "none";
     document.getElementById("totalRows").innerHTML = dom.arrayOfMainTableRows.length;
-    document.getElementById("numberCombinationsInPage").disabled = false;
-    document.getElementById("numberCombinationsInPage").value = 5;
+    document.getElementById("maxRowsPerPage").disabled = false;
+    document.getElementById("maxRowsPerPage").value = 5;
     document.getElementById("numberCombinationsInPageOverlay").style.display = "none";
-    document.getElementById("startRow").disabled = false;
-    document.getElementById("startRowOverlay").style.display = "none";
+    document.getElementById("firstVisibleRow").disabled = false;
+    document.getElementById("firstVisibleRowOverlay").style.display = "none";
     document.getElementById("errorMessage").style.visibility  = "hidden";
     document.getElementById("pagination").style.display = "inline-block";    
   },
@@ -278,16 +275,16 @@ var dom = {
       "<th>Wins count</th><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>"; 
     document.getElementById("totalNumberOfWins").innerHTML = 0;
     document.getElementById("totalRows").innerHTML = 0;
-    document.getElementById("numberCombinationsInPage").value = "";
-    document.getElementById("numberCombinationsInPage").disabled = true;
+    document.getElementById("maxRowsPerPage").value = "";
+    document.getElementById("maxRowsPerPage").disabled = true;
     document.getElementById("numberCombinationsInPageOverlay").style.display = "inline-block";
     dom.maxRowsPerPage = 5;
-    document.getElementById("startRow").value = "";
-    document.getElementById("startRow").disabled = true;
-    document.getElementById("startRowOverlay").style.display = "inline-block";
+    document.getElementById("firstVisibleRow").value = "";
+    document.getElementById("firstVisibleRow").disabled = true;
+    document.getElementById("firstVisibleRowOverlay").style.display = "inline-block";
     dom.firstVisibleRow = 0;
     document.getElementById("pagination").style.display = "none";
-    document.getElementById("returnToTopBottomBuckground").style.display = "none";
+    document.getElementById("scrollButtonsBuckground").style.display = "none";
     document.getElementById("errorMessage").style.visibility  = "hidden";
   }
 
