@@ -12,18 +12,18 @@ var dom = {
   pageScrollTimer: 0,
     
   winCount: function(persons) {
-    var winners = "";        
+    var winners = "";
        
     for (var i = 0; i <= 3; i++) {
         if (persons[i].checkAnswer(
-              persons[(i + 1) % 4].number, 
-              persons[(i + 2) % 4].number, 
+              persons[(i + 1) % 4].number,
+              persons[(i + 2) % 4].number,
               persons[(i + 3) % 4].number)) {
-      		winners += (i + 1);
-      		persons[i].winsCounter++;
+          winners += (i + 1);
+          persons[i].winsCounter++;
         };
     }; 
-    
+
     winners && dom.counterOfWins++;
   },
 
@@ -38,8 +38,8 @@ var dom = {
     for (var i = 0; i <= 3; i++) {
       var Coloured = '';
       if(persons[i].checkAnswer(
-        persons[(i + 1) % 4].number, 
-        persons[(i + 2) % 4].number, 
+        persons[(i + 1) % 4].number,
+        persons[(i + 2) % 4].number,
         persons[(i + 3) % 4].number)) {
         Coloured = ' class="success"'
       };
@@ -53,7 +53,7 @@ var dom = {
     dom.arrayOfMainTableRows[dom.counterOfCombinations] += "</tr>";
     dom.winCount(persons);
   },
-    
+
   writeGeneralInfo: function(person1, person2, person3, person4) {
     document.getElementById("winsTableBody").innerHTML =
       "<tr><td>A</td><td>" + person1.winsCounter + "</td></tr>" +
@@ -62,13 +62,11 @@ var dom = {
       "<tr><td>D</td><td>" + person4.winsCounter + "</td></tr>";
     document.getElementById("winsTable2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td>" + person1.winsCounter + 
-                    "</td><td>" + person2.winsCounter + 
-                    "</td><td>" + person3.winsCounter + 
+      "<th>Wins count</th><td>" + person1.winsCounter +
+                    "</td><td>" + person2.winsCounter +
+                    "</td><td>" + person3.winsCounter +
                     "</td><td>" + person4.winsCounter + "</td></tr></tbody>";
-
     document.getElementById("totalNumberOfWins").innerHTML = dom.counterOfWins;
-    
     person1.winsCounter = 0;
     person2.winsCounter = 0;
     person3.winsCounter = 0;
@@ -78,13 +76,13 @@ var dom = {
   },
 
   setFirstVisibleRow: function (n) { // "n" - number to be set
-      var x = "";
+    var x = "";
 
-      if (n < 0) { // to fix "previous press"
-        n = 0
-        for (var i = 0; i < dom.firstVisibleRow; i++) {
-          x += dom.arrayOfMainTableRows[n + i];
-          dom.lastVisibleRow = n + i;
+    if (n < 0) { // to fix "previous press"
+      n = 0
+      for (var i = 0; i < dom.firstVisibleRow; i++) {
+        x += dom.arrayOfMainTableRows[n + i];
+        dom.lastVisibleRow = n + i;
         };
       } else {
         for (var i = 0; i < dom.maxRowsPerPage && i + n < dom.arrayOfMainTableRows.length; i++) {
@@ -92,14 +90,12 @@ var dom = {
           dom.lastVisibleRow = n + i;
         };
       };
-
       document.getElementById("mainTableBody").innerHTML = x;
       dom.firstVisibleRow = n;
       document.getElementById("firstVisibleRow").value = n +1;
       document.getElementById("errorMessage").style.visibility  = "hidden";
 
-
-      if (n === 0) { // dasabled "Previous" button
+      if (n === 0) {    // dasabled "Previous" button
         document.getElementById("buttonPrevious").className = "disabled";
         document.getElementById("buttonFirst").className = "disabled";
       } else {
@@ -107,12 +103,12 @@ var dom = {
         document.getElementById("buttonFirst").className = "unDisabled";
       };
 
-      if (n >= dom.arrayOfMainTableRows.length - dom.maxRowsPerPage) { // dasabled "Next" button
+      if (n >= dom.arrayOfMainTableRows.length - dom.maxRowsPerPage) {    // dasabled "Next" button
         document.getElementById("buttonNext").className = "disabled";
         document.getElementById("buttonLast").className = "disabled";
       } else {
         document.getElementById("buttonNext").className = "unDisabled";
-        document.getElementById("buttonLast").className = "unDisabled";        
+        document.getElementById("buttonLast").className = "unDisabled";
       };
 
       dom.onBodyResize ();
@@ -138,7 +134,7 @@ var dom = {
     dom.maxRowsPerPage = + x;
     document.getElementsByClassName("btn-xs").innerHTML  = x;
     if (+ x === 256) {
-      document.getElementById("firstVisibleRow").disabled = true;   
+      document.getElementById("firstVisibleRow").disabled = true;
       dom.setFirstVisibleRow(0);  
     } else {
       document.getElementById("firstVisibleRow").disabled = false;
@@ -222,7 +218,7 @@ var dom = {
   onBodyResize: function () {
     if (document.body.offsetHeight - document.documentElement.clientHeight > 0) {
       document.getElementById("scrollButtonsBuckground").style.display = "inline";
-      document.getElementById("scrollToBottomButton").style.display = "inline";  
+      document.getElementById("toBottomButton").style.display = "inline";  
     } else {
       document.getElementById("scrollButtonsBuckground").style.display = "none";
     };
@@ -231,20 +227,19 @@ var dom = {
   onScrollHandler: function () {
     if (document.body.offsetHeight > document.documentElement.clientHeight) {
       document.getElementById("scrollButtonsBuckground").style.display = "inline";
-      document.getElementById("scrollToBottomButton").style.display = "inline";
+      document.getElementById("toBottomButton").style.display = "inline";
     } else {
-      document.getElementById("scrollToBottomButton").style.display = "none"; 
+      document.getElementById("toBottomButton").style.display = "none"; 
     };
 
-
     if (window.pageYOffset >= 1) {
-      document.getElementById("scrollToTopButton").style.display = "inline";     
+      document.getElementById("toTopButton").style.display = "inline";
     } else {
-      document.getElementById("scrollToTopButton").style.display = "none";
+      document.getElementById("toTopButton").style.display = "none";
     };
 
     if (window.pageYOffset > document.body.offsetHeight - document.documentElement.clientHeight - 1) {
-      document.getElementById("scrollToBottomButton").style.display = "none"; 
+      document.getElementById("toBottomButton").style.display = "none"; 
     };
   },
 
@@ -258,7 +253,7 @@ var dom = {
     document.getElementById("firstVisibleRow").disabled = false;
     document.getElementById("firstVisibleRowOverlay").style.display = "none";
     document.getElementById("errorMessage").style.visibility  = "hidden";
-    document.getElementById("pagination").style.display = "inline-block";    
+    document.getElementById("pagination").style.display = "inline-block";
   },
 
   reset: function () {
@@ -272,7 +267,7 @@ var dom = {
               "<tr><td>D</td><td>0</td></tr></tbody>";
     document.getElementById("winsTable2").innerHTML =
       "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>"; 
+      "<th>Wins count</th><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>";
     document.getElementById("totalNumberOfWins").innerHTML = 0;
     document.getElementById("totalRows").innerHTML = 0;
     document.getElementById("maxRowsPerPage").value = "";

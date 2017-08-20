@@ -1,122 +1,120 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>My app</title>
-	<script src="js/Person.js"></script>
-	<script src="js/dom.js"></script>
-	<script src="js/main.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My app</title>
+  <script src="js/Person.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body onresize="dom.onBodyResize()">
 
-	<div class="container-fluid header">
-		<div class="headerInnerContainer">
-			<img class="logo" src="img/logo.jpg" alt="man thinks">
-			<p>What is my number?</p>
-		</div>
-	</div>
+  <div class="container-fluid header">
+    <div class="headerInnerContainer">
+      <img class="logo" src="img/logo.jpg" alt="man thinks">
+      <p>What is my number?</p>
+    </div>
+  </div>
 
-	<div class="container generalContainer">
-		<div class="left-sidebar">
-		</div>
+  <div class="container generalContainer">
+    <div class="left-sidebar">
+    </div>
 
-		<div class="mainContent">
-			<table class="table table-bordered mainTable">
-				<thead class="mainTableHead1">
-					<tr>
-						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
-						<th>A number</th>
-						<th>B number</th>
-						<th>C number</th>
-						<th>D number</th>
-						<th>A answer</th>
-						<th>B answer</th>
-						<th>C answer</th>
-						<th>D answer</th>
-					</tr>
-				</thead>				
-				<thead class="mainTableHead2">
-					<tr>
-						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
-						<th>Person A number</th>
-						<th>Person B number</th>
-						<th>Person C number</th>
-						<th>Person D number</th>
-						<th>Person A answer</th>
-						<th>Person B answer</th>
-						<th>Person C answer</th>
-						<th>Person D answer</th>
-					</tr>
-				</thead>
-				<tbody id="mainTableBody">
-				</tbody>
-			</table>
+    <div class="mainContent">
+      <table class="table table-bordered mainTable">
+        <thead class="mainTableHead1">
+          <tr>
+            <th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
+            <th>A number</th>
+            <th>B number</th>
+            <th>C number</th>
+            <th>D number</th>
+            <th>A answer</th>
+            <th>B answer</th>
+            <th>C answer</th>
+            <th>D answer</th>
+          </tr>
+        </thead>
+        <thead class="mainTableHead2">
+          <tr>
+            <th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
+            <th>Person A number</th>
+            <th>Person B number</th>
+            <th>Person C number</th>
+            <th>Person D number</th>
+            <th>Person A answer</th>
+            <th>Person B answer</th>
+            <th>Person C answer</th>
+            <th>Person D answer</th>
+          </tr>
+        </thead>
+        <tbody id="mainTableBody"></tbody>
+      </table>
 
-			<p>Total rows (combinations): <span id="totalRows"></span></p>
+      <p>Total rows (combinations): <span id="totalRows"></span></p>
 
-			<div class="maxRowsPerPageForm">
-				<p>Max rows per page</p>
-				<select class="form-control" id="maxRowsPerPage" onchange="dom.maxRowsPerPageOnChange()">	
-					<option value=5>5</option>
-					<option value=10>10</option>
-					<option value=15>15</option>
-					<option value=20>20</option>
-					<option value=256>all</option>
-				</select>
-				<div id="numberCombinationsInPageOverlay" onclick="dom.overlayOnClick()"></div>
-				<div class="alert alert-danger" id="errorMessage"></div>		
-			</div>
+      <div class="maxRowsPerPageForm">
+        <p>Max rows per page</p>
+        <select class="form-control" id="maxRowsPerPage" onchange="dom.maxRowsPerPageOnChange()">	
+          <option value=5>5</option>
+          <option value=10>10</option>
+          <option value=15>15</option>
+          <option value=20>20</option>
+          <option value=256>all</option>
+        </select>
+        <div id="numberCombinationsInPageOverlay" onclick="dom.overlayOnClick()"></div>
+        <div class="alert alert-danger" id="errorMessage"></div>
+      </div>
 
-			<div class="firstVisibleRowForm">
-				<p>Start display from</p>
-				<div class="input-group input-group-sm">
-  					<span class="input-group-addon" id="addon1">#</span>
-  					<input type="text" class="form-control" id="firstVisibleRow" onchange="dom.onTypeFirstVisibleRowHandler()" placeholder="......." aria-describedby="addon1">
-				</div>			
-				<div id="firstVisibleRowOverlay" onclick="dom.overlayOnClick()"></div>
-			</div>
+      <div class="firstVisibleRowForm">
+        <p>Start display from</p>
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="addon1">#</span>
+          <input type="text" class="form-control" id="firstVisibleRow" onchange="dom.onTypeFirstVisibleRowHandler()"
+          placeholder="......." aria-describedby="addon1">
+        </div>
+        <div id="firstVisibleRowOverlay" onclick="dom.overlayOnClick()"></div>
+      </div>
 
+      <ul class="pagination pagination-info" id="pagination">
+        <li id="buttonFirst"><a href='#' onclick='dom.setFirstVisibleRow(0)'>First</a></li>
+        <li id="buttonPrevious"><a href='#' onclick='dom.setFirstVisibleRow(dom.firstVisibleRow -
+        dom.maxRowsPerPage)'>Previous</a></li>
+        <li id="buttonNext"><a href='#' onclick='dom.setFirstVisibleRow(dom.lastVisibleRow + 1)'>Next</a></li>
+        <li id="buttonLast"><a href='#' onclick='dom.setFirstVisibleRow(dom.arrayOfMainTableRows.length -
+        dom.maxRowsPerPage)'>Last</a></li>
+      </ul>
+    </div>
 
-			<ul class="pagination pagination-info" id="pagination">
-				<li id="buttonFirst"><a href='#' onclick='dom.setFirstVisibleRow(0)'>First</a></li>
-	      		<li id="buttonPrevious"><a href='#' onclick='dom.setFirstVisibleRow(dom.firstVisibleRow - dom.maxRowsPerPage)'>Previous</a></li>
-	      		<li id="buttonNext"><a href='#' onclick='dom.setFirstVisibleRow(dom.lastVisibleRow + 1)'>Next</a></li>
-	      		<li id="buttonLast"><a href='#' onclick='dom.setFirstVisibleRow(dom.arrayOfMainTableRows.length - dom.maxRowsPerPage)'>Last</a></li>
-			</ul>
+    <div class="rightSidebar">
+      <p>Total number of wins is <span id="totalNumberOfWins"></span></p>
 
-		</div>
-				
-		<div class="rightSidebar">
-			<p>Total number of wins is <span id="totalNumberOfWins"></span></p>
+      <table class="table table-bordered winsTable">
+        <thead>
+          <tr>
+            <th>Persons</th>
+            <th>Wins count</th>
+          </tr>
+        </thead>
+        <tbody id="winsTableBody"></tbody>
+      </table>
 
-			<table class="table table-bordered winsTable">
-				<thead>
-					<tr>
-						<th>Persons</th>
-						<th>Wins count</th>
-					</tr>
-				</thead>
-				<tbody id="winsTableBody">
-				</tbody>
-			</table>
-			<table class="table table-bordered" id="winsTable2">
-				<tbody>				
-				</tbody>
-			</table>
+      <table class="table table-bordered" id="winsTable2"></table>
 
-			<button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
-			<button id="Reset" onclick="dom.reset()" class="btn btn-danger btn-lg">Reset</button>			
-		</div>
-	</div>
+      <button id="Start" onclick="main()" class="btn btn-success btn-lg">Start</button>
+      <button id="Reset" onclick="dom.reset()" class="btn btn-danger btn-lg">Reset</button>
+    </div>
+  </div>
 
-<div id="scrollButtonsBuckground">
-	<a id="scrollToTopButton" onclick="dom.pageScroll(-1, 1.19)"><span class="glyphicon glyphicon-chevron-up"></span></a>
-	<a id="scrollToBottomButton" onclick="dom.pageScroll(1, 1.19)"><span class="glyphicon glyphicon-chevron-down"></span></a>
-</div>
-
+  <div id="scrollButtonsBuckground">
+    <a id="toTopButton" onclick="dom.pageScroll(-1, 1.19)"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="toBottomButton" onclick="dom.pageScroll(1, 1.19)"><span class="glyphicon glyphicon-chevron-down"></span></a>
+  </div>
 </body>
 </html>

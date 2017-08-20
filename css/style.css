@@ -4,351 +4,349 @@
 }
 
 .header {
-	position: relative;
-	background-color: #f7f7f9;
-	border: solid rgba(0, 0, 0, 0.07);
-	border-width: 1px;
-	border-radius: 5px;
-	font-size: 25px;
-	height: 44px;
+  position: relative;
+  background-color: #f7f7f9;
+  border: solid rgba(0, 0, 0, 0.07);
+  border-width: 1px;
+  border-radius: 5px;
+  font-size: 25px;
+  height: 44px;
 }
 
 .headerInnerContainer {
-	position: relative;
-	margin: auto;
-	width: 520px;
-	border: 1px solid #f7f7f9;
+  position: relative;
+  margin: auto;
+  width: 520px;
+  border: 1px solid #f7f7f9;
 }
 
-.logo {	
-	position: relative;
-	height: 37px;
-	margin-top: 2px;
-	margin-left: 0px;
-	margin-right: 10px;
-	float: left;
+.logo {
+  position: relative;
+  height: 37px;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-right: 10px;
+  float: left;
 }
 
 #header p {
-	margin-top: 5px;
+  margin-top: 5px;
 }
 
 .generalContainer {
-	position: relative;
-	width: 554px;
+  position: relative;
+  width: 554px;
 }
 
 .mainContent,
 .rightSidebar {
-	position: relative;
-	background-color: #f7f7f9;
-	border: solid rgba(0, 0, 0, 0.07);
-	border-width: 1px;
-	border-radius: 5px;
-	margin-top: 8px;
-	padding: 10px;
+  position: relative;
+  background-color: #f7f7f9;
+  border: solid rgba(0, 0, 0, 0.07);
+  border-width: 1px;
+  border-radius: 5px;
+  margin-top: 8px;
+  padding: 10px;
 }
 
 .mainContent {
-	width: 520px;
+  width: 520px;
 }
 
 .left-sidebar {
-	background: #fff;
+  background: #fff;
 }
 
 .rightSidebar {
-	float: left;
-	width: 520px;
+  float: left;
+  width: 520px;
 }
 
 .mainTable,
 .winsTable,
 #winsTable2 {
-	background-color: white;
-	text-align: center;
-	font-size: 11px;
+  background-color: white;
+  text-align: center;
+  font-size: 11px;
 }
 
 .mainTable {
-	width: 498px;
+  width: 498px;
 }
 
 .mainTable th,
 .winsTable th {
-		text-align: center;
+  text-align: center;
 }
 
 .mainTable th:first-child {
-	width: 38px;
+  width: 38px;
 }
 
 .maxRowsPerPageForm,
 .firstVisibleRowForm {
-    position: relative;
-    height: 32px;
-    margin-top: 3px;
+  position: relative;
+  height: 32px;
+  margin-top: 3px;
 }
 
 .maxRowsPerPageForm p,
 .firstVisibleRowForm p {
-    float: left;
-    margin-right: 5px;
-    margin-top: 5px;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 #maxRowsPerPage {
-	width: 70px;
-	height: 30px;
-	font-size: 14px;
+  width: 70px;
+  height: 30px;
+  font-size: 14px;
 }
 
 #firstVisibleRow {
-	width: 45px;
-	font-size: 14px;
+  width: 45px;
+  font-size: 14px;
 }
 
 .input-group-sm {
-	position: relative;
-	float: left;
-	width: 75px;
+  position: relative;
+  float: left;
+  width: 75px;
 }
 
 #numberCombinationsInPageOverlay,
 #firstVisibleRowOverlay {
-	height: 30px;
-	position: absolute;
-    top: 0;
-    z-index: 2
+  height: 30px;
+  position: absolute;
+  top: 0;
+  z-index: 2
 }
 
 #numberCombinationsInPageOverlay {
-	width: 70px;
+  width: 70px;
 }
 
 #firstVisibleRowOverlay {
-	width: 73px;
-	left: 115px;
+  width: 73px;
+  left: 115px;
 }
 
 #errorMessage {
-	position: absolute;
-	top: 0px;
-	left: 250px;
+  position: absolute;
+  top: 0px;
+  left: 250px;
 }
 
 .mainTableHead2 {
-	display: none;
+  display: none;
 }
 
 
 .winsTable {
-	width: 190px;
-	display: none;
+  width: 190px;
+  display: none;
 }
 
 #winsTable2 {
-	width: 498px;
+  width: 498px;
 }
 
 #Reset {
-	display: inline;
-	width: 220px;
-	margin-left: 150px;
+  display: inline;
+  width: 220px;
+  margin-left: 150px;
 
 }
 
 #Start {
-	display: none;
-	width: 220px;
-	margin-left: 150px;
+  display: none;
+  width: 220px;
+  margin-left: 150px;
 }
 
 #pagination {
-	margin-left: 24px;
-	margin-top: 5px;
-	margin-bottom: 0px;
+  margin-left: 24px;
+  margin-top: 5px;
+  margin-bottom: 0px;
 }
 
 #pagination li a:focus,
 #pagination li a:hover,
 #pagination li span:focus,
 #pagination li span:hover {
-    z-index: 3;
-    color: #fff;
-    background-color: #5bc0de;
-    border-color: #ddd;
+  z-index: 3;
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #ddd;
 }
 
 .rightSidebar p {
-	text-align: center;
+  text-align: center;
 }
 
 .disabled {
-    pointer-events: none;
+  pointer-events: none;
 }
 
-#scrollToTopButton,
-#scrollToBottomButton {
-    position: fixed;
-    right: 22px;
-    text-align: center;
-    display: none;
+#toTopButton,
+#toBottomButton {
+  position: fixed;
+  right: 22px;
+  text-align: center;
+  display: none;
 }
 
 #scrollButtonsBuckground {
-    position: fixed;
-    right: 5px;
-    bottom: 5px;
-    background: rgb(180, 220, 150);
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    display: none;
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  background: rgb(180, 220, 150);
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: none;
 }
 
-#scrollToTopButton {
-	bottom: 33px;
+#toTopButton {
+  bottom: 33px;
 }
 
-#scrollToBottomButton {
-	bottom: 4px;
+#toBottomButton {
+  bottom: 4px;
 }
 
 @media screen and (min-width: 768px) {
-	.header {
-		font-size: 30px;
-		height: 64px;
-	}
+  .header {
+    font-size: 30px;
+    height: 64px;
+  }
 
-	.headerInnerContainer {
-		width: 722px;
-	}
+  .headerInnerContainer {
+    width: 722px;
+  }
 
-	.generalContainer {
-		width: 752px;
-	}
-	
-	.logo {	
-		height: 57px;
-	}
+  .generalContainer {
+    width: 752px;
+  }
 
-	.header p {
-		margin-top: 10px;
-	}
+  .logo {	
+    height: 57px;
+  }
 
-	.mainContent {
-		float: left;
-		margin-right: 8px;
-		width: 722px;		
-	}
+  .header p {
+    margin-top: 10px;
+  }
 
-	.mainTable {
-	width: 700px;
-	font-size: 14px;
-	}
+  .mainContent {
+    float: left;
+    margin-right: 8px;
+    width: 722px;
+  }
 
-	.mainTable th:first-child {
-		width: 38px;
-	}
+  .mainTable {
+    width: 700px;
+    font-size: 14px;
+  }
 
-	#winsTable2 {
-	font-size: 14px;
-	}
+  .mainTable th:first-child {
+    width: 38px;
+  }
 
-	#winsTable2 {
-		width: 700px;
-	}
+  #winsTable2 {
+    font-size: 14px;
+  }
 
-	.mainTableHead1 {
-		display: none;
-	}
+  #winsTable2 {
+    width: 700px;
+  }
 
+  .mainTableHead1 {
+    display: none;
+  }
 
-	.mainTableHead2 {
-		display: table-header-group;
-	}
+  .mainTableHead2 {
+    display: table-header-group;
+  }
 
-	.rightSidebar {
-		width: 722px;
-		float: left;
-	}
+  .rightSidebar {
+    width: 722px;
+    float: left;
+  }
 
-	#Start,
-	#Reset {
-		margin-left: 251px;
-	}
+  #Start,
+  #Reset {
+    margin-left: 251px;
+  }
 
-	#pagination {
-		margin-left: 123px;
-	}
+  #pagination {
+    margin-left: 123px;
+  }
 
-	.rightSidebar p {
-	font-weight: bold;
-	}
+  .rightSidebar p {
+    font-weight: bold;
+  }
 }
 
-@media screen and (min-width: 974px) {	
-	body .generalContainer {
-		width: 974px;
-	}
+@media screen and (min-width: 974px) {
+  body .generalContainer {
+    width: 974px;
+  }
 
-	.logo {	
-		height: 57px;
-		margin-top: 2px;
-	}
-	
-	.header {
-		font-size: 30px;
-		height: 64px;
-	}
+  .logo {
+    height: 57px;
+    margin-top: 1px;
+  }
 
-	.headerInnerContainer {
-		width: 942px;
-	}
-	
-	#Start,
-	#Reset {
-		width: 190px;
-	}
+  .header {
+    font-size: 30px;
+    height: 64px;
+  }
 
-	.rightSidebar {
-		width: 212px;
-		float: left;
-	}
+  .headerInnerContainer {
+    width: 942px;
+  }
 
-	#winsTable2 {
-		display: none;
-	}
+  #Start,
+  #Reset {
+    width: 190px;
+  }
 
-	.winsTable {
-		display: table;
-		font-size: 14px;
-	}
+  .rightSidebar {
+    width: 212px;
+    float: left;
+  }
 
-	#Start,
-	#Reset {
-		margin-left: 0px;
-	}
+  #winsTable2 {
+    display: none;
+  }
 
+  .winsTable {
+    display: table;
+    font-size: 14px;
+  }
+
+  #Start,
+  #Reset {
+    margin-left: 0px;
+  }
 }
 
-@media screen and (min-width: 1194px) {	
-	.headerInnerContainer {
-		width: 722px;
-	}
+@media screen and (min-width: 1194px) {
+  .headerInnerContainer {
+    width: 722px;
+  }
 
-	body .generalContainer {
-		width: 1194px;
-	}
+  body .generalContainer {
+    width: 1194px;
+  }
 
-	.left-sidebar {
-		height: 1px;
-		width: 212px;
-		float: left;
-	}
+  .left-sidebar {
+    height: 1px;
+    width: 212px;
+    float: left;
+  }
 
-	.mainContent {
-		margin-left: 8px;
-	}
+  .mainContent {
+    margin-left: 8px;
+  }
 }
