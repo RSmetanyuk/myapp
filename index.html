@@ -13,20 +13,20 @@
 </head>
 <body onresize="dom.onBodyResize()">
 
-	<div class="container-fluid" id="header">
-		<div id="headerInnerContainer">
-			<img id="logo" src="img/logo.jpg" alt="man thinks">
+	<div class="container-fluid header">
+		<div class="headerInnerContainer">
+			<img class="logo" src="img/logo.jpg" alt="man thinks">
 			<p>What is my number?</p>
 		</div>
 	</div>
 
-	<div class="container" id="generalContainer">
-		<div id="left-sidebar">
+	<div class="container generalContainer">
+		<div class="left-sidebar">
 		</div>
 
-		<div id="mainContent">
-			<table class="table table-bordered" id="mainTable">
-				<thead id="mainTableHead1">
+		<div class="mainContent">
+			<table class="table table-bordered mainTable">
+				<thead class="mainTableHead1">
 					<tr>
 						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
 						<th>A number</th>
@@ -39,7 +39,7 @@
 						<th>D answer</th>
 					</tr>
 				</thead>				
-				<thead id="mainTableHead2">
+				<thead class="mainTableHead2">
 					<tr>
 						<th><span data-toggle="tooltip" data-placement="top" title="Combination number">#</span></th>
 						<th>Person A number</th>
@@ -58,7 +58,7 @@
 
 			<p>Total rows (combinations): <span id="totalRows"></span></p>
 
-			<div id="maxRowsPerPageForm">
+			<div class="maxRowsPerPageForm">
 				<p>Max rows per page</p>
 				<select class="form-control" id="maxRowsPerPage" onchange="dom.maxRowsPerPageOnChange()">	
 					<option value=5>5</option>
@@ -67,17 +67,17 @@
 					<option value=20>20</option>
 					<option value=256>all</option>
 				</select>
-				<div id="numberCombinationsInPageOverlay" onclick="dom.overlayOnClick()"></div>
+				<div class="numberCombinationsInPageOverlay" onclick="dom.overlayOnClick()"></div>
 				<div class="alert alert-danger" id="errorMessage"></div>		
 			</div>
 
-			<div id="firstVisibleRowForm">
+			<div class="firstVisibleRowForm">
 				<p>Start display from</p>
-				<div class="input-group input-group-sm" id="firstVisibleRowContainer">
+				<div class="input-group input-group-sm">
   					<span class="input-group-addon" id="addon1">#</span>
   					<input type="text" class="form-control" id="firstVisibleRow" onchange="dom.onTypeFirstVisibleRowHandler()" placeholder="......." aria-describedby="addon1">
 				</div>			
-				<div id="firstVisibleRowOverlay" onclick="dom.overlayOnClick()"></div>
+				<div class="firstVisibleRowOverlay" onclick="dom.overlayOnClick()"></div>
 			</div>
 
 
@@ -90,10 +90,10 @@
 
 		</div>
 				
-		<div id="rightSidebar">
+		<div class="rightSidebar">
 			<p>Total number of wins is <span id="totalNumberOfWins"></span></p>
 
-			<table class="table table-bordered" id="winsTable">
+			<table class="table table-bordered winsTable">
 				<thead>
 					<tr>
 						<th>Persons</th>

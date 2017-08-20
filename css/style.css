@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-#header {
+.header {
 	position: relative;
 	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
@@ -13,14 +13,14 @@
 	height: 44px;
 }
 
-#headerInnerContainer {
+.headerInnerContainer {
 	position: relative;
 	margin: auto;
 	width: 520px;
 	border: 1px solid #f7f7f9;
 }
 
-#logo {	
+.logo {	
 	position: relative;
 	height: 37px;
 	margin-top: 2px;
@@ -33,13 +33,13 @@
 	margin-top: 5px;
 }
 
-#generalContainer {
+.generalContainer {
 	position: relative;
 	width: 554px;
 }
 
-#mainContent,
-#rightSidebar {
+.mainContent,
+.rightSidebar {
 	position: relative;
 	background-color: #f7f7f9;
 	border: solid rgba(0, 0, 0, 0.07);
@@ -49,45 +49,49 @@
 	padding: 10px;
 }
 
-#mainContent {
+.mainContent {
 	width: 520px;
 }
 
-#left-sidebar {
+.left-sidebar {
 	background: #fff;
 }
 
-#rightSidebar {
+.rightSidebar {
 	float: left;
 	width: 520px;
 }
 
-#mainTable,
-#winsTable,
+.mainTable,
+.winsTable,
 #winsTable2 {
 	background-color: white;
 	text-align: center;
 	font-size: 11px;
 }
 
-#mainTable {
+.mainTable {
 	width: 498px;
 }
 
-#mainTable th,
-#winsTable th {
+.mainTable th,
+.winsTable th {
 		text-align: center;
 }
 
-#maxRowsPerPageForm,
-#firstVisibleRowForm {
+.mainTable th:first-child {
+	width: 38px;
+}
+
+.maxRowsPerPageForm,
+.firstVisibleRowForm {
     position: relative;
     height: 32px;
     margin-top: 3px;
 }
 
-#maxRowsPerPageForm p,
-#firstVisibleRowForm p {
+.maxRowsPerPageForm p,
+.firstVisibleRowForm p {
     float: left;
     margin-right: 5px;
     margin-top: 5px;
@@ -104,25 +108,25 @@
 	font-size: 14px;
 }
 
-#firstVisibleRowContainer {
+.input-group-sm {
 	position: relative;
 	float: left;
 	width: 75px;
 }
 
-#numberCombinationsInPageOverlay,
-#firstVisibleRowOverlay {
+.numberCombinationsInPageOverlay,
+.firstVisibleRowOverlay {
 	height: 30px;
 	position: absolute;
     top: 0;
     z-index: 2
 }
 
-#numberCombinationsInPageOverlay {
+.numberCombinationsInPageOverlay {
 	width: 70px;
 }
 
-#firstVisibleRowOverlay {
+.firstVisibleRowOverlay {
 	width: 73px;
 	left: 115px;
 }
@@ -133,12 +137,12 @@
 	left: 250px;
 }
 
-#mainTableHead2 {
+.mainTableHead2 {
 	display: none;
 }
 
 
-#winsTable {
+.winsTable {
 	width: 190px;
 	display: none;
 }
@@ -176,7 +180,7 @@
     border-color: #ddd;
 }
 
-#rightSidebar p {
+.rightSidebar p {
 	text-align: center;
 }
 
@@ -211,44 +215,40 @@
 	bottom: 4px;
 }
 
-#mainTable th:first-child {
-	width: 38px;
-}
-
 @media screen and (min-width: 768px) {
-	#header {
+	.header {
 		font-size: 30px;
 		height: 64px;
 	}
 
-	#headerInnerContainer {
+	.headerInnerContainer {
 		width: 722px;
 	}
 
-	#generalContainer {
+	.generalContainer {
 		width: 752px;
 	}
 	
-	#logo {	
+	.logo {	
 		height: 57px;
 	}
 
-	#header p {
+	.header p {
 		margin-top: 10px;
 	}
 
-	#mainContent {
+	.mainContent {
 		float: left;
 		margin-right: 8px;
 		width: 722px;		
 	}
 
-	#mainTable {
+	.mainTable {
 	width: 700px;
 	font-size: 14px;
 	}
 
-	#mainTable th:first-child {
+	.mainTable th:first-child {
 		width: 38px;
 	}
 
@@ -256,22 +256,22 @@
 	font-size: 14px;
 	}
 
-	#mainTableHead1 {
+	#winsTable2 {
+		width: 700px;
+	}
+
+	.mainTableHead1 {
 		display: none;
 	}
 
 
-	#mainTableHead2 {
+	.mainTableHead2 {
 		display: table-header-group;
 	}
 
-	#rightSidebar {
+	.rightSidebar {
 		width: 722px;
 		float: left;
-	}
-
-	#winsTable2 {
-		width: 700px;
 	}
 
 	#Start,
@@ -283,27 +283,27 @@
 		margin-left: 123px;
 	}
 
-	#rightSidebar p {
+	.rightSidebar p {
 	font-weight: bold;
 	}
 }
 
 @media screen and (min-width: 974px) {	
-	body #generalContainer {
+	body .generalContainer {
 		width: 974px;
 	}
 
-	#logo {	
+	.logo {	
 		height: 57px;
 		margin-top: 2px;
 	}
 	
-	#header {
+	.header {
 		font-size: 30px;
 		height: 64px;
 	}
 
-	#headerInnerContainer {
+	.headerInnerContainer {
 		width: 942px;
 	}
 	
@@ -312,7 +312,7 @@
 		width: 190px;
 	}
 
-	#rightSidebar {
+	.rightSidebar {
 		width: 212px;
 		float: left;
 	}
@@ -321,7 +321,7 @@
 		display: none;
 	}
 
-	#winsTable {
+	.winsTable {
 		display: table;
 		font-size: 14px;
 	}
@@ -334,21 +334,21 @@
 }
 
 @media screen and (min-width: 1194px) {	
-	#headerInnerContainer {
+	.headerInnerContainer {
 		width: 722px;
 	}
 
-	body #generalContainer {
+	body .generalContainer {
 		width: 1194px;
 	}
 
-	#left-sidebar {
+	.left-sidebar {
 		height: 1px;
 		width: 212px;
 		float: left;
 	}
 
-	#mainContent {
+	.mainContent {
 		margin-left: 8px;
 	}
 }
