@@ -114,19 +114,19 @@
 	width: 75px;
 }
 
-.numberCombinationsInPageOverlay,
-.firstVisibleRowOverlay {
+#numberCombinationsInPageOverlay,
+#firstVisibleRowOverlay {
 	height: 30px;
 	position: absolute;
     top: 0;
     z-index: 2
 }
 
-.numberCombinationsInPageOverlay {
+#numberCombinationsInPageOverlay {
 	width: 70px;
 }
 
-.firstVisibleRowOverlay {
+#firstVisibleRowOverlay {
 	width: 73px;
 	left: 115px;
 }
