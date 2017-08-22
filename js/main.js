@@ -24,8 +24,6 @@ function main () {
   dom.onStartup();
 };
 
-window.onload = function() {
-  main();
-};
+window.onload = main;
 
 window.onscroll = dom.onScrollHandler;
