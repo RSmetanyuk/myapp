@@ -2,7 +2,7 @@ var dom = {
   counterOfCombinations: 0,
   counterOfWins: 0,
   arrayOfMainTableRows: [],
-  data: [],
+  data: 0,
   maxRowsPerPage: 5,
   firstVisibleRow: 0,
   lastVisibleRow: 0,
@@ -57,17 +57,12 @@ var dom = {
   },
 
   writeGeneralInfo: function(person1, person2, person3, person4) {
-    document.getElementById("winsTableBody").innerHTML =
-      "<tr><td>A</td><td>" + person1.winsCounter + "</td></tr>" +
-      "<tr><td>B</td><td>" + person2.winsCounter + "</td></tr>" +
-      "<tr><td>C</td><td>" + person3.winsCounter + "</td></tr>" +
-      "<tr><td>D</td><td>" + person4.winsCounter + "</td></tr>";
-    document.getElementById("winsTable2").innerHTML =
-      "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td>" + person1.winsCounter +
-                    "</td><td>" + person2.winsCounter +
-                    "</td><td>" + person3.winsCounter +
-                    "</td><td>" + person4.winsCounter + "</td></tr></tbody>";
+    var winsTable = document.getElementById("winsTableBody");
+    var winsTable2 = document.getElementById("winsTable2");
+    for (var i = 0; i <= 3; i++) {
+      winsTable.rows[i].cells[1].innerHTML = arguments[i].winsCounter;
+      winsTable2.rows[1].cells[i + 1].innerHTML = arguments[i].winsCounter;
+    };
     document.getElementById("totalNumberOfWins").innerHTML = dom.counterOfWins;
     person1.winsCounter = 0;
     person2.winsCounter = 0;
