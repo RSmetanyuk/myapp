@@ -29,7 +29,7 @@ var dom = {
   },
 
   checkCase: function (persons) {
-    var row = document.getElementById("template").cloneNode(true);
+    var row = document.getElementById("mainTableRowTemplate").cloneNode(true);
     row.cells[0].textContent = dom.counterOfCombinations + 1;
 
     for (var i = 0; i <= 3; i++) {
