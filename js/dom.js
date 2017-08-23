@@ -2,6 +2,7 @@ var dom = {
   counterOfCombinations: 0,
   counterOfWins: 0,
   arrayOfMainTableRows: [],
+  data: [],
   maxRowsPerPage: 5,
   firstVisibleRow: 0,
   lastVisibleRow: 0,
@@ -28,30 +29,31 @@ var dom = {
   },
 
   checkCase: function (persons) {
-    dom.arrayOfMainTableRows[dom.counterOfCombinations] = "";
-    dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<tr><td>" + (dom.counterOfCombinations + 1) + "</td>";
-    
+    var row = document.getElementById("template").cloneNode(true);
+    row.cells[0].textContent = dom.counterOfCombinations + 1;
+
     for (var i = 0; i <= 3; i++) {
-      dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<td>" + persons[i].number + "</td>";
+      row.cells[1 + i].textContent = persons[i].number
     };
 
     for (var i = 0; i <= 3; i++) {
-      var Coloured = '';
       if(persons[i].checkAnswer(
         persons[(i + 1) % 4].number,
         persons[(i + 2) % 4].number,
         persons[(i + 3) % 4].number)) {
-        Coloured = ' class="success"'
+        row.cells[i + 5].className = "success"
       };
-
-      dom.arrayOfMainTableRows[dom.counterOfCombinations] += "<td" + Coloured + ">" + persons[i].getAnswer(
+      row.cells[i + 5].textContent = persons[i].getAnswer(
         persons[(i + 1) % 4].number, 
         persons[(i + 2) % 4].number, 
-        persons[(i + 3) % 4].number) + "</td>";
+        persons[(i + 3) % 4].number)
     };
 
-    dom.arrayOfMainTableRows[dom.counterOfCombinations] += "</tr>";
-    dom.winCount(persons);
+
+    row.removeAttribute("id");
+    dom.arrayOfMainTableRows.push(row.outerHTML);
+
+    dom.winCount(persons)
   },
 
   writeGeneralInfo: function(person1, person2, person3, person4) {

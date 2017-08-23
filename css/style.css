@@ -83,6 +83,10 @@
   width: 38px;
 }
 
+#template {
+	  display: none;
+}
+
 .maxRowsPerPageForm,
 .firstVisibleRowForm {
   position: relative;
