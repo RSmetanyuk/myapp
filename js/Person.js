@@ -10,9 +10,17 @@ We have four people who give answers the following way:
     the sum of the difference of neighboring numbers she sees is even).  
 */
 
-function Person1 (number) {
+
+function Person (number) {
   this.number = number;
   this.winsCounter = 0;
+  this.checkAnswer = function (firstNumber, secondNumber, thirdNumber) {
+    return this.number === this.getAnswer(firstNumber, secondNumber, thirdNumber);
+  };
+};
+
+function Person1 (number) {
+  Person.call(this, number);
 
   this.getAnswer =  function (number2, number3, number4) {
     if (number2 === number3  && 
@@ -38,15 +46,10 @@ function Person1 (number) {
       }   
     }
   };
-
-  this.checkAnswer = function (number2, number3, number4) {
-    return this.number === this.getAnswer(number2, number3, number4);
-  };
 };
 
 function Person2 (number) {
-  this.number = number;
-  this.winsCounter = 0;
+  Person.call(this, number);
 
   this.getAnswer =  function (number1, number3, number4) {
     if (number1 === number3 &&
@@ -62,15 +65,10 @@ function Person2 (number) {
       if (number4 === number1) return (number3 + 2) % 4 || 4;
     }
   };
-
-  this.checkAnswer = function (number1, number3, number4) {
-    return this.number === this.getAnswer(number1, number3, number4);
-  };
 };
 
 function Person3 (number) {
-  this.number = number;
-  this.winsCounter = 0;
+  Person.call(this, number);
 
   this.getAnswer =  function (number1, number2, number4) {
     if (number1 === number2 &&
@@ -86,15 +84,10 @@ function Person3 (number) {
       if (number4 === number1) return (number2 + 3) % 4 || 4;
     }
   };
-
-  this.checkAnswer = function (number1, number2, number4) {
-    return this.number === this.getAnswer(number1, number2, number4);
-  };
 };
 
 function Person4 (number) {
-  this.number = number;
-  this.winsCounter = 0;
+  Person.call(this, number);
 
   this.getAnswer =  function (number1, number2, number3) {
     if (number1 === number2 &&
@@ -109,9 +102,5 @@ function Person4 (number) {
       if (number2 === number3) return (number1 + 4)%4 || 4;
       if (number3 === number1) return (number2 + 4)%4 || 4;
     }
-  };
-
-  this.checkAnswer = function (number1, number2, number3) {
-    return this.number === this.getAnswer(number1, number2, number3);
   };
 };

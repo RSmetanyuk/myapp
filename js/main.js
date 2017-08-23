@@ -1,9 +1,9 @@
 function main () {
 
-  var person1 = new Person1 (0);
-  var person2 = new Person2 (0);
-  var person3 = new Person3 (0);
-  var person4 = new Person4 (0);
+  var person1 = new Person1 ();
+  var person2 = new Person2 ();
+  var person3 = new Person3 ();
+  var person4 = new Person4 ();
   
   for (a = 1; a <= 4; a++) {
     for (b = 1; b <= 4; b++) {
