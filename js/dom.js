@@ -2,7 +2,6 @@ var dom = {
   counterOfCombinations: 0,
   counterOfWins: 0,
   arrayOfMainTableRows: [],
-  data: 0,
   maxRowsPerPage: 5,
   firstVisibleRow: 0,
   lastVisibleRow: 0,
@@ -49,7 +48,6 @@ var dom = {
         persons[(i + 3) % 4].number)
     };
 
-
     row.removeAttribute("id");
     dom.arrayOfMainTableRows.push(row.outerHTML);
 
@@ -57,12 +55,7 @@ var dom = {
   },
 
   writeGeneralInfo: function(person1, person2, person3, person4) {
-    var winsTable = document.getElementById("winsTableBody");
-    var winsTable2 = document.getElementById("winsTable2");
-    for (var i = 0; i <= 3; i++) {
-      winsTable.rows[i].cells[1].innerHTML = arguments[i].winsCounter;
-      winsTable2.rows[1].cells[i + 1].innerHTML = arguments[i].winsCounter;
-    };
+    dom.fillWinsTable (person1, person2, person3, person4);
     document.getElementById("totalNumberOfWins").innerHTML = dom.counterOfWins;
     person1.winsCounter = 0;
     person2.winsCounter = 0;
@@ -70,6 +63,17 @@ var dom = {
     person4.winsCounter = 0;
     dom.counterOfWins = 0;
     dom.counterOfCombinations = 0;
+  },
+
+  fillWinsTable: function(person1, person2, person3, person4) {
+    var winsTable = document.getElementById("winsTableBody");
+    var winsTable2 = document.getElementById("winsTable2");
+    for (var i = 0; i <= 3; i++) {
+      var data = 0;
+      if (arguments.length == 4) {data = arguments[i].winsCounter};
+      winsTable.rows[i].cells[1].innerHTML = data;
+      winsTable2.rows[1].cells[i + 1].innerHTML = data;
+    };
   },
 
   setFirstVisibleRow: function (n) { // "n" - number to be set
@@ -254,17 +258,11 @@ var dom = {
   },
 
   reset: function () {
+    dom.arrayOfMainTableRows = [];
     document.getElementById("Reset").style.display = "none";
     document.getElementById("Start").style.display = "inline";
     document.getElementById("mainTableBody").innerHTML = "";
-    document.getElementById("winsTableBody").innerHTML = 
-      "<tbody><tr><td>A</td><td>0</td></tr>" +
-              "<tr><td>B</td><td>0</td></tr>" +
-              "<tr><td>C</td><td>0</td></tr>" +
-              "<tr><td>D</td><td>0</td></tr></tbody>";
-    document.getElementById("winsTable2").innerHTML =
-      "<tbody><tr><th>Persons</th><td>A</td><td>B</td><td>C</td><td>D</td></tr>" +
-      "<th>Wins count</th><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>";
+    dom.fillWinsTable ();
     document.getElementById("totalNumberOfWins").innerHTML = 0;
     document.getElementById("totalRows").innerHTML = 0;
     document.getElementById("maxRowsPerPage").value = "";
