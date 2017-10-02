@@ -7,4 +7,4 @@ This application shows a list of possible 256 combinations of numbers in persons
 
 Try this app at: https://rsmetanyukapp.herokuapp.com
 
-Resolved N issues: https://github.com/RSmetanyuk/myapp/issues?q=is%3Aissue+is%3Aclosed
+Resolved 67 issues: https://github.com/RSmetanyuk/myapp/issues?q=is%3Aissue+is%3Aclosed
